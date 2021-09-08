@@ -2,4 +2,4 @@
 
 ## 杂谈
 
-
+- [tenshi](content/test/chinese.md)
