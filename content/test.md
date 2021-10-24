@@ -19,3 +19,11 @@ tags:
 [维基百科](https://zh.wikipedia.org/)
 [维基百科2](https://zh.wikipedia.org/)
 
+```mathjax
+$$
+J(\theta) = \frac 1 2 \sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2
+$$
+```
+
+$$vnote x markdown = awesome$$ (1.2.1)
+
