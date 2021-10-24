@@ -46,7 +46,7 @@ $$vnote x markdown = awesome$$
 ![3](http://latex.codecogs.com/svg.latex?\begin{bmatrix}{a_{1}}&{a_{2}}&{a_{3}}\\\\{b_{1}}&{b_{2}}&{b_{3}}\\\\{c_{1}}&{c_{2}}&{c_{3}}\\\\\end{bmatrix})
 ![4](http://latex.codecogs.com/svg.latex?\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6})
 
-![Text]([/url/to/image.png](https://latex.codecogs.com/svg.latex?{\int&space;x^{2}}={\frac{1}{3}x^{3}&plus;C}) "Optional Text")
+![Image Alt Text](https://latex.codecogs.com/svg.latex?{\int&space;x^{2}}={\frac{1}{3}x^{3}&plus;C} "Optional Text")
 
 ### 5. Google Chart服务器
 
