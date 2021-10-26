@@ -17,6 +17,7 @@ categories:
 #### Font Awesome到底干了什么
 
 我手头的font-awesome.css版本是4.7.0，让我们掀开fa的裙子看看里面到底有什么大宝贝
+
 ![underdress](./images/underdress.gif "underdress")
 
 一段使用fa的典型html骨架：
