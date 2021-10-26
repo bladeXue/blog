@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test-my-grid</title>
+
+    <!-- 在页面中使用normalize是个好习惯，增强跨浏览器性 -->
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./grid.css">
+
+    <style>
+        .container {
+            background-color: #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        .red {
+            background-color: lightcoral;
+        }
+
+        .green-border {
+            border: 1px solid lightseagreen;
+        }
+
+        .yellow-border {
+            border: 1px solid lightyellow;
+        }
+
+        .divider {
+            height: 1px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .box {
+            font-family: "Lucida Sans", Verdana, Arial, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            color: #ffffff;
+            height: 50px;
+            line-height: 50px;
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="row hide-on-mobile">
+        <div class="col-fourth">
+            <div class="box">hide-on-mobile</div>
+        </div>
+        <div class="col-fourth">
+            <div class="box">hide-on-mobile</div>
+        </div>
+        <div class="col-fourth">
+            <div class="box">hide-on-mobile</div>
+        </div>
+        <div class="col-fourth">
+            <div class="box">hide-on-mobile</div>
+        </div>
+    </div>
+
+    <div class="row no-pad">
+        <div class="col-fourth">
+            <div class="box">box</div>
+        </div>
+        <div class="col-fourth">
+            <div class="box">box</div>
+        </div>
+        <div class="col-fourth hide-on-mobile">
+            <div class="box">hide-on-mobile</div>
+        </div>
+        <div class="col-fourth hide-on-mobile">
+            <div class="box">hide-on-mobile</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h1>test-my-grid-examples</h1>
+        <div class="divider"></div>
+
+        <p>row only</p>
+        <div class="row">
+            <div class="box">box without col</div>
+        </div>
+        <div class="divider"></div>
+
+        <p>exhibition</p>
+        <div class="row">
+            <div class="col-half">
+                <div class="box">box</div>
+            </div>
+            <div class="col-half">
+                <div class="box">box</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-fourth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth">
+                <div class="box">box</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-sixth">
+                <div class="box">box</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+            <div class="col-twelfth">
+                <div class="box">box</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <p>infinite nest</p>
+        <div class="row green-border">
+            <div class="col-half green-border">
+                <div class="row">
+                    <div class="col-half">
+                        <div class="box">box</div>
+                    </div>
+                    <div class="col-half">
+                        <div class="box">box</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-half">
+                <div class="row  green-border">
+                    <div class="col-half">
+                        <div class="box">box</div>
+                    </div>
+                    <div class="col-half">
+                        <div class="box">box</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <!--    <p>infinite nest no-margin</p>-->
+        <!--    <div class="row">-->
+        <!--        <div class="col-half">-->
+        <!--            <div class="row no-margin">-->
+        <!--                <div class="col-half">-->
+        <!--                    <div class="box">box</div>-->
+        <!--                </div>-->
+        <!--                <div class="col-half">-->
+        <!--                    <div class="box">box</div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-half">-->
+        <!--            <div class="row no-margin">-->
+        <!--                <div class="col-half">-->
+        <!--                    <div class="box">box</div>-->
+        <!--                </div>-->
+        <!--                <div class="col-half">-->
+        <!--                    <div class="box">box</div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--    <div class="divider"></div>-->
+
+        <p>mobile-col test</p>
+        <div class="row">
+            <div class="col-fourth mobile-col-half">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth mobile-col-half">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth mobile-col-half">
+                <div class="box">box</div>
+            </div>
+            <div class="col-fourth mobile-col-half">
+                <div class="box">box</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+
+    </div>
+
+</body>
+
+</html>
