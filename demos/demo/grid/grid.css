@@ -1,0 +1,268 @@
+[class*='container'],
+[class*='col-'],
+[class*='mobile-col-'],
+.row,
+.row:before,
+.row:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 网格布局其实并不适合移动优先，设计时依旧是宽屏优先 */
+.container {
+    /* 一开始就面向宽屏 */
+    max-width: 1140px;  /* or 1280px */
+    width: 75%; /* or 80% */
+    margin: 0 auto;
+    /*最小宽在nest中不可靠*/
+    /*min-width: 748px;*/
+    /*overflow: hidden;*/
+}
+
+/* .container和.row剥离，增强泛用 */
+.container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+/* 浮动闭合 */
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row {
+    *zoom: 1;
+    width: auto;
+    /* 这里行间隙控制还是有需要斟酌的地方的 */
+    /*margin-bottom: 1.5rem;*/
+    margin-bottom: 1rem;
+}
+
+/* 要用嵌套打败嵌套，轻松解决nest问题 */
+/* 部分情况下，嵌套式的边距是有用的，但是这个选择权交给用户 */
+.row .row {
+    margin-bottom: -1.5rem;
+}
+
+/* 列去内边距 */
+.row.no-pad [class*='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 考虑出一个.col控制移动优先+渐进 */
+
+[class*='col-'] {
+    min-height: 1px;
+    width: auto;
+    float: left;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+/*.col-auto {*/
+.col-0, .col-auto {
+    width: auto;
+}
+
+/* Content Columns */
+.col-1-1, .col-12-12, .col-full {
+    width: 100%;
+}
+.col-1-2, .col-6-12, .col-half {
+    width: 50%;
+}
+.col-1-3, .col-4-12, .col-third {
+    width: 33.33%;
+}
+.col-1-4, .col-3-12, .col-fourth {
+    width: 25%;
+}
+.col-1-5, .col-fifth {
+    width: 20%;
+}
+.col-1-6, .col-2-12, .col-sixth {
+    width: 16.667%;
+}
+.col-1-7 {
+    width: 14.28%;
+}
+.col-1-8 {
+    width: 12.5%;
+}
+.col-1-9 {
+    width: 11.1%;
+}
+.col-1-10 {
+    width: 10%;
+}
+.col-1-11 {
+    width: 9.09%;
+}
+.col-1-12, .col-twelfth {
+    width: 8.33%
+}
+
+/* Layout Columns */
+.col-11-12 {
+    width: 91.66%
+}
+.col-10-12 {
+    width: 83.333%;
+}
+.col-9-12 {
+    width: 75%;
+}
+.col-8-12, .col-2-3, .col-two-thirds {
+    width: 66.66%;
+}
+.col-7-12 {
+    width: 58.33%
+}
+.col-5-12 {
+    width: 41.66%;
+}
+
+/* Pushing blocks */
+.push-2-3, .push-8-12 {
+    margin-left: 66.66%;
+}
+.push-1-2, .push-6-12 {
+    margin-left: 50%;
+}
+.push-1-3, .push-4-12 {
+    margin-left: 33.33%;
+}
+.push-1-4, .push-3-12 {
+    margin-left: 25%;
+}
+.push-1-5 {
+    margin-left: 20%;
+}
+.push-1-6, .push-2-12 {
+    margin-left: 16.667%;
+}
+.push-1-7 {
+    margin-left: 14.28%;
+}
+.push-1-8 {
+    margin-left: 12.5%;
+}
+.push-1-9 {
+    margin-left: 11.1%;
+}
+.push-1-10 {
+    margin-left: 10%;
+}
+.push-1-11 {
+    margin-left: 9.09%;
+}
+.push-1-12, .push-twelfth {
+    margin-left: 8.33%
+}
+
+/* opposite */
+.push-right {
+    float: right;
+}
+
+/* width of tablet for 768px */
+@media handheld, only screen and (max-width: 767px) {
+    /* 重绘宽屏幕的容器，添加上限和更舒适的宽度比 */
+    .container {
+        /*margin: 0 auto;*/
+        /*min-width: 0;*/
+        width: 90%;
+    }
+
+    /* 移动的nest */
+    .row .row {
+        margin-top: -0.5rem;
+        margin-bottom: -0.5rem;
+    }
+
+    [class*='col-'] {
+        width: auto;
+        float: none;
+        /* 善用上下边距折叠 */
+        margin: 0.5rem 0;
+    }
+
+    /* Mobile Layout */
+    [class*='mobile-col-'] {
+        float: left;
+        margin: 0 0 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem; /* column-space */
+        padding-bottom: 0;
+    }
+    .mobile-col-1-1, .mobile-col-12-12, .mobile-col-full {
+        width: 100%;
+    }
+    .mobile-col-1-2, .mobile-col-6-12, .mobile-col-half {
+        width: 50%;
+    }
+    .mobile-col-1-3, .mobile-col-4-12, .mobile-col-third {
+        width: 33.33%;
+    }
+    .mobile-col-1-4, .mobile-col-3-12, .mobile-col-fourth {
+        width: 25%;
+    }
+    .mobile-col-1-5, .mobile-col-fifth {
+        width: 20%;
+    }
+    .mobile-col-1-6, .mobile-col-2-12 {
+        width: 16.667%;
+    }
+    .mobile-col-1-7 {
+        width: 14.28%;
+    }
+    .mobile-col-1-8 {
+        width: 12.5%;
+    }
+    .mobile-col-1-9 {
+        width: 11.1%;
+    }
+    .mobile-col-1-10 {
+        width: 10%;
+    }
+    .mobile-col-1-11 {
+        width: 9.09%;
+    }
+    .mobile-col-1-12, .mobile-col-twelfth {
+        width: 8.33%
+    }
+
+    /* Layout Columns */
+    .mobile-col-11-12 {
+        width: 91.66%
+    }
+    .mobile-col-10-12 {
+        width: 83.333%;
+    }
+    .mobile-col-9-12 {
+        width: 75%;
+    }
+    .mobile-col-8-12, .mobile-col-2-3, .mobile-col-two-thirds {
+        width: 66.66%;
+    }
+    .mobile-col-5-12 {
+        width: 41.66%;
+    }
+    .mobile-col-7-12 {
+        width: 58.33%
+    }
+
+    .hide-on-mobile {
+        display: none !important;
+        width: 0;
+        height: 0;
+    }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试开关按钮</title>
+
+    <style>
+        .switch {
+            /* 取消原本的对钩，把checkbox变成一个纯粹的盒子 */
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background-color: lightcoral;
+        }
+        .switch:checked {
+            background-color: lightblue;
+        }
+        .switch:before {
+            /* checkbox没有文本，只能靠伪元素作出文本 */
+            content: "submit";
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 10px;
+            color: #f0f0f0;
+        }
+    </style>
+
+</head>
+<body>
+
+<input class="switch" type="checkbox" >
+
+</body>
+</html>
