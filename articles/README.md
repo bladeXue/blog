@@ -11,5 +11,5 @@ tags:
 - 如果发现有错误或者笔误，同样可以通过邮件/评论/issue来bb我（本博评论系统用的Disqus，现在访问需要梯子，看不见评论区的旁友记得找个机场）
 - 游戏玩家可以找我打山口山或者守望先锋，id提斯雷尔#5596，专业金色天使
 <!-- more -->
-<img src="/images/avatar/sombra4.jpg" title="sombra" alt="sombra" style="max-width:20%;margin:auto;" />
+<img src="../assets/avatar/sombra4.jpg" title="sombra" alt="sombra" style="max-width:20%;margin:auto;" />
 
