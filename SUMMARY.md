@@ -3,19 +3,17 @@
 - [x] 完成
 - [ ] 未完成
 
+## CSS
+
+- [x] [Font Awesome的正确使用方式](articles/css-building-blocks/correct-use-of-fa/) `CSS`   
+
 ## 算法
 
-- [x] [test](articles/automation-theory-guide/)`算法` `数据结构` `字符串`   this is just a test article.
-- [x] [test](articles/classical-algorithm-maximum-same-prefix-suffix/)`算法` `数据结构` `字符串`   this is just a test article.
-- [x] [test](articles/css-building-blocks/correct-use-of-fa/)`算法` `数据结构` `字符串`   this is just a test article.
-- [x] [test](articles/css-building-blocks/table-based-calendar/)`算法` `数据结构` `字符串`   this is just a test article.
-- [x] [test](utils/)`算法` `数据结构` `字符串`   this is just a test article.
+- [ ] [深入理解递归算法算法](articles/deep-understanding-of-recursion/) `递归`  `分治法`  `函数调用`   
+- [x] [初识图论的概念图论](articles/graph-theory-first-learn-and-concepts/) `图论`  `算法`   
+- [x] [KMP算法](articles/kmp-algorithm/) `算法`  `字符串`  `模式匹配`   
 
-## 经典算法
+## 杂谈
 
-- [x] [test](articles/css-building-blocks/switch-button/)`算法` `数据结构` `字符串`   this is just a test article.
-
-## 1
-
-- [ ] [1](articles/test/)`1`   1
+- [ ] [测试用例](articles/test/) `Test`   
 

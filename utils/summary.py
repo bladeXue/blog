@@ -7,7 +7,7 @@ configFilename = "info.json"
 summaryFilename = "SUMMARY.md"
 
 articleTemplate = "- {x} {title}({url}){tags}  {desc}"
-tagTemplate = "`{}` "
+tagTemplate = " `{}` "
 categoryTemplate = """
 ## {cate}
 

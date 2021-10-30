@@ -1,0 +1,8 @@
+{
+    "release": true,
+    "title": "KMP算法",
+    "description":"",
+    "date": "2100-01-01 00:00:00",
+    "tags": ["算法","字符串","模式匹配"],
+    "categories": ["算法"]
+}
