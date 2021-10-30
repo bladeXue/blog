@@ -301,6 +301,7 @@ public class MainWithBacktrack {
 
 #### 参考
 
-[wiki-八皇后问题](https://zh.wikipedia.org/wiki/八皇后问题)
-[什么是八皇后问题？](https://juejin.im/post/5accdb236fb9a028bb195562)
-[回溯法(backtracking algorithm)求解N皇后问题(N-Queens puzzle)](https://www.jianshu.com/p/bb123944d3e5)
+1. [wiki-八皇后问题](https://zh.wikipedia.org/wiki/八皇后问题)
+2. [什么是八皇后问题？](https://juejin.im/post/5accdb236fb9a028bb195562)
+3. [回溯法(backtracking algorithm)求解N皇后问题(N-Queens puzzle)](https://www.jianshu.com/p/bb123944d3e5)
+
