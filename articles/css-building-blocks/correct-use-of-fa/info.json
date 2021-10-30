@@ -1,16 +1,12 @@
 {
-    "title": "test",
+    "title": "Font Awesome的正确使用方式",
     "release": true,
-    "description":"this is just a test article.",
+    "description":"",
     "date": "2020-06-05 13:43:57",
     "tags": [
-        "算法",
-        "数据结构",
-        "字符串"
+        "CSS"
     ],
     "categories": [
-        "算法",
-        "经典算法",
-        "字符串"
+        "CSS"
     ]
 }
