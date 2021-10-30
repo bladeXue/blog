@@ -3,6 +3,10 @@
 - [x] 完成
 - [ ] 未完成
 
+## 数学
+
+- [x] [对速算的态度](articles/attitude-to-quick-calculation/) `数学`  `算术`   
+
 ## 算法
 
 - [ ] [自动机导读](articles/automation-theory-guide/) `算法`   
