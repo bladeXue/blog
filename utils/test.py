@@ -1,3 +1,9 @@
+# coding=utf-8
+
+import json
+import os
+
+infoJson="""
 {
     "title": "test",
     "release": true,
@@ -14,3 +20,9 @@
         "字符串"
     ]
 }
+"""
+
+s = "title: {title}"
+info = json.loads(infoJson)
+print(s.format(**info))
+
