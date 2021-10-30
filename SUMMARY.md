@@ -1,23 +1,19 @@
-# Ä¿Â¼
+# ç›®å½•
 
-- [x] Íê³É
-- [ ] Î´Íê³É
+- [x] å®Œæˆ
+- [ ] æœªå®Œæˆ
 
+## ç®—æ³•
 
+- [x] [test](articles/automation-theory-guide/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
+- [x] [test](articles/classical-algorithm-maximum-same-prefix-suffix/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
+- [x] [test](articles/css-building-blocks/correct-use-of-fa/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
+- [x] [test](articles/css-building-blocks/table-based-calendar/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
+- [x] [test](utils/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
 
-## Ëã·¨
+## ç»å…¸ç®—æ³•
 
-- [x] [test](articles/automation-theory-guide/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-- [x] [test](articles/classical-algorithm-maximum-same-prefix-suffix/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-- [x] [test](articles/css-building-blocks/correct-use-of-fa/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-- [x] [test](articles/css-building-blocks/table-based-calendar/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-- [x] [test](utils/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-
-
-## ¾­µäËã·¨
-
-- [x] [test](articles/css-building-blocks/switch-button/)`Ëã·¨` `Êı¾İ½á¹¹` `×Ö·û´®`   this is just a test article.
-
+- [x] [test](articles/css-building-blocks/switch-button/)`ç®—æ³•` `æ•°æ®ç»“æ„` `å­—ç¬¦ä¸²`   this is just a test article.
 
 ## 1
 

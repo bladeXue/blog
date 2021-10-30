@@ -3,15 +3,12 @@ import os
 import glob
 import json
 
-# 文件名
 configFilename = "info.json"
 summaryFilename = "SUMMARY.md"
 
-# 字符串模板
 articleTemplate = "- {x} {title}({url}){tags}  {desc}"
 tagTemplate = "`{}` "
 categoryTemplate = """
-
 ## {cate}
 
 """
@@ -20,27 +17,21 @@ summaryTemplate = """\
 
 - [x] 完成
 - [ ] 未完成
-
 {summaryStr}
-\
 """
-
-# done
 
 
 def scanInfos():
 
-    infos = {}
-    infoJsons = glob.glob('**/info.json', recursive=True)
+    infos = {}  # 路径名字串:json字典
+    infoJsons = glob.glob('**/{}'.format(configFilename), recursive=True)
 
     for info in infoJsons:
-        # print(info)
         with open(info, "rb") as f:
             data = json.load(f)  # 小心空文件，文件操作要处理好映射关系
             path = info.rstrip().replace(os.sep, "/").replace("info.json", "")
             infos[path] = data
 
-    # 路径名字串:json字典
     return infos
 
 
@@ -49,7 +40,6 @@ def buildTags(tags):
     for tag in tags:
         tagStr = tagStr+tagTemplate.format(tag)
 
-    # 返回标签组字符串
     return tagStr
 
 
@@ -78,22 +68,21 @@ def buildSummaryData(infos):
         else:
             categories[category].append(article)
 
-    # print(categories)
     for category in categories:
-        categoriesData = categoriesData+categoryTemplate.format(cate=category)
+        categoriesData = categoriesData + \
+            categoryTemplate.format(cate=category)
         for article in categories[category]:
-            categoriesData = categoriesData+article+"\n"
+            categoriesData = categoriesData + article+"\n"
 
     return summaryTemplate.format(summaryStr=categoriesData)
 
 
 if __name__ == "__main__":
-    os.chdir("../")
-    # 获取所有info文件
-    # 克隆文章模板，将info文件解析成单个article
-    # 克隆目录模板，填写文章和类别
-    # infos = 
-    # for path in infos:
-    #     print(infos[path])
-    with open("SUMMARY.md","w+") as f:
+
+    if os.listdir(".").count(summaryFilename) < 1:
+        print("!!!wrong directory")
+        print("execute from the dir where gets "+summaryFilename)
+        exit(0)
+
+    with open(summaryFilename, "w+", encoding="UTF-8") as f:
         f.write(buildSummaryData(scanInfos()))
