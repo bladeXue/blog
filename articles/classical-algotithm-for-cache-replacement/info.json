@@ -1,12 +1,11 @@
 {
-    "release": false,
-    "title": "深入理解递归算法",
+    "release": true,
+    "title": "缓存置换算法和LRU实现",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "递归",
-        "分治法",
-        "函数调用"
+        "算法",
+        "算法题解"
     ],
     "categories": [
         "算法"

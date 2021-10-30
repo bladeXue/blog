@@ -1,12 +1,12 @@
 {
-    "title": "Font Awesome的正确使用方式",
     "release": true,
+    "title": "解决Node报错 System limit for number of file watchers reached",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "CSS"
+        "踩坑","Linux"
     ],
     "categories": [
-        "CSS"
+        "Linux"
     ]
 }

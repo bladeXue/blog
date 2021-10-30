@@ -1,12 +1,10 @@
 {
     "release": false,
-    "title": "深入理解递归算法",
+    "title": "Dijkstra算法",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "递归",
-        "分治法",
-        "函数调用"
+        "算法"
     ],
     "categories": [
         "算法"

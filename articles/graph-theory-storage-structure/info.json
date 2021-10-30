@@ -1,12 +1,10 @@
 {
-    "release": false,
-    "title": "深入理解递归算法",
+    "release": true,
+    "title": "图的存储结构及封装",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "递归",
-        "分治法",
-        "函数调用"
+        "算法","图论"
     ],
     "categories": [
         "算法"
