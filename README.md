@@ -14,7 +14,7 @@
 
 > 为了增加阅读体验，建议安装[Octotree Code Tree](https://www.octotree.io/)这个Chrome插件，它会在浏览器左侧生成GitHub仓库的目录树
 
-![octotree](assets\images\octotree.png "octotree")
+![octotree](assets/images/octotree.png "octotree")
 
 ## 友链
 
