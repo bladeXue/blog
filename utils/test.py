@@ -26,3 +26,4 @@ s = "title: {title}"
 info = json.loads(infoJson)
 print(s.format(**info))
 
+

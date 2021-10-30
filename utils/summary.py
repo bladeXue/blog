@@ -3,17 +3,25 @@ import os
 import glob
 import json
 
+# 文件名
 configFilename = "info.json"
 summaryFilename = "SUMMARY.md"
 
-articleTemplate = "- {x} {title}({url}){tags}"
-categoryTemplate = "## {}"
+# 字符串模板
+articleTemplate = "- {x} {title}({url}){tags}  {desc}"
 tagTemplate = "`{}` "
+categoryTemplate = """
+
+## {cate}
+
+"""
 summaryTemplate = """\
 # 目录
 
 - [x] 完成
 - [ ] 未完成
+
+{summaryStr}
 \
 """
 
@@ -36,42 +44,56 @@ def scanInfos():
     return infos
 
 
+def buildTags(tags):
+    tagStr = ""
+    for tag in tags:
+        tagStr = tagStr+tagTemplate.format(tag)
+
+    # 返回标签组字符串
+    return tagStr
+
+
 def buildSummaryData(infos):
-    articles = {}
-    categories = {}
-    summaryData = {}
+
+    categories = {}  # 字符串:["",""]
+    categoriesData = ""
     for path in infos:
 
+        # 获取文章信息和路径
         info = infos[path]
 
-        # articleTemplate = "- [{x}​] [{title}​]({url}){tags}"
+        # 为每篇文章生成字符串
+        # articleTemplate = "- {x} {title}({url}){tags}  {desc}"
         article = articleTemplate.format(
             x="[x]" if info["release"] else "[ ]",
             title="["+info["title"]+"]",
             url=path,
-            tags=buildTags(info["tags"])
+            tags=buildTags(info["tags"]),
+            desc=info["description"],
         )
+        # 将每篇文章分类，类别唯一，注意空的情况
+        category = info["categories"][0]
+        if categories.get(category) == None:
+            categories[category] = [article]
+        else:
+            categories[category].append(article)
 
-    
+    # print(categories)
+    for category in categories:
+        categoriesData = categoriesData+categoryTemplate.format(cate=category)
+        for article in categories[category]:
+            categoriesData = categoriesData+article+"\n"
+
+    return summaryTemplate.format(summaryStr=categoriesData)
 
 
-def buildTags(tags):
-    tagStr = ""
-    for tag in tags:
-        tagStr =tagStr+tagTemplate.format(tag)
-    
-    return tagStr
-
-
-    # for info in scanInfos():
-    #     print(info)
-    # scanInfos()
 if __name__ == "__main__":
     os.chdir("../")
     # 获取所有info文件
     # 克隆文章模板，将info文件解析成单个article
     # 克隆目录模板，填写文章和类别
-    infos = scanInfos()
+    # infos = 
     # for path in infos:
     #     print(infos[path])
-    buildSummaryData(infos)
+    with open("SUMMARY.md","w+") as f:
+        f.write(buildSummaryData(scanInfos()))
