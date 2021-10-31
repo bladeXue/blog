@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成18篇
-- [ ] 未完成17篇
+- [x] 完成
+- [ ] 未完成
 
 ## 数学
 
@@ -51,6 +51,11 @@
 
 - [ ] [Docker部署MySQL容器](articles/deploy-mysql-in-docker/) `Docker`   
 
+## 杂谈
+
+- [ ] [如何在Github写博客](articles/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
+- [ ] [测试用例](articles/test/) `Test`   
+
 ## 正则表达式
 
 - [ ] [15分钟正则表达式火箭式入门](articles/regular-expression-in-15-minutes/) `正则表达式`   
@@ -58,10 +63,6 @@
 ## Linux
 
 - [x] [解决Node报错 System limit for number of file watchers reached](articles/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
-
-## 杂谈
-
-- [ ] [测试用例](articles/test/) `Test`   
 
 ## 内核
 
