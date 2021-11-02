@@ -38,6 +38,7 @@
 - [无锡肖奈](https://segmentfault.com/u/wuxixiaonai)
 - [粟米](http://www.dreamingcat.me)
 - [Rrafa](http://rrafa.icu/mt-blog/)
+- [Aissen](http://q-minr.top/) `建设中`
 
 ## 关于作者|･ω･｀)
 
