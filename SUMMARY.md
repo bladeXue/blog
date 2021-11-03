@@ -13,6 +13,7 @@
 - [x] [最大相同前缀后缀问题](articles/classical-algorithm-maximum-same-prefix-suffix/) `算法`  `算法题解`   
 - [x] [八皇后问题](articles/classical-algorithm-n-queens/) `算法`  `算法题解`   
 - [x] [缓存置换算法和LRU实现](articles/classical-algotithm-for-cache-replacement/) `算法`  `算法题解`   
+- [ ] [深入理解动态规划](articles/deep-understanding-of-dynamic-programming/) `递归`  `动态规划`  `记忆编程`   
 - [ ] [深入理解递归算法](articles/deep-understanding-of-recursion/) `递归`  `分治法`  `函数调用`   
 - [ ] [动态规划导读](articles/dynamic-program-guide/) `算法`  `动态规划`   
 - [ ] [Dijkstra算法](articles/graph-theory-dijkstra-algorithm/) `算法`   
