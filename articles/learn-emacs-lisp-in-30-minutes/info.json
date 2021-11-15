@@ -1,0 +1,14 @@
+{
+    "release": false,
+    "title": "30分钟Emacs Lisp火箭式入门",
+    "description": "",
+    "date": "2100-01-01 00:00:00",
+    "tags": [
+        "Emacs",
+        "Lisp",
+        "函数式编程"
+    ],
+    "categories": [
+        "Emacs"
+    ]
+}
