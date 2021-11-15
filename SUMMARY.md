@@ -54,7 +54,7 @@
 
 ## Emacs
 
-- [ ] [Emacs：最好的Python编辑器？](articles/emacs-the-best-python-editor/) `Emacs`  `编辑器`  `翻译`   英语文章翻译
+- [ ] [Emacs：最好的Python编辑器？](articles/emacs-the-best-python-editor/) `Emacs`  `编辑器`  `翻译`   
 
 ## 杂谈
 

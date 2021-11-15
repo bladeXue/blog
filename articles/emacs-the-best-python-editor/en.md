@@ -118,26 +118,152 @@ Throughout this tutorial, you’ll see initialization code snippets that enable 
 
 ### Customization Packages
 
+Now that you have an initialization file, you can add customization options to tailor Emacs for Python development. There are a few ways you can customize Emacs, but the one with the fewest steps is adding [Emacs packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html). These come from a variety of sources, but the primary package repository is [MELPA](https://melpa.org/#/), or the **Milkypostman’s Emacs Lisp Package Archive**.
 
+Think of MELPA as [PyPI](https://pypi.org/) for Emacs packages. Everything you need and will use in this tutorial can be found there. To begin using it, expand the code block below and copy the configuration code to your `init.el` file:
 
+```lisp
+;; .emacs.d/init.el
 
+;; ===================================
+;; MELPA Package Support
+;; ===================================
+;; Enables basic packaging support
+(require 'package)
 
+;; Adds the Melpa archive to the list of available repositories
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 
+;; Initializes the package infrastructure
+(package-initialize)
 
+;; If there are no archived package contents, refresh them
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
+;; Installs packages
+;;
+;; myPackages contains a list of package names
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    material-theme                  ;; Theme
+    )
+  )
 
+;; Scans the list in myPackages
+;; If the package listed is not already installed, install it
+(mapc #'(lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+      myPackages)
 
+;; ===================================
+;; Basic Customization
+;; ===================================
 
+(setq inhibit-startup-message t)    ;; Hide the startup message
+(load-theme 'material t)            ;; Load material theme
+(global-linum-mode t)               ;; Enable line numbers globally
 
+;; User-Defined init.el ends here
+```
 
+As you read through the code, you’ll see that `init.el` is broken into sections. Each section is separated by comment blocks that begin with two semicolons (;;). The first section is titled `MELPA Package Support`:
 
+```lisp
+;; .emacs.d/init.el
 
+;; ===================================
+;; MELPA Package Support
+;; ===================================
+;; Enables basic packaging support
+(require 'package)
 
+;; Adds the Melpa archive to the list of available repositories
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 
+;; Initializes the package infrastructure
+(package-initialize)
 
+;; If there are no archived package contents, refresh them
+(when (not package-archive-contents)
+  (package-refresh-contents))
+```
 
+This section begins by setting up the packaging infrastructure:
 
+- **Line 7** tells Emacs to use packages.
+- **Lines 10 and 11** add the MELPA archive to the list of package sources.
+- **Line 14** initializes the packaging system.
+- **Lines 17 and 18** build the current package content list if it doesn’t already exist.
 
+The first section continues from line 20:
+
+```lisp
+;; Installs packages
+;;
+;; myPackages contains a list of package names
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    material-theme                  ;; Theme
+    )
+  )
+
+;; Scans the list in myPackages
+;; If the package listed is not already installed, install it
+(mapc #'(lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+      myPackages)
+```
+
+At this point, you’re all set to programmatically install Emacs packages:
+
+- **Lines 23 to 27** define a list of package names to install. You’ll add more packages as you progress through the tutorial:
+  - **Line 24** adds [better-defaults](http://melpa.org/#/better-defaults). This is a collection of minor changes to the Emacs defaults that make it more user-friendly. It’s also a great base for further customization.
+  - **Line 25** adds the [material-theme](http://melpa.org/#/material-theme) package, which is a nice dark style found in other environments.
+- **Lines 31 to 34** traverse the list and install any packages that are not already installed.
+
+> Note: You don’t need to use the Material theme. There are many different [Emacs themes](http://melpa.org/#/?q=theme) available on MELPA for you to choose from. Pick one that suits your style!
+
+After you install your packages, you can move on to the section titled `Basic Customization`:
+
+```lisp
+;; ===================================
+;; Basic Customization
+;; ===================================
+
+(setq inhibit-startup-message t)    ;; Hide the startup message
+(load-theme 'material t)            ;; Load material theme
+(global-linum-mode t)               ;; Enable line numbers globally
+
+;; User-Defined init.el ends here
+```
+
+Here, you add a few other customizations:
+
+- **Line 40** disables the initial Emacs screen containing the tutorial information. You may want to leave this commented out by using a double semicolon (;;) until you’re more comfortable with Emacs.
+- **Line 41** loads and activates the Material theme. If you want to install a different theme, then use its name here instead. You can also comment out this line to use the default Emacs theme.
+- **Line 42** displays line numbers in every buffer.
+
+Now that you have a complete basic configuration file in place, you can save the file using `Ctrl`+`X` `Ctrl`+`S`. Then, close and restart Emacs to see the changes.
+
+The first time Emacs runs with these options, it may take a few seconds to start as it sets up the packaging infrastructure. When that’s finished, you’ll see that your Emacs window looks a bit different:
+
+![emacsv2-themed](./images/emacsv2-themed.png "emacsv2-themed")
+
+After the restart, Emacs skipped the initial screen and instead opened the last active file. The Material theme is applied, and line numbers have been added to the buffer.
+
+> Note: You can add packages interactively after the packaging infrastructure is set up. Hit `Alt`+`X`, then type `package-show-package-list` to see all the packages available to install in Emacs. As of this writing, there are over 4300 available.
+> 
+> With the list of packages visible, you can:
+> 
+> - Quickly filter the list by package name by hitting `F`.
+> - View the details of any package by clicking its name.
+> - Install the package from the package view by clicking the *Install* link.
+> - Close the package list using `Q`.
 
 ## Emacs for Python Development With elpy
 
