@@ -105,33 +105,30 @@ Let’s take a closer look at what’s happening here:
 
 - You tell Emacs that you want to find and open a file with the keystrokes `Ctrl`+`X` `Ctrl`+`F`.
 - You tell Emacs what file to open by giving it a path to the file. The path `~/.emacs.d/init.el` has three parts:
-  1. AA
-  1. 22
-  2. 33
-- You tell Emacs, “Yes, I do want to create this new file.” (This step is required since the file doesn’t exist. Normally, Emacs will simply open the file specified.)
-1. aa
-2. BB
-3. CC
+  1. The leading tilde `~` is a shortcut to your home folder. On Linux and Mac machines, this is usually `/home/<username>`. On Windows machines, it’s the path specified in the [HOME environment variable](http://www.gnu.org/software/emacs/manual/html_node/efaq-w32/Location-of-init-file.html#Location-of-init-file).
+  2. The folder `.emacs.d` is where Emacs stores all its configuration information. You can use this folder to quickly set up Emacs on a new machine. To do so, copy the contents of this folder to your new machine, and Emacs is good to go!
+  3. The file `init.el` is your initialization file.
+- You tell Emacs, "Yes, I do want to create this new file." (This step is required since the file doesn’t exist. Normally, Emacs will simply open the file specified.)
 
+After Emacs creates the new file, it opens that file in a new buffer for you to edit. This action doesn’t actually create the file yet, though. You must save the blank file using `Ctrl`+`X` `Ctrl`+`S` to create it on disk.
 
+Throughout this tutorial, you’ll see initialization code snippets that enable different features. Create the initialization file now if you want to follow along! You can also find the complete initialization file at the link below:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> Download Code: [Click here to download the code](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) you’ll use to learn about Emacs for Python in this tutorial.
 
 ### Customization Packages
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
