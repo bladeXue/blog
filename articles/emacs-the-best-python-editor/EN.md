@@ -267,6 +267,104 @@ After the restart, Emacs skipped the initial screen and instead opened the last 
 
 ## Emacs for Python Development With elpy
 
+Emacs is ready out of the box to edit Python code. The library file `python.el` provides *python-mode*, which enables basic indentation and syntax highlighting support. However, this built-in package doesn’t provide much else. To properly compete with Python-specific [IDEs](https://realpython.com/python-ides-code-editors-guide/) (Integrated Development Environments), you’ll add more capabilities.
+
+The [`elpy`](https://elpy.readthedocs.org/en/latest/) package (**Emacs Lisp Python Environment**) provides a near-complete set of [Python IDE features](https://elpy.readthedocs.org/en/latest/ide.html), including:
+
+- Automatic indentation
+- Syntax highlighting
+- Auto completion
+- Syntax checking
+- Python REPL integration
+- Virtual environment support
+
+To install and `enable` elpy, you add the package to your Emacs configuration. The following change to `init.el` will do the trick:
+
+```lisp
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    elpy                            ;; Emacs Lisp Python Environment
+    material-theme                  ;; Theme
+    )
+  )
+```
+
+Once `elpy` is installed, you need to enable it. Add the following code just before the end of your `init.el` file:
+
+```lisp
+;; ====================================
+;; Development Setup
+;; ====================================
+;; Enable elpy
+(elpy-enable)
+
+;; User-Defined init.el ends here
+```
+
+You now have a new section titled `Development Setup`. Line 49 enables `elpy`.
+
+> Note: Unfortunately, Emacs will only read the contents of the initialization file once when it starts. If you make any changes to it, then the easiest and safest way to load them is to restart Emacs.
+
+To see the new mode in action, go back to the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) code you entered [earlier](https://realpython.com/emacs-the-best-python-editor/#basic-emacs). Create a new Python file and retype the Sieve code directly:
+
+```python
+MAX_PRIME = 100
+
+sieve = [True] * MAX_PRIME
+for i as range(2, MAX_PRIME):
+  if sieve[i]:
+    print(i)
+    for j in range(i*i, MAX_PRIME, i):
+      sieve[j] = False
+```
+
+Note the intentional [syntax error](https://realpython.com/invalid-syntax-python/) on line 4.
+
+This is what your Python file would look like in Emacs:
+
+![emacsv2-elpy-in-action2-new](./images/emacsv2-elpy-in-action2-new.gif "emacsv2-elpy-in-action2-new")
+
+Auto-indentation and keyword highlighting still work as before. However, you should also see an error indicator on line 4:
+
+![emacsv2-elpy-basic-error](./images/emacsv2-elpy-basic-error.png "emacsv2-elpy-basic-error")
+
+This error indicator pops up in the `for` loop when you typed `as` instead of `in`.
+
+Correct that error, then type `Ctrl`+`C` `Ctrl`+`C` while in the Python buffer to run the file without leaving Emacs:
+
+![emacsv2-elpy-execute](./images/emacsv2-elpy-execute.png "emacsv2-elpy-execute")
+
+When you use this command, Emacs will do the following:
+
+1. Create a new buffer named *\*Python\**
+2. Open your Python interpreter and connect it to that buffer
+3. Create a new window under your current code window to display the buffer
+4. Send the code to the interpreter to execute
+
+You can scroll through the *\*Python\** buffer to see which interpreter was run and how the code was started. You can even type commands at the prompt (>>>) at the bottom.
+
+Often, you’ll want to execute your code in a [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) using the interpreter and packages specified for that environment. Fortunately, `elpy` includes the [pyvenv](http://melpa.org/#/pyvenv) package, which provides built-in support for virtual environments.
+
+To use an existing virtual environment in Emacs, type `Alt`+`X` `pyvenv-workon`. Emacs will ask for the name of the virtual environment to use and activate it. You can deactivate the current virtual environment with `Alt`+`X` `pyvenv-deactivate`. You can also access this functionality from the Emacs menu, under *Virtual Envs*.
+
+You can also configure `elpy` from within Emacs. Type `Alt`+`X` `elpy-config` to display the following dialog:
+
+![emacsv2-elpy-config](./images/emacsv2-elpy-config.png "emacsv2-elpy-config")
+
+You should see valuable debugging information, as well as options to configure `elpy`.
+
+Now you’ve put all of the basics of using Emacs with Python in place. Time to put some icing on this cake!
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -376,123 +474,3 @@ After the restart, Emacs skipped the initial screen and instead opened the last 
 
 
 ## Conclusion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
