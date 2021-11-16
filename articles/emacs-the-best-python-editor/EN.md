@@ -2,7 +2,7 @@
 
 You can download all the files referenced in this tutorial at the link below:
 
-> Download Code: [Click here to download the code](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) you’ll use to learn about Emacs for Python in this tutorial.
+> Download Code: [Click here to download the code you’ll use](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) to learn about Emacs for Python in this tutorial.
 
 ## Installation and Basics
 
@@ -114,7 +114,7 @@ After Emacs creates the new file, it opens that file in a new buffer for you to 
 
 Throughout this tutorial, you’ll see initialization code snippets that enable different features. Create the initialization file now if you want to follow along! You can also find the complete initialization file at the link below:
 
-> Download Code: [Click here to download the code](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) you’ll use to learn about Emacs for Python in this tutorial.
+> Download Code: [Click here to download the code you’ll use](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) to learn about Emacs for Python in this tutorial.
 
 ### Customization Packages
 
@@ -355,122 +355,319 @@ You should see valuable debugging information, as well as options to configure `
 
 Now you’ve put all of the basics of using Emacs with Python in place. Time to put some icing on this cake!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Additional Python Language Features
 
+In addition to all of the basic IDE features described above, there are other syntax features you can use with Emacs for Python development. In this tutorial, you’ll cover these three:
 
+1. Syntax checking with [flycheck](http://www.flycheck.org/)
+2. Code formatting with [PEP 8](https://realpython.com/python-pep8/) and [black](https://pypi.org/project/black/)
+3. Integration with Jupyter and IPython
 
-
-
-
-
-
-
+This is not an exhaustive list, however! Feel free to play around with Emacs and Python to see what other syntax features you can discover.
 
 ### Syntax Checking
 
+By default, `elpy` uses a syntax-checking package called [flymake](https://www.gnu.org/software/emacs/manual/html_node/flymake/index.html). While `flymake` is built into Emacs, it only has native support four languages, and it requires significant effort to be able to support new languages.
 
+Luckily, there is a newer and more complete solution available! The syntax-checking package [flycheck](http://www.flycheck.org/) supports real-time syntax checking in over 50 languages and is designed to be quickly configured for new languages. You can read about the differences between `flymake` and `flycheck` in the [documentation](https://www.flycheck.org/en/latest/user/flycheck-versus-flymake.html).
 
+You can quickly switch `elpy` to use `flycheck` instead of `flymake`. First, add `flycheck` to your `init.el`:
 
+```lisp
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    elpy                            ;; Emacs Lisp Python Environment
+    flycheck                        ;; On the fly syntax checking
+    material-theme                  ;; Theme
+    )
+  )
+```
 
+`flycheck` will now be installed with the other packages.
 
+Then, add the following lines in the `Development Setup` section:
 
+```lisp
+;; ====================================
+;; Development Setup
+;; ====================================
+;; Enable elpy
+(elpy-enable)
 
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+```
 
+This will enable `flycheck` when Emacs runs your initialization file. Now you’ll see real-time syntax feedback whenever you use Emacs for Python code editing:
+
+![emacsv2-elpy-flycheck](./images/emacsv2-elpy-flycheck.gif "emacsv2-elpy-flycheck")
+
+Notice the syntax reminder for [range()](https://realpython.com/python-range/), which appears at the bottom of the window as you type.
 
 ### Code Formatting
 
+Love it or hate it, [PEP 8](https://www.python.org/dev/peps/pep-0008/) is here to stay. If you want to follow all or some of the standards, then you’ll probably want an automated way to do so. Two popular solutions are [autopep8](https://pypi.python.org/pypi/autopep8/) and [black](https://pypi.org/project/black/). These code formatting tools must be installed in your Python environment before they can be used. To learn more about how to install an auto-formatter, check out How to [Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/#autoformatters).
 
+Once the auto-formatter is available, you can install the proper Emacs package to enable it:
 
+- **py-autopep8** connects `autopep8` to Emacs.
+- **blacken** enables `black` to run from within Emacs.
 
+You only need to install one of these in Emacs. To do so, add one of the following highlighted lines to your `init.el`:
 
+```lisp
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    elpy                            ;; Emacs Lisp Python Environment
+    flycheck                        ;; On the fly syntax checking
+    py-autopep8                     ;; Run autopep8 on save
+    blacken                         ;; Black formatting on save
+    material-theme                  ;; Theme
+    )
+  )
+```
 
+If you’re using `black`, then you’re done! `elpy` recognizes the `blacken` package and will enable it automatically.
 
+If you’re using `autopep8`, however, then you’ll need to enable the formatter in the `Development Setup` section:
 
+```lisp
+;; ====================================
+;; Development Setup
+;; ====================================
+;; Enable elpy
+(elpy-enable)
 
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable autopep8
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;; User-Defined init.el ends here
+```
+
+Now, every time you save your Python code, the buffer is automatically formatted and saved, and the contents reloaded. You can see how this works with some badly formatted Sieve code and the `black` formatter:
+
+![emacsv2-elpy-autopep8-cropped](./images/emacsv2-elpy-autopep8-cropped.gif "emacsv2-elpy-autopep8-cropped")
+
+You can see that after the file is saved, it’s reloaded in the buffer with the proper `black` formatting applied.
 
 ### Integration With Jupyter and IPython
 
+Emacs can also work with Jupyter Notebooks and the IPython REPL. If you don’t already have Jupyter installed, then check out [Jupyter Notebook: An Introduction](https://realpython.com/jupyter-notebook-introduction/). Once Jupyter is ready to go, add the following lines to your `init.el` after the call to enable `elpy`:
 
+```lisp
+;; ====================================
+;; Development Setup
+;; ====================================
+;; Enable elpy
+(elpy-enable)
 
+;; Use IPython for REPL
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+             "jupyter")
 
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+```
 
+This will update Emacs to use IPython rather than the standard Python REPL. Now when you run your code with `Ctrl`+`C` `Ctrl`+`C`, you’ll see the IPython REPL:
 
+![emacsv2-elpy-ipython](./images/emacsv2-elpy-ipython.png "emacsv2-elpy-ipython")
 
+While this is pretty useful on its own, the real magic is in the Jupyter Notebook integration. As always, you need to add a bit of configuration to enable everything. The [`ein`](http://melpa.org/#/ein) package enables an IPython Notebook client in Emacs. You can add it to your `init.el` like so:
 
+```lisp
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    elpy                            ;; Emacs Lisp Python Environment
+    flycheck                        ;; On the fly syntax checking
+    py-autopep8                     ;; Run autopep8 on save
+    blacken                         ;; Black formatting on save
+    ein                             ;; Emacs IPython Notebook
+    material-theme                  ;; Theme
+    )
+  )
+```
 
+You can now start a Jupyter server and work with Notebooks from within Emacs.
+
+To start the server, use the command `Alt`+`X` `ein:jupyter-server-start`. Then provide a folder in which to run the server. You’ll see a new buffer showing the Jupyter Notebooks available in the folder selected:
+
+![emacsv2-jupyter-notebook-list](./images/emacsv2-jupyter-notebook-list.png "emacsv2-jupyter-notebook-list")
+
+From here you can create a new Notebook with a selected kernel by clicking *New Notebook*, or open an existing Notebook from the list at the bottom by clicking *Open*:
+
+![emacsv2-jupyter-open-notebook](./images/emacsv2-jupyter-open-notebook.png "emacsv2-jupyter-open-notebook")
+
+You can complete the exact same task by typing `Ctrl`+`X` `Ctrl`+`F`, and then typing `Ctrl`+`C` `Ctrl`+`Z`. This will open the Jupyter Notebook directly in Emacs as a file.
+
+With a Notebook open, you can:
+
+- Move around the Notebook cells using the arrow keys
+- Add a new cell above the current cell using `Ctrl`+`A`
+- Add a new cell below the current cell using `Ctrl`+`B`
+- Execute new cells using either `Ctrl`+`C` `Ctrl`+`C` or `Alt`+`Enter`
+
+Here’s an example of how to move around a Notebook, add a new cell, and execute it:
+
+![emacsv2-ein-add-new-cell-cropped](./images/emacsv2-ein-add-new-cell-cropped.gif "emacsv2-ein-add-new-cell-cropped")
+
+You can save your work using `Ctrl`+`X` `Ctrl`+`S`.
+
+When you’re done working in your notebook, you can close it using `Ctrl`+`C` `Ctrl`+`Shift`+`3`. You can stop the Jupyter server completely by hitting `Alt`+`X` `ein:jupyter-server-stop`. Emacs will ask you if you want to kill the server and close all open Notebooks.
+
+Of course, this is just the tip of the Jupyter iceberg! You can explore everything the `ein` package can do in the [documentation](https://tkf.github.io/emacs-ipython-notebook/).
 
 ## Testing Support
 
+Do you write perfect code that has no side-effects and performs well under all conditions? Of course… not! If this sounds like you, though, then you’re free to skip ahead a bit. But for most developers, testing code is a requirement.
 
+`elpy` provides extensive support for running [tests](https://elpy.readthedocs.io/en/latest/ide.html#testing), including support for:
 
+- [unittest](https://docs.python.org/3/library/unittest.html)
+- [nose](https://nose.readthedocs.io/en/latest/)
+- [pytest](https://docs.pytest.org/en/latest/)
+- [green](https://pypi.org/project/green/)
+- [Twisted’s trial](https://twistedmatrix.com/trac/wiki/TwistedTrial)
+- [Django](https://realpython.com/python-testing/#how-to-use-the-django-test-runner)
 
+To demonstrate the testing capabilities, the code for this tutorial includes a version of Edsger Dijkstra’s [shunting yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm). This algorithm parses mathematical equations that are written using infix notation. You can download the code at the link below:
 
+> Download Code: [Click here to download the code you’ll use](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) to learn about Emacs for Python in this tutorial.
 
+To start, let’s get a more complete picture of the project by viewing the project folder. You can open a folder in Emacs using `Ctrl`+`X` `D`. Next, you’ll display two windows in the same frame by splitting the frame vertically with `Ctrl`+`X` `3`. Finally, you navigate to the test file in the left window, and click on it to open it in the right window:
 
+![emacsv2-pyeval-split](./images/emacsv2-pyeval-split.png "emacsv2-pyeval-split")
 
+The test file `expr_test.py` is a basic `unittest` file that contains a single test case with six tests. To run the test case, type `Ctrl`+`C` `Ctrl`+`T`:
 
+![emacsv2-elpy-test-run](./images/emacsv2-elpy-test-run.png "emacsv2-elpy-test-run")
+
+The results are displayed in the left window. Notice how all six tests were run. You can run a single test in a test file by putting the cursor in that test before typing `Ctrl`+`C` `Ctrl`+`T`.
 
 ## Debugging Support
 
+When tests fail, you’ll need to delve into the code to figure out why. The built-in *python-mode* allows you to use Emacs for Python code debugging with `pdb`. For an introduction to `pdb`, check out [Python Debugging with Pdb](https://realpython.com/python-debugging-pdb/).
 
+Here’s how to use `pdb` in Emacs:
 
+1. Open the `debug-example.py` file in the PyEval project.
+2. Type `Alt`+`X` `pdb` to start the Python debugger.
+3. Type `debug-example.py` `Enter` to run the file under the debugger.
 
+Once it’s running, `pdb` will split the frame horizontally and open itself in a window above the file you’re debugging:
 
+![emacsv2-debug-start](./images/emacsv2-debug-start.png "emacsv2-debug-start")
 
+All debuggers in Emacs run as part of the [Grand Unified Debugger library](https://www.gnu.org/software/emacs/manual/html_node/emacs/Debuggers.html#Debuggers), also called the GUD. This library provides a consistent interface for debugging all supported languages. The name of the buffer created, *\*gud-debug-example.py\**, shows that the debug window was created by the GUD.
 
+The GUD also connects `pdb` to the actual source file in the bottom window, which tracks your current location. Let’s step through this code to see how that works:
 
+![emacsv2-debug-step-cropped](./images/emacsv2-debug-step-cropped.gif "emacsv2-debug-step-cropped")
 
+You can step through code in `pdb` using one of two keys:
+
+1. `S` steps *into* other functions.
+2. `N` steps *over* other functions.
+
+You’ll see the cursor move in the lower source window to keep track of the execution point. As you follow function calls, `pdb` opens local files as required to keep you moving forward.
 
 ## Git Support
 
+No modern IDE would be complete without support for source control. While numerous source control options exist, it’s a fair bet that most programmers are using [Git](https://git-scm.com/). If you’re not using source control, or need to learn more about Git, then check out [Introduction to Git and GitHub for Python developers](https://realpython.com/python-git-github-intro/).
 
+In Emacs, source control support is provided by the [`magit`](http://magit.vc/) package. You install `magit` by listing it in your `init.el` file:
 
+```lisp
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+    elpy                            ;; Emacs Lisp Python Environment
+    ein                             ;; Emacs iPython Notebook
+    flycheck                        ;; On the fly syntax checking
+    py-autopep8                     ;; Run autopep8 on save
+    blacken                         ;; Black formatting on save
+    magit                           ;; Git integration
+    material-theme                  ;; Theme
+    )
+  )
+```
 
+After you restart Emacs, `magit` will be ready to use.
 
+Let’s take a look at an example. Open any of the files in the `PyEval` folder, then type `Alt`+`X` `magit-status`. You’ll see the following appear:
 
+![emacsv2-magit-status](./images/emacsv2-magit-status.png "emacsv2-magit-status")
 
+When activated, `magit` splits the Emacs frame and displays its status buffer in the lower window. This snapshot lists the staged, unstaged, untracked, and any other files in your repo folder.
 
+Most of the interaction you do with `magit` will be in this status buffer. For example, you can:
 
+- Move between sections in the status buffer using `P` for Previous and `N` for Next
+- Expand or collapse a section using `Tab`
+- Stage changes using `S`
+- Unstage changes using `U`
+- Refresh the contents of the status buffer using `G`
+
+Once a change is staged, you commit it using `C`. You’ll be presented with a variety of commit variations. For a normal commit, hit `C` again. You’ll see two new buffers appear:
+
+1. The lower window contains the *COMMIT_EDITMSG* buffer, which is where you add your commit message.
+2. The upper window contains the *magit-diff* buffer, which displays the changes you are committing.
+
+After entering your commit message, type `Ctrl`+`C` `Ctrl`+`C` to commit the changes:
+
+![emacsv2-magit-commit](./images/emacsv2-magit-commit.png "emacsv2-magit-commit")
+
+You may have noticed the top of the status buffer displaying both the *Head* (local) and *Merge* (remote) branches. This allows you to push your changes to the remote branch quickly.
+
+Look in the status buffer under *Unmerged into origin/master* and find the changes you want to push. Then, hit `Shift`+`P` to open the push options, and `P` to push the changes:
+
+![emacsv2-magit-push](./images/emacsv2-magit-push.png "emacsv2-magit-push")
+
+Out of the box, `magit` will talk to GitHub and GitLab, as well as a host of other source control tools. For more info on `magit` and its capabilities, check out the [full documentation](https://magit.vc/manual/).
 
 ## Additional Emacs Modes
 
+One of the major benefits of using Emacs over a Python-specific IDE is the ability to work in other languages. As a developer, you might have to work with Python, Golang, JavaScript, Markdown, JSON, shell scripts, and more, all in a single day! Having complex and complete support for all of these languages in a single code editor will increase your efficiency.
 
-
-
-
-
-
-
-
+There are tons of example Emacs initialization files available for you to review and use to build your own configuration. One of the best sources is GitHub. A GitHub search for [emacs.d](https://github.com/search?q=emacs.d) turns up a plethora of options for you to sift through.
 
 ## Alternatives
 
+Of course, Emacs is only one of several editors available for Python developers. If you’re interested in alternatives, then check out:
 
-
-
-
-
-
-
-
+- [Setting Up Sublime Text 3 for Full Stack Python Development](https://realpython.com/setting-up-sublime-text-3-for-full-stack-python-development/)
+- [Thonny: The Beginner-Friendly Python Editor](https://realpython.com/python-thonny/)
+- [Python Development in Visual Studio Code](https://realpython.com/python-development-visual-studio-code/)
+- [VIM and Python — A Match Made in Heaven](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
+- [PyCharm for Production Python Development (Guide)](https://realpython.com/pycharm-guide/)
 
 ## Conclusion
+
+As one of the most feature-rich editors available, Emacs is great for Python programmers. Available on every major platform, Emacs is extremely customizable and adaptable to many different tasks.
+
+Now you can:
+
+- Install Emacs on your selected platform
+- Set up an Emacs initialization file to configure Emacs
+- Build a basic Python configuration for Emacs
+- Write Python code to explore Emacs capabilities
+- Run and Test Python code in the Emacs environment
+- Debug Python code using integrated Emacs tools
+- Add source control functionality using Git
+
+Give Emacs a try on your next Python project! You can download all the files referenced in this tutorial at the link below:
+
+> Download Code: [Click here to download the code you’ll use](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor) to learn about Emacs for Python in this tutorial.
+
