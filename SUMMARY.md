@@ -54,7 +54,7 @@
 
 ## Emacs
 
-- [ ] [Emacs：最好的Python编辑器？](articles/emacs-the-best-python-editor/) `Emacs`  `编辑器`  `翻译`   
+- [ ] [Emacs：最好的Python编辑器？](articles/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
 - [ ] [30分钟Emacs Lisp火箭式入门](articles/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
 
 ## 杂谈
