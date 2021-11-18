@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成
-- [ ] 未完成
+- [x] 完成 `18` 篇
+- [ ] 未完成 `25` 篇
 
 ## 数学
 
@@ -62,6 +62,12 @@
 - [ ] [如何在Github写博客](articles/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
 - [ ] [测试用例](articles/test/) `Test`   
 
+## Linux
+
+- [ ] [Makefile编写指南](articles/how-to-write-makefile/) `Make`  `C`  `Linux`   
+- [ ] [C Linux Socket编程](articles/linux-c-socket-program/) `Socket`  `C`   
+- [x] [解决Node报错 System limit for number of file watchers reached](articles/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
+
 ## 计算机网络
 
 - [ ] [邮差的计算机网络](articles/poster-and-network/) `计算机网络`  `网络协议`  `路由`   
@@ -70,9 +76,9 @@
 
 - [ ] [15分钟正则表达式火箭式入门](articles/regular-expression-in-15-minutes/) `正则表达式`   
 
-## Linux
+## Visual Studio Code
 
-- [x] [解决Node报错 System limit for number of file watchers reached](articles/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
+- [ ] [在Visual Studio Code中配置Vim](articles/vim-in-vsc/) `Visual Studio Code`   
 
 ## 内核
 
