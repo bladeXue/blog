@@ -39,6 +39,7 @@
 - [粟米](http://www.dreamingcat.me)
 - [Rrafa](http://rrafa.icu/mt-blog/)
 - [Aissen](http://q-minr.top/) `建设中`
+- [竹青](https://www.tardblog.cn/)
 
 ## 关于作者|･ω･｀)
 
