@@ -1,4 +1,4 @@
-> 本篇原文来自[realpython.com](https://realpython.com/)的文章[Emacs: The Best Python Editor?](https://realpython.com/emacs-the-best-python-editor/)，文章提供了一个结构合理风格良好的配置文件，本仓库目录下的[`EN.md`](./EN.md)为英文原版复制，[`archives/`](./archives/)目录中存放了[原版参考代码](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)的一个快照。如果你在本文中发现了任何版权问题请立刻联系作者(ノへ￣、)
+> 本篇原文来自[realpython.com](https://realpython.com/)的文章[Emacs: The Best Python Editor?](https://realpython.com/emacs-the-best-python-editor/)，略有魔改，本仓库目录下的[`EN.md`](./EN.md)为英文原版复制，[`archives/`](./archives/)目录中存放了[原版参考代码](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)的一个快照，其中提供了一个结构合理风格良好的配置文件。如果你在本文中发现了任何版权问题请立刻联系作者(ノへ￣、)
 >
 > 下面是译文：
 
@@ -50,9 +50,9 @@ for i in range(2, MAX_PRIME):
 - 当键入右括号或括号时，Emacs都会突出显示左括号或括号。
 - Emacs正常地响应了方向键（这点和Vim有所区别），`Enter`，`Backspace`，`Del`，`Home`，`End`和`Tab` 键也是一样。
 
-但是Emacs中还是有一些奇怪的键位映射，比如当你想把别处的代码粘贴进Emacs时，习惯上你会使用标准的`Ctrl`+`V`快捷键，但你很快就会发现根本就无事发生。
+但是Emacs中还是有一些“奇怪”的**键位**映射，比如当你想把别处的代码粘贴进Emacs时，习惯上你会使用标准的`Ctrl`+`V`快捷键，但你很快就会发现编辑器毫无反应。
 
-查询Emacs内置教程可能是学习某个热键的最简单方案了，直接把光标放置到Emacs启动界面上的Emacs Tutorial后按下`Enter`就可以访问，或是随时按下`Ctrl`+`H` `T`快捷键来快速访问。搞定后你应该会看到这么一段说明：
+对于初次接触Emacs，查询某个键位的作用，最简单的方式就是查询Emacs内置教程，直接把光标放置到Emacs启动界面上的Emacs Tutorial后按下`Enter`就可以访问，或是随时按下`Ctrl`+`H` `T`快捷键来迅速跳转。然后你应该会看到这么一段说明：
 
 ```text
 Emacs commands generally involve the CONTROL key (sometimes labeled
@@ -69,43 +69,43 @@ Important Note: to end the Emacs session, type C-x C-c.  (Two characters.)
 To quit a partially entered command, type C-g.
 ```
 
-扫完这段文字，你就会明白在Emacs文档中，快捷键的记法是C-x C-s。这个命令用于保存当前缓冲区的内容。这个记号释义为要同时按下`Ctrl`键和`X`键，然后再同时按下`Ctrl`键和`S`键。
+看完这段字你大致就能理解了，Emacs中快捷键的记法形如C-x C-s。这个命令用于保存当前缓冲区的内容。这个记号释义为要同时按下`Ctrl`键和`X`键，然后再同时按下`Ctrl`键和`S`键。
 
-> 提示：在本篇教程中，Emacs中的快捷键记为`Ctrl`+`X` `Ctrl`+`S`。
+> 提示：在本篇教程中，Emacs中的快捷键记为形如`Ctrl`+`X` `Ctrl`+`S`。
 
-Emacs沿用了一些可以追溯到其诞生的UNIX文本时代的术语，由于这些术语现在可能时过境迁，含义发生了变化，所以随着教程的推进，你最好简单先了解一下它们：
+Emacs沿用了一些比较古老的术语，一路可以追溯到其当年诞生的UNIX文本时代的操作系统，由于这些术语可能和现在的主流用语有偏差，但Emacs还是保留了它们，为了方便阅读，最好还是先了解一下这些专有名词：
 
-- 你在启动Emacs时看到的窗口称为[frame（框架）](https://www.gnu.org/software/emacs/manual/html_node/elisp/Frames.html#Frames)，你可以根据需要在任意数量的显示器上打开任意数量的Emacs Frame，它们会被Emacs统一追踪。
-- The panes within each Emacs frame are referred to as [windows（窗口）](https://www.gnu.org/software/emacs/manual/html_node/elisp/Windows.html#Windows). Emacs frames initially contain a single window, but you can open multiple windows in each frame, either manually or by running special commands.
-- Within each window, the contents displayed are called a [buffer](http://www.gnu.org/software/emacs/manual/html_node/elisp/Buffers.html). Buffers can contain the contents of files, the output of commands, the lists of menu options, or other items. Buffers are where you interact with Emacs.
-- When Emacs needs your input, it asks in a special one-line area at the bottom of the currently active frame called the [mini-buffer](https://www.gnu.org/software/emacs/manual/html_node/elisp/Minibuffers.html#Minibuffers). If you ever find yourself there unexpectedly, then you can cancel whatever got you there with `Ctrl`+`G`.
+- 对Emacs来说，每次启动Emacs时你看到的窗口称为[frame（框架）](https://www.gnu.org/software/emacs/manual/html_node/elisp/Frames.html#Frames)，对操作系统来说则通常称之为**Window**或者**窗体**，但在Emacs中通常称呼为**框架**
+- 每个Emacs框架所拥有的矩形区域通常被称为[windows（窗口）](https://www.gnu.org/software/emacs/manual/html_node/elisp/Windows.html#Windows)。每次启动时，Emacs会打开一个框架，并渲染一个窗口出来，但通过快捷键和命令，你可以在一个框架中打开多个窗口（分屏）
+- 窗口负责待编辑的文本流显示出来，被称为[buffer（缓冲区）](http://www.gnu.org/software/emacs/manual/html_node/elisp/Buffers.html)。缓冲区是编辑的主体，也是你和Emacs交互的主要方式，缓冲区可以是打开的文件内容，也可以是命令行输出，一个菜单列表等等。
+- 每个Emacs框架的底部都会有一小条预留位置，这个是让你输入命令和Emacs交互用的，通常称为[mini-buffer（微型缓冲区或者命令区）](https://www.gnu.org/software/emacs/manual/html_node/elisp/Minibuffers.html#Minibuffers)，通过`Ctrl`+`G`快捷键来清空和取消当前命令
 
-Now that you’ve covered the basics, it’s time to start customizing and configuring Emacs for Python development!
+现在你对Emacs的功能应该是有所了解了，但为了让Emacs成为真正的Python开发利器，还需要必要的客制化和配置。
 
-### Initialization File
+### 启动配置
 
-One of the great benefits of Emacs is its powerful configuration options. The core of Emacs configuration is the [initialization file](http://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html), which is processed every time Emacs is started.
+Emacs拥有众多的优点，但其中的佼佼者便是其丰富强大的配置选项，配置的核心便是[启动文件](http://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html)，Emacs每次启动都会读取该文件进行初始化
 
-This file contains commands written in [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html), which is executed every time Emacs is started. Don’t worry, though! You don’t need to know Lisp to use or customize Emacs. In this tutorial, you’ll find everything you need to get started. (After all, this is Real Python, not Real Lisp!)
+这个文件由[Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html)脚本代码构成，并在每次启动时被Emacs执行。别被吓到了，客制化Emacs不需要你成为一个Lisp大师，但想精通Emacs，回头学习一些Lisp也很有用的。大部分客制化选项都会写在这个文件里。
 
-On start-up, Emacs looks for the initialization file in [three places](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html#Find-Init):
+启动的时候，Emacs依次会在[三个地方](https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html#Find-Init)寻找相关配置：
 
-1. First, it looks in your home user folder for the file `.emacs`.
-2. If it’s not there, then Emacs looks in your home user folder for the file `emacs.el`.
-3. Finally, if neither is found, then it looks in your home folder for `.emacs.d/init.el`.
+1. 首先，Emacs会尝试翻查你用户家目录下的`.emacs`文件。
+2. 如果该文件不存在，那么Emacs会继续在你的家目录里寻找`emacs.el`文件。
+3. 最后如果这两个文件都没找到，Emacs则会尝试按照路径，读取家目录下的`.emacs.d/init.el`文件。
 
-The last option, `.emacs.d/init.el`, is the current recommended initialization file. However, if you’ve previously used and configured Emacs, then you may already have one of the other initialization files present. If so, then continue to use that file as you read this tutorial.
+通常情况下，我们推荐使用第三种，也就是创建`.emacs.d/init.el`来作为配置文件的地址，如果你以前用过Emacs，你可能也会找到前两个，你也可以选择用它们来完成本篇教程，问题不大，但如果你想完全按照本文来，你可以删掉它们，改用`.emacs.d/init.el`
 
-When you first install Emacs, there is no `.emacs.d/init.el`, but you can create this file fairly quickly. With the Emacs window open, follow these steps:
+如果这是你第一次用Emacs，你可以需要手动创建`.emacs.d/init.el`，然后在你已经打开了的Emacs窗口中，操作以下步骤：
 
-1. Hit `Ctrl`+`X` `Ctrl`+`F`.
-2. Type `~/.emacs.d/init.el` in the mini-buffer.
-3. Hit `Enter`.
-4. Emacs may ask you to confirm your choice. If so, then hit `Enter` again.
+1. 按下`Ctrl`+`X` `Ctrl`+`F`。
+2. 在命令区的提示符中输入`~/.emacs.d/init.el`。
+3. 按下`Enter`确认。
+4. 如果要二次确认，就再按一次`Enter`键。
 
-Let’s take a closer look at what’s happening here:
+和我们之前的操作类似，但这次让我们来回顾一下在这个操作中都干嘛了：
 
-- You tell Emacs that you want to find and open a file with the keystrokes `Ctrl`+`X` `Ctrl`+`F`.
+- 你按下了热键`Ctrl`+`X` `Ctrl`+`F`来告诉Emacs你想打开一个文件。
 - You tell Emacs what file to open by giving it a path to the file. The path `~/.emacs.d/init.el` has three parts:
   1. The leading tilde `~` is a shortcut to your home folder. On Linux and Mac machines, this is usually `/home/<username>`. On Windows machines, it’s the path specified in the [HOME environment variable](http://www.gnu.org/software/emacs/manual/html_node/efaq-w32/Location-of-init-file.html#Location-of-init-file).
   2. The folder `.emacs.d` is where Emacs stores all its configuration information. You can use this folder to quickly set up Emacs on a new machine. To do so, copy the contents of this folder to your new machine, and Emacs is good to go!
