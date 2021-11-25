@@ -6,30 +6,28 @@
 
 你可以在下面的链接中找到本教程引用的所有文件：
 
-> 戳[这里](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)下载代码
+> 戳[这里](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)获取原文仓库代码
 
 ## 安装和基础
 
-在你开始探索Emacs以及它所有的Python开发潜力前，你需要先完成安装并学习一些基础操作。
+众所周知Emacs是一个很值得学习的编辑器，在开始探索Emacs的所有潜能，并将其全部释放在Python开发之前，你需要先完成安装Emacs并学习一些基础操作。
 
 ### 安装
 
-在你尝试安装Emacs前，你必须确定你要使用的平台。[ErgoEmacs](http://ergoemacs.org/)提供的这篇[指南](http://ergoemacs.org/emacs/which_emacs.html)，提供了你在诸如Linux，Mac和Windows这类系统上部署并运行一个初始版Emacs的一切知识。
+在正式安装Emacs之前，要先选择自己的平台和Emacs发行版。[ErgoEmacs](http://ergoemacs.org/)提供的这篇[指南](http://ergoemacs.org/emacs/which_emacs.html)，提供了你在诸如Linux，Mac和Windows等不同系统上部署并运行一个初始版Emacs的一切知识。
 
-安装完毕后，你就可以启动Emacs了:
+安装完毕后，你就可以第一次启动Emacs了，你应该会看到这样一个默认启动界面：
 
 ![emacsv2-fresh-launch](./images/emacsv2-fresh-launch.png "emacsv2-fresh-launch")
 
-顺利的话，你应该会看到上图的默认启动界面。
-
 ### Emacs基础
 
-在你开始用Emacs进行Python之旅之前，让我们先用几个例子来对Emacs的一些基础操作进行一个快速浏览。你可以学到如何通过一个初始的Emacs编写程序，以及原始配置下Emacs内置了多少针对Python的功能。Emacs打开，通过以下步骤创建一个短小精悍的Python程序：
+在你正式开始用Emacs进行愉快的Python之旅之前，让我们先用几个例子来快速熟悉一下Emacs的基础操作。你可以了解到在初始配置的Emacs下编写代码是如何一个体验，以及初始配置下Emacs内置了多少针对Python编程的功能。打开你的Emacs，通过以下步骤创建一个简单的Python程序：
 
 1. 按下`Ctrl`+`X` `Ctrl`+`F`来打开一个新文件。
 2. 输入`sieve.py`来对文件进行命名。
 3. 按下`Enter`键。
-4. 如果Emacs要你二次确认，那就再按一次`Enter`键。
+4. Emacs可能会要你二次确认，如果这样就再按一次`Enter`键。
 
 现在输入下面的代码：
 
@@ -44,13 +42,13 @@ for i in range(2, MAX_PRIME):
         sieve[j] = False
 ```
 
-你可能已经认出来了这个是[埃拉托斯特尼筛法](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)的代码实现，可以用来找到某个区间内的所有素数。在你输入这段代码时，你会注意到：
+你可能已经认出来了这个是[埃拉托斯特尼筛法](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)的代码实现，这是一个检索给定区间内的素数的算法。在你输入这段代码的同时，你大概已经注意到了：
 
 - Emacs以不同的高亮方式标记出了Python关键字和变量常量。
 - Emacs在[for](https://realpython.com/courses/python-for-loop/)和[if](https://realpython.com/courses/python-conditional-statements/)语句后进行了自动缩进。
 - 当你输入`Tab`时，Emacs切换了对齐方式，使得文本更加紧凑。
 - 当键入右括号或括号时，Emacs都会突出显示左括号或括号。
-- Emacs正常地响应了方向键（这点和Vim区别），同样包括`Enter`，`Backspace`，`Del`，`Home`，`End`和`Tab` 键。
+- Emacs正常地响应了方向键（这点和Vim有所区别），`Enter`，`Backspace`，`Del`，`Home`，`End`和`Tab` 键也是一样。
 
 但是Emacs中还是有一些奇怪的键位映射，比如当你想把别处的代码粘贴进Emacs时，习惯上你会使用标准的`Ctrl`+`V`快捷键，但你很快就会发现根本就无事发生。
 
