@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成 `18` 篇
-- [ ] 未完成 `25` 篇
+- [x] 完成
+- [ ] 未完成
 
 ## 数学
 
@@ -54,6 +54,7 @@
 
 ## Emacs
 
+- [ ] [Emacs碎碎念](articles/emacs-notes/) `Emacs`   
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
 - [ ] [30分钟Emacs Lisp火箭式入门](articles/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
 
@@ -75,6 +76,10 @@
 ## 正则表达式
 
 - [ ] [15分钟正则表达式火箭式入门](articles/regular-expression-in-15-minutes/) `正则表达式`   
+
+## Lisp
+
+- [ ] [SICP省流小助手](articles/sicp-quick-learn/) `Lisp`  `Scheme`  `SICP`   
 
 ## Visual Studio Code
 
