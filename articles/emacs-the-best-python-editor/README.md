@@ -1,4 +1,4 @@
-> 本篇原文来自[realpython.com](https://realpython.com/)的文章[Emacs: The Best Python Editor?](https://realpython.com/emacs-the-best-python-editor/)，文章提供了一个结构合理风格良好的配置文件，本仓库目录下的`[EN.md](./EN.md)`为英文原版复制，`[archives/](./archives/)`目录中存放了[原版参考代码](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)的一个快照。如果你在本文中发现了任何版权问题请立刻联系作者(ノへ￣、)
+> 本篇原文来自[realpython.com](https://realpython.com/)的文章[Emacs: The Best Python Editor?](https://realpython.com/emacs-the-best-python-editor/)，文章提供了一个结构合理风格良好的配置文件，本仓库目录下的[`EN.md`](./EN.md)为英文原版复制，[`archives/`](./archives/)目录中存放了[原版参考代码](https://github.com/realpython/materials/tree/master/emacs-the-best-python-editor)的一个快照。如果你在本文中发现了任何版权问题请立刻联系作者(ノへ￣、)
 >
 > 下面是译文：
 
