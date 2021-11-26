@@ -81,6 +81,10 @@
 
 - [ ] [SICP省流小助手](articles/sicp-quick-learn/) `Lisp`  `Scheme`  `SICP`   
 
+## 计算机常识
+
+- [ ] [理解补码](articles/understand-complement-code/) `编码`  `计算机组成原理`   
+
 ## Visual Studio Code
 
 - [ ] [在Visual Studio Code中配置Vim](articles/vim-in-vsc/) `Visual Studio Code`   
