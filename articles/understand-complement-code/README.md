@@ -11,7 +11,7 @@
 我们这样定义一个相反数：
 
 1. 对于数字A和数字B。
-2. 如果存在![](https://latex.codecogs.com/gif.latex?A&plus;B=0)成立，则称A和B互为相反数，记作![](https://latex.codecogs.com/gif.latex?B=-A)，以上。
+2. 如果存在![](https://latex.codecogs.com/gif.latex?\small&space;A&plus;B=0)成立，则称A和B互为相反数，记作![](https://latex.codecogs.com/gif.latex?\small&space;B=-A)，以上。
 
 你可能会觉得这两者没有区别，但是对CPU来说，这是实现减法的关键。
 
@@ -19,15 +19,15 @@
 
 假设我们拥有一个8位CPU，给定一个数字A，十进制表示为15，其8位二进制表示为00001111，又给定一个数字B，其8位二进制表示为11110001，A和B相加为9位二进制100000000，但是我们的CPU是8位的，所以第9位被进位丢弃，结果是00000000，把流程写下来：
 
-1. 有![ ](https://latex.codecogs.com/gif.latex?A=[00001111]_{8})和![ ](https://latex.codecogs.com/gif.latex?B=[11110001]_{8})。
-2. 等式![](https://latex.codecogs.com/gif.latex?[00001111]_{8}&plus;[11110001]_{8}=[00000000]_{8})成立。
+1. 有![ ](https://latex.codecogs.com/gif.latex?\small&space;A=[00001111]_{8})和![ ](https://latex.codecogs.com/gif.latex?\small&space;B=[11110001]_{8})。
+2. 等式![](https://latex.codecogs.com/gif.latex?\small&space;[00001111]_{8}&plus;[11110001]_{8}=[00000000]_{8})成立。
 3. 根据相反数定义，A和B相加为零，互为相反数。
 
 数字B其实就是A的补码，其十进制表示为-15，通过巧妙地运用进位溢出，就变相通过相反数来完成了一次减法，15-15=0是这样，通过补码就完成CPU的减法。
 
 ## 补码的求法
 
-其实你只要观察一下![ ](https://latex.codecogs.com/gif.latex?A=[00001111]_{8})和![ ](https://latex.codecogs.com/gif.latex?B=[11110001]_{8})，其实很轻易就能看出来补码是怎么算的：为了构造加法完成后能触发满值溢出1个数，补码就是取反后加上一个溢出补位数字。
+其实你只要观察一下![ ](https://latex.codecogs.com/gif.latex?\small&space;A=[00001111]_{8})和![ ](https://latex.codecogs.com/gif.latex?\small&space;B=[11110001]_{8})，其实很轻易就能看出来补码是怎么算的：为了构造加法完成后能触发满值溢出1个数，补码就是取反后加上一个溢出补位数字。
 
 ## 总结
 
