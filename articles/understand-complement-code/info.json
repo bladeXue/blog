@@ -1,8 +1,8 @@
 {
-    "release": false,
+    "release": true,
     "title": "理解补码",
     "description":"",
     "date": "2100-01-01 00:00:00",
-    "tags": ["编码","计算机组成原理"],
-    "categories": ["计算机常识"]
+    "tags": ["C","编码","组成原理"],
+    "categories": ["C"]
 }
