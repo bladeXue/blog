@@ -3,7 +3,7 @@ build:
 	gcc -c -Wa,-L foo.c
 
 dump:
-	objdump -d foo.o > dump.log
+	objdump -d foo.o > dump.txt
 
 clear:
 	rm foo.o foo.s

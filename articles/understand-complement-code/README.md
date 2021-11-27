@@ -48,7 +48,7 @@ int main()
 }
 ```
 
-通过GCC命令`gcc -c -Wa,-L foo.c; objdump -d foo.o > dump.log`我们可以提取其二进制文件：
+通过GCC命令`gcc -c -Wa,-L foo.c; objdump -d foo.o > dump.txt`我们可以提取其二进制文件：
 
 ```log
 foo.o:     file format elf64-x86-64
