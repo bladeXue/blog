@@ -33,6 +33,18 @@
 
 - [ ] [15分钟正则表达式火箭式入门](articles/algorithm/regular-expression-in-15-minutes/) `正则表达式`   
 
+## 书评
+
+- [ ] [书评-算法第4版](articles/book/review-of-algorithm4th/) `书评`   
+- [ ] [书评-素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
+- [ ] [书评-老人与海原著](articles/book/review-of-original-the-old-man-and-the-sea/) `书评`  `原著`  `英语阅读`   
+
+## Linux
+
+- [ ] [C Linux Socket编程](articles/c/c-linux-socket-program/) `Socket`  `C`   
+- [ ] [Makefile编写指南](articles/c/how-to-write-makefile/) `Make`  `C`  `Linux`   
+- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
@@ -57,12 +69,6 @@
 ## Docker
 
 - [ ] [Docker部署MySQL容器](articles/linux/deploy-mysql-in-docker/) `Docker`   
-
-## Linux
-
-- [ ] [Makefile编写指南](articles/linux/how-to-write-makefile/) `Make`  `C`  `Linux`   
-- [ ] [C Linux Socket编程](articles/linux/linux-c-socket-program/) `Socket`  `C`   
-- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
 
 ## Lisp
 
