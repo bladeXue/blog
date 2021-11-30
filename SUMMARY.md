@@ -37,7 +37,7 @@
 
 - [ ] [算法第4版](articles/book/review-of-algorithm4th/) `书评`   
 - [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
-- [ ] [老人与海原著](articles/book/review-of-original-the-old-man-and-the-sea/) `书评`  `原著`  `英语阅读`   
+- [ ] [老人与海原著](articles/book/review-of-original-the-old-man-and-the-sea/) `书评`  `英语阅读`   
 
 ## Linux
 
