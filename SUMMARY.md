@@ -66,10 +66,6 @@
 - [ ] [Spring核心编程指南](articles/java/spring-learn-core/) `Java`  `Spring`   
 - [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
 
-## Docker
-
-- [ ] [Docker部署MySQL容器](articles/linux/deploy-mysql-in-docker/) `Docker`   
-
 ## Lisp
 
 - [ ] [SICP省流小助手](articles/lisp/sicp-quick-learn/) `Lisp`  `Scheme`  `SICP`   
