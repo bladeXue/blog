@@ -57,7 +57,9 @@
 
 - [ ] [Emacs碎碎念](articles/emacs/emacs-notes/) `Emacs`   
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
+- [ ] [Evil模式](articles/emacs/evil-notes/) `Emacs`  `Vi`  `Evil`   
 - [ ] [30分钟Emacs Lisp火箭式入门](articles/emacs/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
+- [ ] [使用Magit控制版本](articles/emacs/magit-notes/) `Emacs`  `Git`  `Magit`   
 
 ## Java
 
@@ -73,7 +75,17 @@
 ## 数学
 
 - [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
-- [ ] [初识矩阵](articles/mathematics/linear-algebra-what-is-matrix/) `线性代数`  `数学`   
+- [ ] [初识矩阵](articles/mathematics/linear-algebra/linear-algebra-what-is-matrix/) `线性代数`  `数学`   
+
+## Python
+
+- [ ] [通过Numpy学习矩阵论](articles/python/learn-matrix-theory-via-numpy/) `Python`  `Numpy`   
+- [ ] [30分钟Python火箭式入门](articles/python/learn-python-in-30-minutes/) `Python`   
+- [ ] [Python生成个性二维码](articles/python/python-generate-qr-code/) `Python`   
+
+## Redis
+
+- [ ] [Redis笔记](articles/redis/redis-notes/) `Redis`   
 
 ## 杂谈
 

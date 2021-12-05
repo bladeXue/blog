@@ -1,0 +1,14 @@
+{
+    "release": false,
+    "title": "使用Magit控制版本",
+    "description": "",
+    "date": "2100-01-01 00:00:00",
+    "tags": [
+        "Emacs",
+        "Git",
+        "Magit"
+    ],
+    "categories": [
+        "Emacs"
+    ]
+}

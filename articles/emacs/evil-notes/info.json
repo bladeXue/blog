@@ -1,0 +1,14 @@
+{
+    "release": false,
+    "title": "Evil模式",
+    "description": "",
+    "date": "2100-01-01 00:00:00",
+    "tags": [
+        "Emacs",
+        "Vi",
+        "Evil"
+    ],
+    "categories": [
+        "Emacs"
+    ]
+}
