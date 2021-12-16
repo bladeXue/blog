@@ -90,7 +90,11 @@
 ## 杂谈
 
 - [ ] [测试用例](articles/test/) `Test`   
+- [ ] [关于复制粘贴](articles/yet/about-copy-and-paste/) `编程`   
+- [ ] [关于审美](articles/yet/about-the-aesthetic/) `设计`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
+- [ ] [理解函数副作用](articles/yet/understand-function-side-effect/) `函数式编程`   
+- [ ] [如何学习一门新语言](articles/yet/why-we-start-new-lang-from-data-structures/) `编程`   
 
 ## 计算机网络
 
