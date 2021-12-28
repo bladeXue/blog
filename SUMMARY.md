@@ -61,6 +61,10 @@
 - [ ] [30分钟Emacs Lisp火箭式入门](articles/emacs/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
 - [ ] [使用Magit控制版本](articles/emacs/magit-notes/) `Emacs`  `Git`  `Magit`   
 
+## 前端
+
+- [ ] [HTML快速入门](articles/html/quick-learn-html/) `HTML`  `前端`   
+
 ## Java
 
 - [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `Java`   
@@ -90,6 +94,7 @@
 ## 杂谈
 
 - [ ] [测试用例](articles/test/) `Test`   
+- [ ] [一个梦](articles/yet/a-strange-dream/) `杂谈`   
 - [ ] [关于复制粘贴](articles/yet/about-copy-and-paste/) `编程`   
 - [ ] [关于审美](articles/yet/about-the-aesthetic/) `设计`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
