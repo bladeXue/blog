@@ -72,50 +72,19 @@
 - [ ] [Spring核心编程指南](articles/java/spring-learn-core/) `Java`  `Spring`   
 - [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
 
-## Lisp
-
-- [ ] [SICP省流小助手](articles/lisp/sicp-quick-learn/) `Lisp`  `Scheme`  `SICP`   
-
 ## 数学
 
 - [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
 - [ ] [初识矩阵](articles/mathematics/linear-algebra/linear-algebra-what-is-matrix/) `线性代数`  `数学`   
 
-## Python
-
-- [ ] [通过Numpy学习矩阵论](articles/python/learn-matrix-theory-via-numpy/) `Python`  `Numpy`   
-- [ ] [30分钟Python火箭式入门](articles/python/learn-python-in-30-minutes/) `Python`   
-- [ ] [Python生成个性二维码](articles/python/python-generate-qr-code/) `Python`   
-
-## Redis
-
-- [ ] [Redis笔记](articles/redis/redis-notes/) `Redis`   
-
 ## 杂谈
 
+- [ ] [什么是复数](articles/mathematics/what-is-complex-number/) `Test`   
 - [ ] [测试用例](articles/test/) `Test`   
-- [ ] [一个梦](articles/yet/a-strange-dream/) `杂谈`   
-- [ ] [关于复制粘贴](articles/yet/about-copy-and-paste/) `编程`   
-- [ ] [关于审美](articles/yet/about-the-aesthetic/) `设计`   
+- [ ] [如何学习从0到1](articles/yet/from-zero-to-one/) `杂谈`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
-- [ ] [拖拉机和坦克](articles/yet/tractors-and-tanks/) `杂谈`   
-- [ ] [理解函数副作用](articles/yet/understand-function-side-effect/) `函数式编程`   
-- [ ] [如何学习一门新语言](articles/yet/why-we-start-new-lang-from-data-structures/) `编程`   
-
-## 计算机网络
-
-- [ ] [邮差的计算机网络](articles/yet/poster-and-network/) `计算机网络`  `网络协议`  `路由`   
 
 ## C
 
 - [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
-
-## Visual Studio Code
-
-- [ ] [在Visual Studio Code中配置Vim](articles/yet/vim-in-vsc/) `Visual Studio Code`   
-
-## 内核
-
-- [ ] [x86汇编导读](articles/yet/x86-assembly-guide/) `x86`  `汇编`   
-- [ ] [xv6源码阅读指南](articles/yet/xv6-source-read-guide/) `x86`  `汇编`  `内核`   
 
