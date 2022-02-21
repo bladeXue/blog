@@ -31,6 +31,10 @@
 - [ ] [Makefile编写指南](articles/c/how-to-write-makefile/) `Make`  `C`  `Linux`   
 - [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
 
+## C++
+
+- [ ] [C++关键字一览](articles/cpp/keywords-in-cpp/) `C++`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
@@ -63,6 +67,7 @@
 
 - [ ] [什么是复数](articles/mathematics/what-is-complex-number/) `Test`   
 - [ ] [测试用例](articles/test/) `Test`   
+- [ ] [测试用例tex](articles/tex/test/) `Test`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
 
 ## C
