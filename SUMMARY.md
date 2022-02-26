@@ -31,6 +31,11 @@
 - [ ] [Makefile编写指南](articles/c/how-to-write-makefile/) `Make`  `C`  `Linux`   
 - [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
 
+## C
+
+- [ ] [x86汇编指南](articles/c/x86-assembly-guide/) `汇编`  `nasm`  `x86`   
+- [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
+
 ## C++
 
 - [ ] [C++关键字一览](articles/cpp/keywords-in-cpp/) `C++`   
@@ -69,8 +74,4 @@
 - [ ] [测试用例](articles/test/) `Test`   
 - [ ] [测试用例tex](articles/tex/test/) `Test`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
-
-## C
-
-- [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
 
