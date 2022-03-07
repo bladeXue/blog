@@ -60,6 +60,7 @@
 
 - [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `Java`   
 - [ ] [手工实现Java热加载](articles/java/java-hot-swap-mechanism/) `Java`   
+- [ ] [给初学者的Java Web教程](articles/java/java-web-for-beginners/) `Java`   
 - [ ] [Spring核心编程指南](articles/java/spring-learn-core/) `Java`  `Spring`   
 - [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
 
