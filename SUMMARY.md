@@ -75,4 +75,5 @@
 - [ ] [测试用例](articles/test/) `Test`   
 - [ ] [测试用例tex](articles/tex/test/) `Test`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
+- [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
