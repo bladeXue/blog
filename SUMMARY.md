@@ -45,12 +45,17 @@
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
 - [x] [使用表格构建日历表](articles/css/css-building-blocks/table-based-calendar/) `CSS`   
 - [x] [什么是CSS积木](articles/css/css-building-blocks/what-is-this/) `CSS`   
+- [ ] [速学SASS](articles/css/sass-in-15-minutes/) `SASS`  `CSS`   
 
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
 - [ ] [30分钟Emacs Lisp火箭式入门](articles/emacs/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
 - [ ] [使用Magit控制版本](articles/emacs/magit-notes/) `Emacs`  `Git`  `Magit`   
+
+## 英语
+
+- [ ] [30篇英文短文](articles/english/30-short-essays/) `英语`   
 
 ## 前端
 
