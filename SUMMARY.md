@@ -26,20 +26,6 @@
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
 - [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
 
-## Linux
-
-- [ ] [Makefile编写指南](articles/c/how-to-write-makefile/) `Make`  `C`  `Linux`   
-- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
-
-## C
-
-- [ ] [x86汇编指南](articles/c/x86-assembly-guide/) `汇编`  `nasm`  `x86`   
-- [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
-
-## C++
-
-- [ ] [C++关键字一览](articles/cpp/keywords-in-cpp/) `C++`   
-
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
@@ -56,35 +42,32 @@
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
-- [ ] [30分钟Emacs Lisp火箭式入门](articles/emacs/learn-emacs-lisp-in-30-minutes/) `Emacs`  `Lisp`  `函数式编程`   
-- [ ] [使用Magit控制版本](articles/emacs/magit-notes/) `Emacs`  `Git`  `Magit`   
 
 ## 英语
 
 - [ ] [30篇英文短文](articles/english/30-short-essays/) `英语`   
 
-## 前端
-
-- [ ] [HTML快速入门](articles/html/quick-learn-html/) `HTML`  `前端`   
-
 ## Java
 
 - [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `Java`   
-- [ ] [手工实现Java热加载](articles/java/java-hot-swap-mechanism/) `Java`   
-- [ ] [给初学者的Java Web教程](articles/java/java-web-for-beginners/) `Java`   
-- [ ] [Spring核心编程指南](articles/java/spring-learn-core/) `Java`  `Spring`   
 - [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
+
+## Linux
+
+- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
 
 ## 数学
 
 - [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
-- [ ] [初识矩阵](articles/mathematics/linear-algebra/linear-algebra-what-is-matrix/) `线性代数`  `数学`   
 
 ## 杂谈
 
-- [ ] [什么是复数](articles/mathematics/what-is-complex-number/) `Test`   
 - [ ] [测试用例](articles/test/) `Test`   
 - [ ] [测试用例tex](articles/tex/test/) `Test`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
 - [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
+
+## C
+
+- [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
 

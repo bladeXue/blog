@@ -1,12 +1,3 @@
----
-title: Java的Context上下文
-date: 2020-07-04 22:52:20
-tags:
-- java
-categories:
-- [Java]
----
-
 # 对Java中的Context上下文概念的理解
 <!-- more -->
 Java中Context是一个很常见的概念，在各大IOC容器和框架中经常可以看到，我第一次看到这个东西是servlet里的ServletContext对象，Context单词的本意是“语境”或者“上下文”，大部分技术博客也都直接拿上下文来称呼，但是从直观上让人感觉乖乖的，让人一时有点理解不能，这里针对Context的本质做一点讨论

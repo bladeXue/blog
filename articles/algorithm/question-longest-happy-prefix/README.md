@@ -1,14 +1,3 @@
----
-title: 经典算法题解-最长快乐前缀
-date: 2020-06-10 15:48:16
-tags:
-- 算法
-- 字符串
-- 习题
-categories:
-- [算法, 算法题解]
----
-
 # 最长快乐前缀问题
 
 > 题目描述来源：[LeetCode-最长快乐前缀](https://leetcode-cn.com/problems/longest-happy-prefix/)

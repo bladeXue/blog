@@ -1,13 +1,3 @@
----
-title: 解决Node报错 System limit for number of file watchers reached
-date: 2020-03-21 15:27:40
-tags: 
-- linux
-- manjaro kde plasma
-categories:
-- [Linux, 踩坑日常]
----
-
 # 解决 Error: ENOSPC: System limit for number of file watchers reached
 
 #### 问题场景
