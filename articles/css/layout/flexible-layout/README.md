@@ -101,55 +101,18 @@
 flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | initial | inherit
 ```
 
-现在我们整个横向倒序+换行的试试效果，可以看到`E`盒子的左侧不够`F`的空间了，于是`F`选择了换行，如下：
-
-```html
-<!-- HTML -->
-<div class="flex-container bg">
-    <div class="flex-item box">A</div>
-    <div class="flex-item box">B</div>
-    <div class="flex-item box">C</div>
-    <div class="flex-item box">D</div>
-    <div class="flex-item box">E</div>
-    <div class="flex-item box">F</div>
-    <div class="flex-item box">G</div>
-    <div class="flex-item box">H</div>
-</div>
-<style>
-    .flex-container {
-        /* 设置弹性容器 */
-        display: flex;
-        flex-flow: row-reverse wrap;
-    }
-    .flex-item {
-        /* 弹性盒子样式 */
-        flex: 0 1 200px;
-    }
-    .bg {
-        /* 给它整个背景 */
-        background-color: lightgray;
-    }
-    .box {
-        /* 让盒子长好看点 */
-        margin: 10px;
-        height: 200px;
-        background-color: lightcoral;
-        text-align: center;
-        color: white;
-        font-size: 8rem;
-        line-height: 200px;
-    }
-</style>
-```
-
-![flex_flow_html](./images/flex_flow_html.png "flex_flow_html")
-
-其它的一些的`flex-flow`的效果：
+`flex-direction`的4种效果：
 
 ![flex_flow_row](./images/flex_flow_row.png "flex_flow_row")
 ![flex_flow_row_reverse](./images/flex_flow_row_reverse.png "flex_flow_row_reverse")
 ![flex_flow_column](./images/flex_flow_column.png "flex_flow_column")
 ![flex_flow_column_reverse](./images/flex_flow_column_reverse.png "flex_flow_column_reverse")
+
+`flex-wrap`的3种效果：
+
+![flex_flow_nowrap](./images/flex_flow_nowrap.png "flex_flow_nowrap")
+![flex_flow_wrap](./images/flex_flow_wrap.png "flex_flow_wrap")
+![flex_flow_wrap_reverse](./images/flex_flow_wrap_reverse.png "flex_flow_wrap_reverse")
 
 ### 3. justify-content
 
