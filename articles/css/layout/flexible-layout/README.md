@@ -116,13 +116,22 @@ flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | 
 
 ### 3. justify-content
 
-这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式签名如下：
+这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
 
 ```css
-justify-content: flex-start | flex-end | center | space-between | space-around | initial | inherit;
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | initial | inherit;
 ```
 
+> 这个样式的签名其实超级长，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position)，但在实际使用中通常会让元素填充空间，所以我很少会手动去调整`justify-content`。
 
+`justify-content`的6种常见效果：
+
+![justify_content_flex_start](./images/justify_content_flex_start.png "justify_content_flex_start")
+![justify_content_flex_end](./images/justify_content_flex_end.png "justify_content_flex_end")
+![justify_content_center](./images/justify_content_center.png "justify_content_center")
+![justify_content_space_between](./images/justify_content_space_between.png "justify_content_space_between")
+![justify_content_space_around](./images/justify_content_space_around.png "justify_content_space_around")
+![justify_content_space_evenly](./images/justify_content_space_evenly.png "justify_content_space_evenly")
 
 
 
