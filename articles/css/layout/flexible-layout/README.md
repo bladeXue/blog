@@ -60,8 +60,6 @@
 
 设置元素的`display: flex`生成**块级Flex容器**，设置`display: inline-flex`可以生成**内联Flex容器**。一个典型的弹性布局结构如下：
 
-![display_html](./images/display_html.png "display_html")
-
 ```HTML
 <!-- HTML -->
 <div class="flex-container">
@@ -91,12 +89,16 @@
 </style>
 ```
 
+效果：
+
+![display_html](./images/display_html.png "display_html")
+
 ### 2. flex-flow
 
 `flex-flow`作用于容器，控制“元素流向”，选择弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，签名如下：
 
 ```css
-flex-flow: [ <row|row-reverse|column|column-reverse> <nowrap|wrap|wrap-reverse>] | initial | inherit
+flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | initial | inherit
 ```
 
 现在我们整个横向倒序+换行的试试效果，可以看到`E`盒子的左侧不够`F`的空间了，于是`F`选择了换行，如下：
@@ -142,6 +144,33 @@ flex-flow: [ <row|row-reverse|column|column-reverse> <nowrap|wrap|wrap-reverse>]
 
 ![flex_flow_html](./images/flex_flow_html.png "flex_flow_html")
 
+其它的一些的`flex-flow`的效果：
+
+![flex_flow_row](./images/flex_flow_row.png "flex_flow_row")
+![flex_flow_row_reverse](./images/flex_flow_row_reverse.png "flex_flow_row_reverse")
+![flex_flow_column](./images/flex_flow_column.png "flex_flow_column")
+![flex_flow_column_reverse](./images/flex_flow_column_reverse.png "flex_flow_column_reverse")
+
+### 3. justify-content
+
+这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式签名如下：
+
+```css
+justify-content: flex-start | flex-end | center | space-between | space-around | initial | inherit;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -178,7 +207,7 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 
 1. `flex-grow`：伸展权重，当弹性容器的空间富余时，按照此数值拉伸各个元素，默认为0。
 2. `flex-shrink`：收缩权重，当弹性盒子的总宽度溢出容器时，按照此数值压缩各个元素，默认为1。
-3. `flex-basis`：基准宽度，弹性容器会随意修改弹性盒子的宽度，所以原本盒子模型的`width`经常失效，我们用`flex-basis`替代，默认为auto。
+3. `flex-basis`：基准宽度，弹性容器会随意修改弹性盒子的宽度，所以原本盒子模型的`width`经常失效，我们用`flex-basis`替代（但是你可以把width也写上），默认为auto。
 
 这里我们尝试设置一个容器，然后塞3个`flex-basis`为200px的盒子，将`flex-grow`设置为0，`flex-shrink`设置为1，分别将容器的`width`设置为1000px和500px，结果一个不变，一个收缩，如下：
 
