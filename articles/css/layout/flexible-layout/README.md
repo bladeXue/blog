@@ -22,7 +22,7 @@
 
 弹性布局是CSS3中的一种布局方式，和传统的布局方式不同的是，弹性布局不再指定一个元素具体的尺寸，而是描述这个元素该如何去填充空间。这样做会把布局变得简单，我们只需要在样式中提出布局的需求，然后由浏览器计算具体的数值。
 
-一个Flex布局由**弹性容器**和**弹性盒子**构成，将一个父盒子指定成弹性容器后，其子项自动变成弹性盒子，随后会有：
+一个Flex布局由**弹性容器**和**弹性盒子**（也叫**弹性项目**或者**弹性个体**）构成，将一个父盒子指定成弹性容器后，其子项自动变成弹性盒子，随后会有：
 
 1. 弹性容器默认宽度100%。
 2. 横向布局的块级盒子不再占用单行。
@@ -38,6 +38,23 @@
 > 记住这张图，使用Flex时会反复提到轴和起点。
 
 ## 属性
+
+将一个元素的`display`设置为`flex`或`inline-flex`即可将其设置为弹性容器，其子元素自动成为弹性盒子。Flex容器拥有4个主属性，Flex盒子拥有3个主属性，本质上就是在不断对齐和瓜分容器的**主轴**和**交叉轴**，他们的**默认值样式**看起来会长这样：
+
+```css
+.flex-container {
+    /* display: flex | inline-flex; */        
+    flex-flow: row nowrap;          /* 选择主轴 */
+    justify-content: flex-start;    /* 主轴的对齐 */
+    align-items: stretch;           /* 交叉轴的对齐 */        
+    align-content: stretch;         /* 多根主轴时的对齐方案 */        
+}
+.flex-item {
+    flex: 0 1 auto;                 /* 分配主轴空间 */
+    order: 0;                       /* 主轴的个性 */    
+    align-self: auto | stretch;     /* 交叉轴的个性 */
+}
+```
 
 ### 1. display
 
@@ -74,14 +91,90 @@
 </style>
 ```
 
-### 2. flex
+### 2. flex-flow
 
-`flex`属性作用于弹性盒子，控制元素的宽度。`flex`其实是3个属性的合体：
+`flex-flow`作用于容器，控制“元素流向”，选择弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，签名如下：
+
+```css
+flex-flow: [ <row|row-reverse|column|column-reverse> <nowrap|wrap|wrap-reverse>] | initial | inherit
+```
+
+现在我们整个横向倒序+换行的试试效果，可以看到`E`盒子的左侧不够`F`的空间了，于是`F`选择了换行，如下：
+
+```html
+<!-- HTML -->
+<div class="flex-container bg">
+    <div class="flex-item box">A</div>
+    <div class="flex-item box">B</div>
+    <div class="flex-item box">C</div>
+    <div class="flex-item box">D</div>
+    <div class="flex-item box">E</div>
+    <div class="flex-item box">F</div>
+    <div class="flex-item box">G</div>
+    <div class="flex-item box">H</div>
+</div>
+<style>
+    .flex-container {
+        /* 设置弹性容器 */
+        display: flex;
+        flex-flow: row-reverse wrap;
+    }
+    .flex-item {
+        /* 弹性盒子样式 */
+        flex: 0 1 200px;
+    }
+    .bg {
+        /* 给它整个背景 */
+        background-color: lightgray;
+    }
+    .box {
+        /* 让盒子长好看点 */
+        margin: 10px;
+        height: 200px;
+        background-color: lightcoral;
+        text-align: center;
+        color: white;
+        font-size: 8rem;
+        line-height: 200px;
+    }
+</style>
+```
+
+![flex_flow_html](./images/flex_flow_html.png "flex_flow_html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 5. flex
+
+`flex`属性作用于弹性盒子，指定了元素的**实际宽度**控制权。`flex`其实是3个属性的合体：
 
 ```css
 /* 完整样式签名 */
 flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 ```
+
+> 你可以把它们写开，但我习惯把它们写在一起，即使当前弹性布局不使用`flex`，我也会把默认值抄上。这样可以避免出现意外值。
 
 1. `flex-grow`：伸展权重，当弹性容器的空间富余时，按照此数值拉伸各个元素，默认为0。
 2. `flex-shrink`：收缩权重，当弹性盒子的总宽度溢出容器时，按照此数值压缩各个元素，默认为1。
@@ -109,6 +202,7 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
     }
     .flex-item {
         /* 弹性盒子样式 */
+        /* 这三行等同于flex: 0 1 200px */
         flex-grow: 0;
         flex-shrink: 1;
         flex-basis: 200px;
