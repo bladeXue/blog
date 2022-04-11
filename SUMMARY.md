@@ -34,7 +34,7 @@
 - [ ] [设计一个栅格系统](articles/css/design-a-grid-system/) `CSS`   
 - [ ] [文档流模型](articles/css/layout/document-flow/) `CSS`  `布局`   
 - [ ] [元素尺度](articles/css/layout/element-scale/) `CSS`  `布局`   
-- [ ] [弹性布局](articles/css/layout/flexible-layout/) `CSS`  `布局`   
+- [x] [弹性布局](articles/css/layout/flexible-layout/) `CSS`  `布局`   
 - [ ] [浮动布局](articles/css/layout/float-layout/) `CSS`  `布局`   
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `CSS`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `CSS`  `布局`   
