@@ -133,7 +133,7 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 ![justify_content_space_around](./images/justify_content_space_around.png "justify_content_space_around")
 ![justify_content_space_evenly](./images/justify_content_space_evenly.png "justify_content_space_evenly")
 
-
+### 4. align-items和align-content
 
 
 
@@ -181,7 +181,7 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 2. `flex-shrink`：收缩权重，当弹性盒子的总宽度溢出容器时，按照此数值压缩各个元素，默认为1。
 3. `flex-basis`：基准宽度，弹性容器会随意修改弹性盒子的宽度，所以原本盒子模型的`width`经常失效，我们用`flex-basis`替代（但是你可以把width也写上），默认为auto。
 
-这里我们尝试设置一个容器，然后塞3个`flex-basis`为200px的盒子，将`flex-grow`设置为0，`flex-shrink`设置为1，分别将容器的`width`设置为1000px和500px，结果一个不变，一个收缩，如下：
+这里我们写点代码，先尝试设置一个容器，然后塞3个`flex-basis`为200px的盒子，将`flex-grow`设置为0，`flex-shrink`设置为1，分别将容器的`width`设置为1000px和500px，结果一个不变，一个收缩，如下：
 
 ```html
 <!-- HTML -->
@@ -231,6 +231,16 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 ```
 
 ![basis_and_shrink](./images/basis_and_shrink.png "basis_and_shrink")
+
+### 6. order
+
+
+
+
+### 7. align-self
+
+
+
 
 ## 案例
 
