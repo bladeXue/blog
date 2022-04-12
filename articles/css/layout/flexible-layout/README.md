@@ -56,7 +56,7 @@
 }
 ```
 
-### 1. display
+### 0. display
 
 设置元素的`display: flex`生成**块级Flex容器**，设置`display: inline-flex`可以生成**内联Flex容器**。一个典型的弹性布局结构如下：
 
@@ -93,9 +93,9 @@
 
 ![display_html](./images/display_html.png "display_html")
 
-### 2. flex-flow
+### 1. flex-flow
 
-`flex-flow`作用于容器，控制“元素流向”，选择弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，签名如下：
+`flex-flow`作用于容器，控制**布局流**，也就是弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，默认为`row nowrap`，签名如下：
 
 ```css
 flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | initial | inherit
@@ -114,9 +114,9 @@ flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | 
 ![flex_flow_wrap](./images/flex_flow_wrap.png "flex_flow_wrap")
 ![flex_flow_wrap_reverse](./images/flex_flow_wrap_reverse.png "flex_flow_wrap_reverse")
 
-### 3. justify-content
+### 2. justify-content
 
-这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
+弹性容器中最强大最复杂的属性，控制子元素之间的距离。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
 
 ```css
 justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | initial | inherit;
@@ -133,7 +133,18 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 ![justify_content_space_around](./images/justify_content_space_around.png "justify_content_space_around")
 ![justify_content_space_evenly](./images/justify_content_space_evenly.png "justify_content_space_evenly")
 
-### 4. align-items和align-content
+### 3. align-items
+
+`align-items`控制元素在交叉轴方向上的对齐效果，默认为`stretch`，适用两种情况：
+
+1. 子元素高度不一。
+2. 子元素没有撑满单行高度。
+
+`align-items`的样式签名：
+
+```css
+align-items: baseline | center | flex-start | flex-end | stretch | initial | inherit
+```
 
 
 
@@ -143,6 +154,11 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 
 
 
+
+
+### 4. align-content
+
+`align-items`可以针对元素在交叉轴方向上的高度进行对齐，当出现多根轴线时（比如你应用了`flex-wrap: wrap`，容器内的元素出现了换行），多根轴线之间的距离分配就出现了新问题，这个时候可以用`align-content`来控制这种交叉轴方向上的多轴对齐问题。
 
 
 

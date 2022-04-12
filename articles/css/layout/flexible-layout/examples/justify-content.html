@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>justify content</title>
+
+    <style>
+        .bg {
+            margin: 0 auto 15px;
+            width: 1000px;
+            /*height: 200px;*/
+            background-color: lightgray;
+        }
+
+        .title {
+            margin: 0;
+            padding-left: 10px;
+            border-bottom: 2px solid white;
+            height: 40px;
+            color: white;
+            font-size: 2rem;
+            line-height: 40px;
+        }
+
+        .box {
+            /* 让盒子长好看点 */
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            line-height: 100px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .flex-item {
+            flex: 0 1 100px;
+        }
+
+        .A {
+            flex-basis: 100px;
+        }
+
+        .B {
+            flex-basis: 300px;
+        }
+
+        .C {
+            flex-basis: 200px;
+        }
+
+        #c1 {
+            /*background-color: lightgreen;*/
+            justify-content: flex-start;
+        }
+
+        #c2 {
+            justify-content: flex-end;
+        }
+
+        #c3 {
+            justify-content: center;
+        }
+
+        #c4 {
+            justify-content: space-between;
+        }
+
+        #c5 {
+            justify-content: space-around;
+        }
+        #c6 {
+            justify-content: space-evenly;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- HTML -->
+<div class="bg">
+    <p class="title">flex-start</p>
+    <div id="c1" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+<div class="bg">
+    <p class="title">flex-end</p>
+    <div id="c2" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+<div class="bg">
+    <p class="title">center</p>
+    <div id="c3" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+<div class="bg">
+    <p class="title">space-between</p>
+    <div id="c4" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+<div class="bg">
+    <p class="title">space-around</p>
+    <div id="c5" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+<div class="bg">
+    <p class="title">space-evenly</p>
+    <div id="c6" class="flex-container">
+        <div class="flex-item box A">A</div>
+        <div class="flex-item box B">B</div>
+        <div class="flex-item box C">C</div>
+    </div>
+</div>
+
+</body>
+</html>
