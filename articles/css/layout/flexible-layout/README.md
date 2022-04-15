@@ -98,8 +98,11 @@
 `flex-flow`作用于容器，控制**布局流**，也就是弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，默认为`row nowrap`，签名如下：
 
 ```css
-flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | initial | inherit
+flex-flow: [ <flex-direction> <flex-wrap> ] | initial | inherit
 ```
+
+1. `flex-direction`可取值：`row`，`row-reverse`，`column`和`column-reverse`。
+2. `flex-wrap`可取值：`nowrap`，`wrap`和`wrap-reverse`。
 
 `flex-direction`的4种效果：
 
@@ -116,15 +119,15 @@ flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | 
 
 ### 2. justify-content
 
-弹性容器中最强大最复杂的属性，控制子元素之间的距离。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
+弹性容器中最强大最复杂的属性，控制子**元素之间的距离**。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
 
 ```css
 justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | initial | inherit;
 ```
 
-> 这个样式的签名其实超级长，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position)，但在实际使用中通常会让元素填充空间，所以我很少会手动去调整`justify-content`。
+> 这个样式的签名其实超级长，因为`justify-content`同时也是Grid布局的样式，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position)，但是在Flex布局中，主要生效的其实就是上面这6个取值，比如同一个弹性容器里，`justify-content: start`和`justify-content: flex-start`效果不变。
 
-`justify-content`的6种常见效果：
+`justify-content`的6种效果：
 
 ![justify_content_flex_start](./images/justify_content_flex_start.png "justify_content_flex_start")
 ![justify_content_flex_end](./images/justify_content_flex_end.png "justify_content_flex_end")
@@ -143,8 +146,13 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 `align-items`的样式签名：
 
 ```css
-align-items: baseline | center | flex-start | flex-end | stretch | initial | inherit
+align-items: flex-start | flex-end | center | baseline | stretch | initial | inherit
 ```
+
+> 这个样式和`justify-content`一样也是Grid样式，详情可以参考[align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items#%E7%A4%BA%E4%BE%8B)。
+
+`align-items`的5种效果：
+
 
 
 
