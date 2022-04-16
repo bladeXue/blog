@@ -28,7 +28,8 @@
 
 ## C++
 
-- [ ] [关于IMGUI](articles/cpp/about-imgui/) `C++`  `imgui`   
+- [ ] [关于IMGUI](articles/cpp/about-imgui/) `C++`  `DirectX`   
+- [ ] [如何学习C++](articles/cpp/how-to-learn-cpp/) `C++`   
 
 ## CSS
 
