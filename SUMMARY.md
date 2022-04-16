@@ -26,6 +26,10 @@
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
 - [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
 
+## C++
+
+- [ ] [关于IMGUI](articles/cpp/about-imgui/) `C++`  `imgui`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
@@ -47,6 +51,10 @@
 
 - [ ] [30篇英文短文](articles/english/30-short-essays/) `英语`   
 
+## Git
+
+- [ ] [Git用法](articles/git/git-tricks/) `Git`   
+
 ## Java
 
 - [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `Java`   
@@ -59,6 +67,10 @@
 ## 数学
 
 - [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
+
+## Server
+
+- [ ] [通过Minio构建文件存储服务](articles/server/build-file-storage-by-minio/) `Minio`   
 
 ## 杂谈
 
