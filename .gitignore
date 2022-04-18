@@ -274,3 +274,7 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+################# 自定义
+
+run_python_windows.bat
