@@ -52,9 +52,26 @@
 .flex-item {
     flex: 0 1 auto;                 /* 分配主轴空间 */
     order: 0;                       /* 主轴的个性 */    
-    align-self: auto | stretch;     /* 交叉轴的个性 */
+    align-self: auto | stretch;     /* 交叉轴具体值 */
 }
 ```
+
+把这些属性的值抄一遍没有意义，具体可以在用的时候去查阅MDN的[CSS（层叠样式表）](https://developer.mozilla.org/zh-CN/docs/Web/CSS)，这里仅仅给出常用的一些取值：
+
+### 1. 容器属性
+
+容器除了`display`外，拥有4个可以控制弹性模型的属性，它们的主要作用就是设置容器的**弹性轴**和元素在弹性轴上的**间距**
+
+|属性|取值|描述|
+|-|-|-|
+|`display`|`flex`\|`inline-flex`||
+
+### 2. 盒子属性
+
+
+
+
+
 
 ### 0. display
 
@@ -271,7 +288,7 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 
 
 
-
+## 弹性盒子的碎碎念
 
 ## 总结
 
