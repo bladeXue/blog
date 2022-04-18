@@ -54,7 +54,8 @@
 
 ## Git
 
-- [ ] [Git用法](articles/git/git-tricks/) `Git`   
+- [ ] [Git的gc机制](articles/git/gc-mechanism/) `Git`   
+- [x] [Git小魔术](articles/git/git-tricks/) `Git`   Git常用收录，以及一些有趣的小魔法。
 
 ## Java
 
