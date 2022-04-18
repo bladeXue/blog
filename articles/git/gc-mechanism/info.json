@@ -1,6 +1,6 @@
 {
     "release": false,
-    "title": "Git的gc机制",
+    "title": "gc机制",
     "description":"",
     "date": "2100-01-01 00:00:00",
     "tags": ["Git"],
