@@ -31,12 +31,20 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
+## 关于变基
+
+？
+
 ## 关于标签
 
 Git的标签有两种：
 
 1. 轻标签：仅添加名称，主要用于本地仓库的一次性使用。
 2. 注解标签：添加名称，注解和签名，用于协助管理版本数据库。
+
+## 关于别名
+
+？
 
 ## 获取Help信息
 
@@ -218,18 +226,25 @@ git show <commit-id>
 git remote add origin <repo-url>
 ```
 
+## 建立远程分支副本
+
+```bash
+git checkout -b <branch-id> origin/<branch-id>
+```
+
+## 建立上游分支
+
+```bash
+git branch --set-upstream-to <branch-id> origin/<branch-id>
+```
+
 ## 查看远程仓库
 
 ```bash
+git remote 
 git remote -v
 ```
 
-## 推送远程仓库
-
-```bash
-git push
-git push -u origin master   ;; 向远程仓库推送本地master的所有提交
-```
 
 ## 获取远程仓库
 
@@ -246,6 +261,12 @@ git fetch --all && git reset --hard origin/master
 ;; --all是获取所有remote
 ```
 
+## 推送远程仓库
+
+```bash
+git push
+git push -u origin master   ;; 向远程仓库推送本地master的所有提交
+```
 ## 创建分支
 
 以前的写法：
@@ -334,6 +355,8 @@ git gc --prune=now
 ```
 
 ## 忽略文件
+
+？
 
 ## 总结
 
