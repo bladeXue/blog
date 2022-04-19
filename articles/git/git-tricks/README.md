@@ -27,6 +27,17 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 > 注意相对引用必须“先树后线”。
 
+## 关于分支
+
+采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+
+## 关于标签
+
+Git的标签有两种：
+
+1. 轻标签：仅添加名称，主要用于本地仓库的一次性使用。
+2. 注解标签：添加名称，注解和签名，用于协助管理版本数据库。
+
 ## 获取Help信息
 
 ```bash
@@ -126,18 +137,50 @@ git diff --name-only --diff-filter=U
 git diff --word-diff
 ```
 
-## 切换版本
-
-本质是通过重写`.git/refs/`来切换版本，通过重置引用指针可以达到回退版本的目的。
+## 删除文件
 
 ```bash
-git reset --hard <commit-id>
+git rm <filename>           ;; 连本地文件和索引一起删除
+git rm --cached <filename>  ;; 放弃索引，但会保留本地文件
+```
+
+查看索引区：
+
+```bash
+git ls-files --stage
+```
+
+## 重置版本
+
+本质是通过重写`.git/refs/`来重置版本（切换版本），通过重置引用指针可以达到回退版本的目的。
+
+```bash
+git reset --hard <commit-id>    ;; 仅重置HEAD位置
+git reset --soft <commit-id>    ;; 仅重置HEAD，索引
+git reset --mixed <commit-id>   ;; 重置HEAD，索引，工作树
 ```
 
 提交新版本，或者切换版本都会在`.git/logs/`会留下相应的指针变动记录，想查看可以使用：
 
 ```bash
 git reflog <branch-id>
+```
+
+## 修改最近一次版本
+
+取缔最近一次提交并和当前缓冲区融合，变成一次新提交。如果缓存区没有内容，那么仅仅修改上一次提交的message。
+
+```bash
+git commit --amend
+```
+
+## 还原版本
+
+类似`reset`，但是产生一个新版本。
+
+```bash
+git revert <commit-id>  ;; 会产生一个“否定了目标版本”的新版本
+git revert HEAD         ;; 撤销前一次提交
 ```
 
 ## 查看仓库状态
@@ -156,7 +199,10 @@ git status --ignore-submodules
 
 ```bash
 git log
+git log --abbrev-commit     ;; 简化版本id
 git log --pretty=oneline    ;; 简短版输出
+git log --graph             ;; 输出树形图
+git log --decorate          ;; 输出注解
 ```
 
 查看目标版本的具体信息。
@@ -166,10 +212,23 @@ git show
 git show <commit-id>  
 ```
 
+## 关联远程仓库
+
+```bash
+git remote add origin <repo-url>
+```
+
+## 查看远程仓库
+
+```bash
+git remote -v
+```
+
 ## 推送远程仓库
 
 ```bash
 git push
+git push -u origin master   ;; 向远程仓库推送本地master的所有提交
 ```
 
 ## 获取远程仓库
@@ -178,7 +237,7 @@ git push
 git pull
 ```
 
-这个命令等同于```git fetch && git merge```，很多情况下不建议使用，推荐直接```git fetch```然后手动处理冲突。
+这个命令等同于```git fetch && git merge```，很多情况下不建议使用（而且这里的`merge`还是fast-forward），推荐直接```git fetch```然后手动处理冲突。
 
 想要获取远程仓库并重置状态，可以获取后强行同步成远端版本：
 
@@ -187,17 +246,91 @@ git fetch --all && git reset --hard origin/master
 ;; --all是获取所有remote
 ```
 
+## 创建分支
 
+以前的写法：
 
+```bash
+git checkout -b <branch-id>
+```
 
+这个命令等同于：`git branch <branch-id> && git checkout <branch-id>`。现在推荐的写法，使用`switch`替换`checkout`来切换分支：
 
+```bash
+git branch                      ;; 查看分支
+git branch <branch-id>          ;; 新建分支
+git switch -c <branch-id>
+git switch --create <branch-id>
+```
 
-
-
-## 快速切换回上一个分支
+## 快速切换回上个分支
 
 ```bash
 git switch -
+```
+
+## 合并分支和变基
+
+切换到主分支，就可以尝试合并副分支了，合并后，副分支会保留。
+
+```bash
+git merge <branch-id>           ;; 默认是--ff
+git merge –no-ff <branch-id>    ;; 拒绝快速合并
+git merge --squash <branch-id>  ;; 伪合并，将副分支上的所有版本直接
+                                ;; 做一个汇总版暂存到主分支，不产生交汇
+```
+
+采用**变基**，将副分支上的版本在主分支上重新提交（并处理相关冲突），副分支不会消失但是指针会贴主分支上。
+
+```bash
+git rebase <branch-id>  ;; 如果变基过程发生冲突，就要修改后再次add
+git rebase --continue   ;; add后才能用这行命令，此时Git会让你填message
+git rebase --skip       ;; 无视冲突，直接提交
+git rebase --abort      ;; 放弃变基
+```
+
+## 合并其它分支的某次历史提交
+
+```bash
+git switch <branch-id> && git cherry-pick <commit-id>
+```
+
+## 变基的`-i`选项
+
+> 非常NB的选项。
+
+使用交互式选项`-i`可以手动选择目标分支上的需要加入主分支的版本，允许改写，替换，删除和合并。
+
+```bash
+git rebase -i <branch-id> 
+```
+
+## 删除分支
+
+```bash
+git branch -d <branch-id>
+```
+
+## 添加标签
+
+```bash
+git tag                     ;; 查看标签
+git tag <tag-name>          ;; 添加轻标签
+git tag -a <tag-name>       ;; 添加注解标签
+git tag -am "" <tag-name>   ;;
+git tag -n                  ;;  查看列表
+```
+
+## 删除标签
+
+```bash
+git tag -d <tagname>
+```
+
+## 回收
+
+```bash
+git gc --prune=now
 ```
 
 ## 忽略文件
