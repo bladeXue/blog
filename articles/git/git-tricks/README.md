@@ -27,13 +27,25 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 > 注意相对引用必须“先树后线”。
 
-## 关于分支
+## 关于`checkout`
+
+在以前的写法里，`checkout`命令被称为**检出**，用于切换分支和重置工作区的文件。所以`checkout`的语义有些混乱，为了避免这个问题，新版本的git增加了`switch`和`restore`两个指令，来分割`checkout`的职责。
+
+## 关于`--`
+
+主要是文件名的分隔符，因为在以前的`checkout`里，不用`--`的文件会被当成分支处理，有时候会有麻烦。
+
+## 关于分支规范
 
 采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
+## 关于提交规范
+
+目前还是参考[Angular提交规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)多一点。
+
 ## 关于变基
 
-？
+什么时候使用变基一直是个问题，这个看团队自己选择。
 
 ## 关于标签
 
@@ -44,7 +56,9 @@ Git的标签有两种：
 
 ## 关于别名
 
-？
+个人不推荐使用别名。
+
+
 
 ## 获取Help信息
 
@@ -53,7 +67,57 @@ git --help
 git help -a
 ```
 
-## 配置个人信息
+直接运行`git`命令也可以获得一份指令摘要：
+
+```bash
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+```
+
+## 配置`.gitconfig`
 
 ```bash
 git config --global user.name ""
@@ -63,6 +127,14 @@ git config --global user.email ""
 这里的个人信息不是指Github账户，而是会作为提交人信息记录在版本数据库里。
 关于设置代理可以参考[一文让你了解如何为 Git 设置代理](https://ericclose.github.io/git-proxy-config.html)。
 
+## 克隆仓库
+
+```bash
+git clone <repo-url>
+git clone --depth=1 <repo-url>
+git clone -b <branch-name> --single-branch <repo-url>
+```
+
 ## 提交版本
 
 ```bash
@@ -70,6 +142,12 @@ git add <filenames>
 git commit -m ""
 ```
 > 不使用`-m`参数的话，git会弹出一个编辑器来给你填commit message，一般默认是vim。
+
+## 提交分块
+
+```bash
+git add -p <filenames>
+```
 
 ## 提交驻藏
 
@@ -93,6 +171,8 @@ git stash apply <stash@{n}> ;; 应用某个贮藏
 git stash pop               ;; 弹出最近一次贮藏
 ```
 
+> `apply`一个贮藏时，如果工作区已经有同名文件了，`apply`会被工作区拒绝，此时可以新建一个临时分支来存放`apply`，然后手动合并回原分支来达成目的。
+
 清空贮藏。
 
 ```bash
@@ -113,17 +193,49 @@ git checkout -- <filename>  ;; --是必须的，不然checkout会跑去切换分
 现在的做法，使用`restore`：
 
 ```bash
-git restore <filename>          ;; 将未暂存的修改丢弃
-git restore --staged <filename> ;; 将已暂存的修改设置为未暂存
+git restore <filename>                      
+;; 从暂存区恢复工作区，尚未暂存=直接丢弃
+
+git restore --staged <filename>             
+;; 将已暂存的修改设置为未暂存
+
+git restore --staged --worktree <filename>  
+;; --worktree是默认选项
+
+git restore --source <commit-id> <filename> 
+;; 从某次提交中恢复文件到工作区
+```
+
+## 恢复被删文件
+
+先定位到删文件的那一个版本，再用版本号检出具体文件。
+
+```bash
+git rev-list -n 1 HEAD -- <filename>                ;; 得到目标版本
+git checkout <delete-file-commit-id>^ -- <filename> ;; 回溯文件
+```
+
+使用`restore`替换`checkout`的做法。
+
+```bash
+git rev-list -n 1 HEAD -- <filename>                   ;; 得到目标版本
+git restore -s <delete-file-commit-id>^ -- <filename>  ;; 回溯文件
 ```
 
 ## 对比修改
 
-将当前**工作区**和**暂存区**进行对比。
+将当前工作区和**暂存区**进行对比。
 
 ```bash
 git diff
-git diff -- readme.txt  ;; 对比具体文件
+git diff <filename>  ;; 对比具体文件
+```
+
+将暂存区和**最新版本**进行对比。
+
+```bash
+git diff --cached
+git diff --cached <filename> 
 ```
 
 查看当前至**目标版本**或**任意两个版本**的对比。
@@ -144,6 +256,18 @@ git diff --name-only --diff-filter=U
 ```bash
 git diff --word-diff
 ```
+
+## 查看冲突文件列表
+
+展示工作区的冲突文件列表。
+
+```bash
+git diff --name-only --diff-filter=U
+```
+
+## 重命名文件
+
+如果在文件系统里直接改名或者改目录，Git会把这个文件标记成删除，然后建一个新的，这对于历史跟踪非常不利，推荐使用git的`mv`指令。
 
 ## 删除文件
 
@@ -191,6 +315,18 @@ git revert <commit-id>  ;; 会产生一个“否定了目标版本”的新版�
 git revert HEAD         ;; 撤销前一次提交
 ```
 
+## 重设第一次提交
+
+`update-ref -d`指令会删除目标引用和其在`.git/logs/`里的记录，然后再次提交工作区会把历史定位回第一次提交。其效果就是会清空里`git log`所有的提交，并将所有的改动放回工作区。
+
+```bash
+git update-ref -d HEAD
+```
+
+> 但实际上版本并没有消失，只是不显示了而已，在`git reflog`里依旧可以看到所有版本的记录。
+
+> 慎用！
+
 ## 查看仓库状态
 
 查看当前分支和文件修改情况。
@@ -220,10 +356,30 @@ git show
 git show <commit-id>  
 ```
 
+## 比较两个分支的历史记录
+
+对比分支1有，但2没有的提交记录。
+
+```bash
+git log <branch-id1> ^<branch-id2>
+```
+
 ## 关联远程仓库
 
 ```bash
 git remote add origin <repo-url>
+```
+
+## 关联远程分支
+
+```bash
+git branch -u origin/<branch-id>
+```
+
+## 展示本地分支关联远程仓库的情况
+
+```bash
+git branch -vv
 ```
 
 ## 建立远程分支副本
@@ -245,7 +401,6 @@ git remote
 git remote -v
 ```
 
-
 ## 获取远程仓库
 
 ```bash
@@ -263,11 +418,34 @@ git fetch --all && git reset --hard origin/master
 
 ## 推送远程仓库
 
+推送是分支推送到分支，不是仓库对仓库。
+
 ```bash
 git push
-git push -u origin master   ;; 向远程仓库推送本地master的所有提交
+git push -u origin master               ;; 向远程推送本地所有提交
+git push -f <remote-name> <branch-name> ;; 强制推送
 ```
-## 创建分支
+
+## 查看分支
+
+```bash
+git branch -r   ;; 查看远程分支
+git branch -a   ;; 查看远程和本地的所有分支
+```
+
+## 查看分支映射关系
+
+```bash
+git remote show origin
+```
+
+## 同步远程的分支删除情况
+
+```bash
+git remote prune origin
+```
+
+## 创建和切换分支
 
 以前的写法：
 
@@ -284,6 +462,14 @@ git switch -c <branch-id>
 git switch --create <branch-id>
 ```
 
+## 保护性切换
+
+在git里，分支其实是commit-id的一个别名，所以在以前的写法里，`checkout`除了切换分支，还能用来直接跳转到某一个版本，但是这次跳转不属于任何一个分支，会留下一个分离式的HEAD。在这个HEAD的环境下，做的任何提交都不会影响其它分支。
+
+```bash
+git checkout <commit-id>
+```
+
 ## 快速切换回上个分支
 
 ```bash
@@ -292,7 +478,7 @@ git switch -
 
 ## 合并分支和变基
 
-切换到主分支，就可以尝试合并副分支了，合并后，副分支会保留。
+切换到主分支，就可以尝试合并副分支了，合并后，副分支会保留。合并会自己生成一个message，也可以开`-m`自己写。
 
 ```bash
 git merge <branch-id>           ;; 默认是--ff
@@ -316,6 +502,12 @@ git rebase --abort      ;; 放弃变基
 git switch <branch-id> && git cherry-pick <commit-id>
 ```
 
+## 变基前自动储藏
+
+```bash
+git rebase --autostash
+```
+
 ## 变基的`-i`选项
 
 > 非常NB的选项。
@@ -326,10 +518,29 @@ git switch <branch-id> && git cherry-pick <commit-id>
 git rebase -i <branch-id> 
 ```
 
-## 删除分支
+## 重命名分支
+
+重命名本地分支。
 
 ```bash
-git branch -d <branch-id>
+git branch -m <new-branch-id>
+```
+
+## 删除分支
+
+删除本地分支。
+
+```bash
+git branch -d <branch-id>  
+git branch --merged master | grep -v '^\*\| master' | xargs -n 1 git branch -d  ;; 删除已经合并到主分支的副分支
+```
+## 删除远程分支
+
+删除远程分支。
+
+```bash         
+git push origin -d <remote-branch-id>
+git push origin :<remote-branch-id>     ;; 和上面一个效果
 ```
 
 ## 添加标签
@@ -348,16 +559,42 @@ git tag -n                  ;;  查看列表
 git tag -d <tagname>
 ```
 
-## 回收
+## 一键背锅
+
+查看某段代码是谁写的。
+
+```bash
+git blame <filename>
+```
+
+## 清理工作区
+
+强制清除gitignore中记录的文件。
+
+```bash
+git clean -X -f
+```
+
+## 忽略文件
+
+参考GitHub官方的模板[github/gitignore](https://github.com/github/gitignore)。主要针对3种文件：
+
+1. 自动生成文件，如各种缓存。
+2. 中间编译物和非必要二进制文件（Git不追踪二进制变化）。
+3. 屏蔽敏感文件。
+
+## 显示被忽略的文件
+
+```bash
+git status --ignored
+```
+
+## 回收空间
 
 ```bash
 git gc --prune=now
 ```
 
-## 忽略文件
-
-？
-
 ## 总结
 
-好
+ψ(｀∇´)ψ
