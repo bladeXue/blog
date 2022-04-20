@@ -278,3 +278,4 @@ TSWLatexianTemp*
 ################# 自定义
 
 run_python_windows.bat
+run_deploy.bat
