@@ -201,6 +201,22 @@ git restore --staged --worktree <filename>   ;; 版本->暂存区->工作区
 git restore --source <commit-id> <filename>  ;; 从某次提交中恢复文件到工作区
 ```
 
+> 丢弃修改仅仅是针对追踪了的文件，想加大力度，可以尝试下面的`git clean`。
+
+## 清理工作区
+
+清空整个工作区，让工作区和版本内容完全一致。
+
+```bash
+git clean -d -f
+```
+
+按照gitignore记录来清理文件。
+
+```bash
+git clean -X -f
+```
+
 ## 恢复被删文件
 
 先定位到删文件的那一个版本，再用版本号检出具体文件。
@@ -560,14 +576,6 @@ git tag -d <tagname>
 
 ```bash
 git blame <filename>
-```
-
-## 清理工作区
-
-强制清除gitignore中记录的文件。
-
-```bash
-git clean -X -f
 ```
 
 ## 忽略文件
