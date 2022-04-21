@@ -139,6 +139,20 @@ git config --global user.email ""
 这里的个人信息不是指Github账户，而是会作为提交人信息记录在版本数据库里。
 关于设置代理可以参考[一文让你了解如何为 Git 设置代理](https://ericclose.github.io/git-proxy-config.html)。
 
+## 配置`.gitignore`
+
+参考GitHub官方的模板[github/gitignore](https://github.com/github/gitignore)。主要针对3种文件：
+
+1. 自动生成文件，如各种缓存。
+2. 中间编译物和非必要二进制文件（Git不追踪二进制变化）。
+3. 屏蔽敏感文件。
+
+检查忽略文件可以使用`check-ignore`：
+
+```bash
+git check-ignore -v <filename>
+```
+
 ## 克隆仓库
 
 ```bash
@@ -594,20 +608,6 @@ git tag -d <tagname>
 
 ```bash
 git blame <filename>
-```
-
-## 忽略文件
-
-参考GitHub官方的模板[github/gitignore](https://github.com/github/gitignore)。主要针对3种文件：
-
-1. 自动生成文件，如各种缓存。
-2. 中间编译物和非必要二进制文件（Git不追踪二进制变化）。
-3. 屏蔽敏感文件。
-
-## 显示被忽略的文件
-
-```bash
-git status --ignored
 ```
 
 ## 回收空间
