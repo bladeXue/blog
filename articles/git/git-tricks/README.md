@@ -437,7 +437,7 @@ git push -u origin master               ;; 向远程推送本地所有提交
 git push -f <remote-name> <branch-name> ;; 强制推送
 ```
 
-## 查看分支
+## 查看远程分支
 
 ```bash
 git branch -r   ;; 查看远程分支
@@ -456,7 +456,7 @@ git remote show origin
 git remote prune origin
 ```
 
-## 创建和切换分支
+## 创建分支和切换
 
 以前的写法：
 
@@ -543,8 +543,16 @@ git branch -m <new-branch-id>
 
 ```bash
 git branch -d <branch-id>  
+```
+
+## 删除已合并分支
+
+删除已经合并到主分支的分支。
+
+```bash
 git branch --merged master | grep -v '^\*\| master' | xargs -n 1 git branch -d  ;; 删除已经合并到主分支的副分支
 ```
+
 ## 删除远程分支
 
 删除远程分支。
