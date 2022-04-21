@@ -35,17 +35,27 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 主要是文件名的分隔符，因为在以前的`checkout`里，不用`--`的文件会被当成分支处理，有时候会有麻烦。
 
-## 关于分支规范
-
-采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
-
 ## 关于提交规范
 
 目前还是参考[Angular提交规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)多一点。
 
-## 关于变基
 
-什么时候使用变基一直是个问题，这个看团队自己选择。
+## 关于分支规范
+
+采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+
+
+## 关于合并策略
+
+策略有5种：
+
+1. `--ff`快速合并
+2. `--no-ff`提交合并
+3. `--squash`伪合并
+4. `rebase`变基
+5. `cherry-pick`提取
+
+`--squash`和`cherry-pick`除了hotfix一类的场景外尽可能少用，因为会产生不好理解的分支记录。什么时候使用变基一直是个问题，这个看团队自己选择。
 
 ## 关于标签
 
@@ -493,7 +503,7 @@ git switch -
 
 ```bash
 git merge <branch-id>           ;; 默认是--ff
-git merge –no-ff <branch-id>    ;; 拒绝快速合并
+git merge --no-ff <branch-id>   ;; 拒绝快速合并
 git merge --squash <branch-id>  ;; 伪合并，将副分支上的所有版本直接
                                 ;; 做一个汇总版暂存到主分支，不产生交汇
 ```
@@ -507,7 +517,7 @@ git rebase --skip       ;; 无视冲突，直接提交
 git rebase --abort      ;; 放弃变基
 ```
 
-## 合并其它分支的某次历史提交
+## 提取其它分支的提交
 
 ```bash
 git switch <branch-id> && git cherry-pick <commit-id>
