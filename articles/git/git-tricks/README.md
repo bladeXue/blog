@@ -192,20 +192,13 @@ git checkout
 git checkout -- <filename>  ;; --是必须的，不然checkout会跑去切换分支
 ```
 
-现在的做法，使用`restore`：
+现在的做法，使用`restore`来进行还原操作：
 
 ```bash
-git restore <filename>                      
-;; 从暂存区恢复工作区，尚未暂存=直接丢弃
-
-git restore --staged <filename>             
-;; 将已暂存的修改设置为未暂存
-
-git restore --staged --worktree <filename>  
-;; --worktree是默认选项
-
-git restore --source <commit-id> <filename> 
-;; 从某次提交中恢复文件到工作区
+git restore <filename>                       ;; 暂存区->工作区
+git restore --staged <filename>              ;; 版本->暂存区
+git restore --staged --worktree <filename>   ;; 版本->暂存区->工作区
+git restore --source <commit-id> <filename>  ;; 从某次提交中恢复文件到工作区
 ```
 
 ## 恢复被删文件
