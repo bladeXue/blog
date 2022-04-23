@@ -1,13 +1,12 @@
 {
     "release": false,
-    "title": "初识矩阵",
+    "title": "如何学习C++",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "线性代数",
-        "数学"
+        "C++"
     ],
     "categories": [
-        "数学"
+        "C++"
     ]
 }

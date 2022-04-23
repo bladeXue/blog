@@ -2,9 +2,9 @@
 
 ## 概念
 
-弹性布局是目前最成熟，支持最好的，开发体验最友好的布局方案。传统的**定位布局**和**浮动布局**需要编写冗长的栅格系统来达到布局需求，但是2009年，W3C提出弹性布局，很多旧的样式，用弹性布局代码几行就写完了。
+弹性布局是目前最成熟，支持最好的，开发体验最友好的布局方案。传统的**定位布局**和**浮动布局**需要编写冗长的栅格系统来达到布局需求，但是2009年，W3C提出弹性布局，很多以前写老长的样式代码，用弹性布局几行就写完了。
 
-此外弹性布局可以轻松实现垂直居中（感天动地，前端终于有一个方便的垂直居中方案了）。
+此外弹性布局可以轻松实现**垂直居中**（感天动地，前端终于有一个方便的垂直居中方案了）。
 
 ## 浏览器支持
 
@@ -52,9 +52,26 @@
 .flex-item {
     flex: 0 1 auto;                 /* 分配主轴空间 */
     order: 0;                       /* 主轴的个性 */    
-    align-self: auto | stretch;     /* 交叉轴的个性 */
+    align-self: auto | stretch;     /* 交叉轴具体值 */
 }
 ```
+
+把这些属性的值抄一遍没有意义，具体可以在用的时候去查阅MDN的[CSS（层叠样式表）](https://developer.mozilla.org/zh-CN/docs/Web/CSS)，这里仅仅给出常用的一些取值：
+
+### 1. 容器属性
+
+容器除了`display`外，拥有4个可以控制弹性模型的属性，它们的主要作用就是设置容器的**弹性轴**和元素在弹性轴上的**间距**
+
+|属性|取值|描述|
+|-|-|-|
+|`display`|`flex`\|`inline-flex`||
+
+### 2. 盒子属性
+
+
+
+
+
 
 ### 0. display
 
@@ -98,8 +115,11 @@
 `flex-flow`作用于容器，控制**布局流**，也就是弹性容器的主轴方向和是否换行，实际上由两个属性`flex-direction`和`flex-wrap`组成，默认为`row nowrap`，签名如下：
 
 ```css
-flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | initial | inherit
+flex-flow: [ <flex-direction> <flex-wrap> ] | initial | inherit
 ```
+
+1. `flex-direction`可取值：`row`，`row-reverse`，`column`和`column-reverse`。
+2. `flex-wrap`可取值：`nowrap`，`wrap`和`wrap-reverse`。
 
 `flex-direction`的4种效果：
 
@@ -116,7 +136,7 @@ flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | 
 
 ### 2. justify-content
 
-弹性容器中最强大最复杂的属性，控制子元素之间的距离。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式签名的简写如下：
+弹性容器中最强大最复杂的属性，控制子元素之间的**距离**。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式签名的简写如下：
 
 ```css
 justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | initial | inherit;
@@ -124,7 +144,7 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 
 > 这个样式的签名其实超级长，因为它除了Flex，还可以控制Grid，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position).
 
-`justify-content`的6种常见效果：
+`justify-content`的6种效果：
 
 ![justify_content_flex_start](./images/justify_content_flex_start.png "justify_content_flex_start")
 ![justify_content_flex_end](./images/justify_content_flex_end.png "justify_content_flex_end")
@@ -143,8 +163,13 @@ justify-content: flex-start | flex-end | center | space-between | space-around |
 `align-items`的样式签名：
 
 ```css
-align-items: baseline | center | flex-start | flex-end | stretch | initial | inherit
+align-items: flex-start | flex-end | center | baseline | stretch | initial | inherit
 ```
+
+> 这个样式和`justify-content`一样也是Grid样式，详情可以参考[align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items#%E7%A4%BA%E4%BE%8B)。
+
+`align-items`的5种效果：
+
 
 
 
@@ -263,7 +288,7 @@ flex: [ flex-grow flex-shrink flex-basis ] | none | auto | initial | inherit
 
 
 
-
+## 弹性盒子的碎碎念
 
 ## 总结
 

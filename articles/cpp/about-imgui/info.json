@@ -1,14 +1,13 @@
 {
     "release": false,
-    "title": "Evil模式",
+    "title": "关于IMGUI",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
-        "Emacs",
-        "Vi",
-        "Evil"
+        "C++",
+        "DirectX"
     ],
     "categories": [
-        "Emacs"
+        "C++"
     ]
 }

@@ -26,6 +26,11 @@
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
 - [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
 
+## C++
+
+- [ ] [关于IMGUI](articles/cpp/about-imgui/) `C++`  `DirectX`   
+- [ ] [如何学习C++](articles/cpp/how-to-learn-cpp/) `C++`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
@@ -39,6 +44,10 @@
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `CSS`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `CSS`  `布局`   
 
+## DX
+
+- [ ] [《DirectX 12 3D 游戏开发实战》踩坑合集](articles/dx/dx12-issues/) `DX`   
+
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
@@ -46,6 +55,11 @@
 ## 英语
 
 - [ ] [30篇英文短文](articles/english/30-short-essays/) `英语`   
+
+## Git
+
+- [ ] [回收机制](articles/git/gc-mechanism/) `Git`   
+- [x] [Git小魔术](articles/git/git-tricks/) `Git`   收录一些常用的Git片段
 
 ## Java
 
@@ -58,7 +72,13 @@
 
 ## 数学
 
-- [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
+- [x] [对速算的态度](articles/math/attitude-to-quick-calculation/) `数学`  `算术`   
+- [ ] [线性代数入门](articles/math/linear-algebra-guide/) `数学`  `线性代数`   
+- [ ] [三角学回顾](articles/math/review-of-trigonometry/) `三角函数`  `几何学`   
+
+## Server
+
+- [ ] [通过Minio构建文件存储服务](articles/server/build-file-storage-by-minio/) `Minio`   
 
 ## 杂谈
 
