@@ -72,6 +72,10 @@ Git的标签有两种：
 
 命令行当然挺好的，实际开发中，SourceTree也挺好的，基本上80%的Git操作都在面板上了。团队如果采用Gui管理Git的话，尽量用一样的比较靠谱。
 
+## 关于托管
+
+Git原生的组织方式就是打补丁后抄送邮件列表，从而达到团队协作的目的。现在流行的Github一类的托管平台不过是把这个步骤自动化了，包括Linux在内的一些老牌项目依旧在使用邮件列表。不管是选择自建，或者上平台，还是用邮件列表，都有各自的优势，但是Github作为第三方平台，是否值得信任要团队自己考虑。可以看看Nimble的Jesse Squires怎么[解释这个问题](https://www.jessesquires.com/blog/2022/04/19/github-suspending-russian-accounts/)。
+
 ## 获取Help信息
 
 ```bash
