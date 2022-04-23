@@ -606,6 +606,11 @@ git tag -n                  ;;  查看列表
 git tag -d <tagname>
 ```
 
+## 制作补丁
+
+```bash
+git format-patch
+
 ## 一键背锅
 
 查看某段代码是谁写的。
@@ -620,6 +625,7 @@ git blame <filename>
 git gc --prune=now
 ```
 
+```
 ## 总结
 
 不定期更新ψ(｀∇´)ψ
