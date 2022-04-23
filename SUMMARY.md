@@ -44,6 +44,10 @@
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `CSS`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `CSS`  `布局`   
 
+## DX
+
+- [ ] [《DirectX 12 3D 游戏开发实战》踩坑合集](articles/dx/dx12-issues/) `DX`   
+
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
@@ -68,7 +72,9 @@
 
 ## 数学
 
-- [x] [对速算的态度](articles/mathematics/attitude-to-quick-calculation/) `数学`  `算术`   
+- [x] [对速算的态度](articles/math/attitude-to-quick-calculation/) `数学`  `算术`   
+- [ ] [线性代数入门](articles/math/linear-algebra-guide/) `数学`  `线性代数`   
+- [ ] [三角学回顾](articles/math/review-of-trigonometry/) `三角函数`  `几何学`   
 
 ## Server
 
