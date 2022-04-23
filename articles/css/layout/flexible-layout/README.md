@@ -116,13 +116,13 @@ flex-flow: [ row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse ] | 
 
 ### 2. justify-content
 
-弹性容器中最强大最复杂的属性，控制子元素之间的距离。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式的简洁签名如下：
+弹性容器中最强大最复杂的属性，控制子元素之间的距离。这个属性差不多就是Flex专属的`text-align`，负责当主轴空间剩余时，调整弹性盒子们在剩下的空间中对齐的位置，默认为`flex-start`，也就是朝**main-start**（主轴起点）的位置挤一块儿。其样式签名的简写如下：
 
 ```css
 justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | initial | inherit;
 ```
 
-> 这个样式的签名其实超级长，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position)，但在实际使用中通常会让元素填充空间，所以我很少会手动去调整`justify-content`。
+> 这个样式的签名其实超级长，因为它除了Flex，还可以控制Grid，详情可以参考MDN的[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content#overflow-position).
 
 `justify-content`的6种常见效果：
 
