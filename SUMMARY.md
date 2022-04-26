@@ -68,7 +68,7 @@
 ## Java
 
 - [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `java`   
-- [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
+- [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `java`  `spring`   
 
 ## Linux
 
