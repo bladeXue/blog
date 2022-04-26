@@ -32,29 +32,29 @@
 
 ## C++
 
-- [ ] [关于IMGUI](articles/cpp/about-imgui/) `C++`  `DirectX`   
-- [ ] [如何学习C++](articles/cpp/how-to-learn-cpp/) `C++`   
+- [ ] [关于IMGUI](articles/cpp/about-imgui/) `c++`  `directx`   
+- [ ] [如何学习C++](articles/cpp/how-to-learn-cpp/) `c++`   
 
 ## CSS
 
-- [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `CSS`   
-- [x] [使用表格构建日历表](articles/css/css-building-blocks/table-based-calendar/) `CSS`   
-- [x] [什么是CSS积木](articles/css/css-building-blocks/what-is-this/) `CSS`   
-- [ ] [设计一个栅格系统](articles/css/design-a-grid-system/) `CSS`   
-- [ ] [文档流模型](articles/css/layout/document-flow/) `CSS`  `布局`   
-- [ ] [元素尺度](articles/css/layout/element-scale/) `CSS`  `布局`   
-- [x] [弹性布局](articles/css/layout/flexible-layout/) `CSS`  `布局`   
-- [ ] [浮动布局](articles/css/layout/float-layout/) `CSS`  `布局`   
-- [ ] [行内块布局](articles/css/layout/inline-layout/) `CSS`  `布局`   
-- [ ] [定位布局](articles/css/layout/position-layout/) `CSS`  `布局`   
+- [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `css`   
+- [x] [使用表格构建日历表](articles/css/css-building-blocks/table-based-calendar/) `css`   
+- [x] [什么是CSS积木](articles/css/css-building-blocks/what-is-this/) `css`   
+- [ ] [设计一个栅格系统](articles/css/design-a-grid-system/) `css`   
+- [ ] [文档流模型](articles/css/layout/document-flow/) `css`  `布局`   
+- [ ] [元素尺度](articles/css/layout/element-scale/) `css`  `布局`   
+- [x] [弹性布局](articles/css/layout/flexible-layout/) `css`  `布局`   
+- [ ] [浮动布局](articles/css/layout/float-layout/) `css`  `布局`   
+- [ ] [行内块布局](articles/css/layout/inline-layout/) `css`  `布局`   
+- [ ] [定位布局](articles/css/layout/position-layout/) `css`  `布局`   
 
 ## DX
 
-- [ ] [《DirectX 12 3D 游戏开发实战》踩坑合集](articles/dx/dx12-issues/) `DX`   
+- [ ] [《DirectX 12 3D 游戏开发实战》踩坑合集](articles/dx/dx12-issues/) `dx`   
 
 ## Emacs
 
-- [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `Emacs`  `Python`  `翻译`   
+- [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `emacs`  `python`  `翻译`   
 
 ## 英语
 
@@ -62,17 +62,17 @@
 
 ## Git
 
-- [ ] [回收机制](articles/git/gc-mechanism/) `Git`   
-- [x] [Git小魔术](articles/git/git-tricks/) `Git`   收录一些常用的Git片段
+- [ ] [回收机制](articles/git/gc-mechanism/) `git`   
+- [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
 
 ## Java
 
-- [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `Java`   
+- [x] [对Java中Context概念的理解](articles/java/context-concept-in-java/) `java`   
 - [ ] [JdbcTemplate使用和源码解析初步](articles/java/spring-learn-jebctemplate-src/) `Java`  `Spring`   
 
 ## Linux
 
-- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `踩坑`  `Linux`   
+- [x] [解决Node报错 System limit for number of file watchers reached](articles/linux/solution-for-kde-node-watch-limit-error/) `linux`  `踩坑`   
 
 ## 数学
 
@@ -82,16 +82,16 @@
 
 ## Server
 
-- [ ] [通过Minio构建文件存储服务](articles/server/build-file-storage-by-minio/) `Minio`   
+- [ ] [通过Minio构建文件存储服务](articles/server/build-file-storage-by-minio/) `minio`   
 
 ## 杂谈
 
-- [ ] [测试用例](articles/test/) `Test`   
-- [ ] [测试用例tex](articles/tex/test/) `Test`   
+- [ ] [测试用例](articles/test/) `test`   
+- [ ] [测试用例tex](articles/tex/test/) `test`   
 - [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
 - [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
 ## C
 
-- [x] [理解补码](articles/yet/understand-complement-code/) `C`  `编码`  `组成原理`   
+- [x] [理解补码](articles/yet/understand-complement-code/) `c`  `编码`  `组成原理`   
 
