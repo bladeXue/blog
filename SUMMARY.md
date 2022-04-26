@@ -21,6 +21,10 @@
 - [x] [两数之和](articles/algorithm/question-sum-of-two-numbers/) `算法`   
 - [ ] [两个子串问题](articles/algorithm/question-two-substrings/) `算法`   
 
+## Angular
+
+- [ ] [Angular核心技能点](articles/angular/angular-core-skills/) `angular`   
+
 ## 书评
 
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
