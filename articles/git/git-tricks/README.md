@@ -44,7 +44,6 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
-
 ## 关于合并策略
 
 策略有5种：
@@ -294,7 +293,6 @@ git clean -d -f
 git clean -X -f
 ```
 
-
 ## 重命名文件
 
 如果在文件系统里直接改名或者改目录，Git会把这个文件标记成删除，然后建一个新的，这对于历史跟踪和体积维护非常不利，推荐使用git的`mv`指令。
@@ -357,7 +355,7 @@ git revert <commit-id>  ;; 会产生一个“否定了目标版本”的新版�
 git revert HEAD         ;; 撤销前一次提交
 ```
 
-## 融合提交最新版本
+## 融合最近一次版本
 
 > 仅对最新一版生效
 
