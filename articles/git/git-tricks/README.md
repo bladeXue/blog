@@ -68,6 +68,10 @@ Git的标签有两种：
 
 个人不推荐使用别名。
 
+## 关于命令行
+
+Git在各个系统的命令行里表现一致，但是Windows和Unix下，命令行的斜杠是有区别的，部分涉及路径的指令要区分使用，包括```git restore '*.c'```这样带正则的命令。
+
 ## 关于SourceTree
 
 命令行当然挺好的，实际开发中，SourceTree也挺好的，基本上80%的Git操作都在面板上了。团队如果采用Gui管理Git的话，尽量用一样的比较靠谱。
@@ -211,56 +215,6 @@ git stash clear
 
 > 养成随手贮藏的好习惯可以帮你避免很多麻烦。
 
-## 丢弃修改
-
-以前的做法，使用`checkout`：
-
-```bash
-git checkout
-git checkout -- <filename>  ;; --是必须的，不然checkout会跑去切换分支
-```
-
-现在的做法，使用`restore`来进行还原操作：
-
-```bash
-git restore <filename>                       ;; 暂存区->工作区
-git restore --staged <filename>              ;; 版本->暂存区
-git restore --staged --worktree <filename>   ;; 版本->暂存区->工作区
-git restore --source <commit-id> <filename>  ;; 从某次提交中恢复文件到工作区
-```
-
-> 丢弃修改仅仅是针对追踪了的文件，想加大力度，可以尝试下面的`git clean`。
-
-## 清理工作区
-
-清空整个工作区，让工作区和版本内容完全一致。
-
-```bash
-git clean -d -f
-```
-
-按照gitignore记录来清理文件。
-
-```bash
-git clean -X -f
-```
-
-## 恢复被删文件
-
-先定位到删文件的那一个版本，再用版本号检出具体文件。
-
-```bash
-git rev-list -n 1 HEAD -- <filename>                ;; 得到目标版本
-git checkout <delete-file-commit-id>^ -- <filename> ;; 回溯文件
-```
-
-使用`restore`替换`checkout`的做法。
-
-```bash
-git rev-list -n 1 HEAD -- <filename>                   ;; 得到目标版本
-git restore -s <delete-file-commit-id>^ -- <filename>  ;; 回溯文件
-```
-
 ## 对比修改
 
 将当前工作区和**暂存区**进行对比。
@@ -296,17 +250,58 @@ git diff --name-only --diff-filter=U
 git diff --word-diff
 ```
 
-## 查看冲突文件列表
-
-展示工作区的冲突文件列表。
+查看冲突文件列表。
 
 ```bash
 git diff --name-only --diff-filter=U
 ```
 
+## 检出修改
+
+**检出**的本质是在不同区之间同步文件历史（比如`版本区`->`工作区`），借此到达在工作区**丢弃修改**的目的。
+
+以前的做法，使用`checkout`：
+
+```bash
+git checkout -- <filename>             ;; --是必须的，不然checkout会跑去切换分支
+git checkout <commit-id> -- <filename> ;; 默认是从最新版本提取
+```
+
+现在的做法，使用`restore`来进行还原操作：
+
+```bash
+git restore <filename>                       ;; 暂存区->工作区
+git restore --staged <filename>              ;; 版本->暂存区
+git restore --staged --worktree <filename>   ;; 版本->暂存区->工作区
+git restore --source <commit-id> <filename>  ;; 历史版本->工作区
+```
+
+> 因为同一个版本提交的文件是协作的，所以在工作区中仅仅提取单个历史文件是很危险的，通常建议以版本为单位来重置。
+
+> 丢弃修改仅仅是针对追踪了的文件，想加大力度，可以尝试下面的`git clean`。
+
+## 清理工作区
+
+清空整个工作区，让工作区和版本内容完全一致。
+
+```bash
+git clean -d -f
+```
+
+按照gitignore记录来清理文件。
+
+```bash
+git clean -X -f
+```
+
+
 ## 重命名文件
 
-如果在文件系统里直接改名或者改目录，Git会把这个文件标记成删除，然后建一个新的，这对于历史跟踪非常不利，推荐使用git的`mv`指令。
+如果在文件系统里直接改名或者改目录，Git会把这个文件标记成删除，然后建一个新的，这对于历史跟踪和体积维护非常不利，推荐使用git的`mv`指令。
+
+```bash
+git mv <old-name> <new-name>
+```
 
 ## 删除文件
 
@@ -319,6 +314,22 @@ git rm --cached <filename>  ;; 放弃索引，但会保留本地文件
 
 ```bash
 git ls-files --stage
+```
+
+## 恢复删除文件
+
+先定位到删文件的那一个版本，再用`checkout`命令通过版本号**检出**具体文件。
+
+```bash
+git rev-list -n 1 HEAD -- <filename>                ;; 得到目标版本
+git checkout <delete-file-commit-id>^ -- <filename> ;; 回溯文件
+```
+
+使用`restore`替换`checkout`的做法。
+
+```bash
+git rev-list -n 1 HEAD -- <filename>                   ;; 得到目标版本
+git restore -s <delete-file-commit-id>^ -- <filename>  ;; 回溯文件
 ```
 
 ## 重置版本
@@ -337,14 +348,6 @@ git reset --mixed <commit-id>   ;; 重置HEAD，索引，工作树
 git reflog <branch-id>
 ```
 
-## 修改最近一次版本
-
-取缔最近一次提交并和当前缓冲区融合，变成一次新提交。如果缓存区没有内容，那么仅仅修改上一次提交的message。
-
-```bash
-git commit --amend
-```
-
 ## 还原版本
 
 类似`reset`，但是产生一个新版本。
@@ -352,6 +355,16 @@ git commit --amend
 ```bash
 git revert <commit-id>  ;; 会产生一个“否定了目标版本”的新版本
 git revert HEAD         ;; 撤销前一次提交
+```
+
+## 融合提交最新版本
+
+> 仅对最新一版生效
+
+取缔最近一次提交并和当前缓冲区融合，变成一次新提交。如果缓存区没有内容，那么仅仅修改上一次提交的message。
+
+```bash
+git commit --amend
 ```
 
 ## 重设第一次提交
@@ -362,7 +375,7 @@ git revert HEAD         ;; 撤销前一次提交
 git update-ref -d HEAD
 ```
 
-> 但实际上版本并没有消失，只是不显示了而已，在`git reflog`里依旧可以看到所有版本的记录。
+> 但实际上版本并没有消失，只是通过**强扭指针**让它不显示了而已，在`git reflog`里依旧可以看到所有版本的记录。
 
 > 慎用！
 
@@ -388,11 +401,19 @@ git log --graph             ;; 输出树形图
 git log --decorate          ;; 输出注解
 ```
 
-查看目标版本的具体信息。
+## 提取历史文件
+
+使用`show`指令查看目标版本的具体信息。
 
 ```bash
 git show
 git show <commit-id>  
+```
+
+通过重定向可以将单个文件归档。
+
+```bash
+git show <commit-id>:<path-name> > <file-in-somewhere>   ;; 小心这里的PATH必须是UNIX的`/`
 ```
 
 ## 比较两个分支的历史记录
@@ -606,10 +627,20 @@ git tag -n                  ;;  查看列表
 git tag -d <tagname>
 ```
 
+## 创建归档
+
+```bash
+git archive --list                                                      ;; 查看支持的压缩格式
+git archive --format=<format-type> --output=<file-name> <commit-id>     ;; 指定一个版本归档
+git archive --format=<format-type> <commit-id> > <file-name>            ;; 使用重定向替代具体文件
+git archive --format=<format-type> --prefix=<folder-name> <commit-id>   ;; 指定压缩包里的文件夹前缀
+```
+
 ## 制作补丁
 
 ```bash
 git format-patch
+```
 
 ## 一键背锅
 
