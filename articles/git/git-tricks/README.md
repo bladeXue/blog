@@ -37,7 +37,7 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 ## 关于提交规范
 
-目前最主流的参考还是前端社区的[Angular提交规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)，可以达成：
+目前最主流的参考还是Angular社区的[提交规范](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format)，目的在于：
 
 1. 生成**CHANGELOG**
 2. 减少不必要提交
