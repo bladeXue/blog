@@ -67,9 +67,9 @@
 ## Git
 
 - [ ] [Angular提交信息规范](articles/git/angular-commit-message-format-translation/) `git`  `翻译`   
-- [ ] [回收机制](articles/git/gc-mechanism/) `git`   
 - [x] [Visual Studio Code里有用的Git插件](articles/git/git-extensions-in-vsc/) `git`   
 - [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
+- [ ] [回收机制](articles/_drafts/git-gc-mechanism/) `git`   
 
 ## Java
 
