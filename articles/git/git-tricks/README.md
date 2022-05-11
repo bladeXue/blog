@@ -341,7 +341,7 @@ git restore -s <delete-file-commit-id>^ -- <filename>  ;; 回溯文件
 
 ## 重置版本
 
-本质是通过重写`.git/refs/`来重置版本（切换版本），通过重置引用指针可以达到**工作区**回退版本的目的。
+本质是通过重写`.git/refs/`中的各个指针文件来重置版本（切换版本），通过重置引用指针可以达到**工作区**回退版本的目的。
 
 ```bash
 git reset --hard <commit-id>    ;; 仅重置HEAD位置
@@ -355,7 +355,7 @@ git reset --mixed <commit-id>   ;; 重置HEAD，索引，工作树
 git reflog <branch-id>
 ```
 
-> `checkout`命令可以启用[保护性切换](#保护性切换)
+> 如果仅仅是想浏览历史版本，而不想做出影响任何分支的修改，可以使用`checkout`命令进行**分支外**的[保护性切换](#保护性切换)。
 
 ## 还原版本
 
