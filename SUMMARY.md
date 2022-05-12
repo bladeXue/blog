@@ -21,19 +21,13 @@
 - [x] [两数之和](articles/algorithm/question-sum-of-two-numbers/) `算法`   
 - [ ] [两个子串问题](articles/algorithm/question-two-substrings/) `算法`   
 
-## Angular
-
-- [ ] [Angular核心技能点](articles/angular/angular-core-skills/) `angular`   
-
 ## 书评
 
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
-- [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
 
-## C++
+## C
 
-- [ ] [关于IMGUI](articles/cpp/about-imgui/) `c++`  `directx`   
-- [ ] [如何学习C++](articles/cpp/how-to-learn-cpp/) `c++`   
+- [x] [理解补码](articles/c/understand-complement-code/) `c`  `编码`  `组成原理`   
 
 ## CSS
 
@@ -48,27 +42,22 @@
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `css`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `css`  `布局`   
 
-## 绘画
-
-- [ ] [关于绘画](articles/draw/about-drawing/) `绘画`   
-
-## DX
-
-- [ ] [《DirectX 12 3D 游戏开发实战》踩坑合集](articles/dx/dx12-issues/) `dx`   
-
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `emacs`  `python`  `翻译`   
-
-## 英语
-
-- [ ] [30篇英文短文](articles/english/30-short-essays/) `英语`   
 
 ## Git
 
 - [ ] [Angular提交信息规范](articles/git/angular-commit-message-format-translation/) `git`  `翻译`   
 - [x] [Visual Studio Code里有用的Git插件](articles/git/git-extensions-in-vsc/) `git`   
 - [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
+
+## 杂谈
+
+- [ ] [如何在Github写博客](articles/github/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
+- [ ] [测试用例](articles/test/) `test`   
+- [ ] [测试用例tex](articles/tex/test/) `test`   
+- [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
 ## Java
 
@@ -87,16 +76,5 @@
 
 ## Server
 
-- [ ] [通过Minio构建文件存储服务](articles/server/build-file-storage-by-minio/) `minio`   
-
-## 杂谈
-
-- [ ] [测试用例](articles/test/) `test`   
-- [ ] [测试用例tex](articles/tex/test/) `test`   
-- [ ] [如何在Github写博客](articles/yet/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
-- [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
-
-## C
-
-- [x] [理解补码](articles/yet/understand-complement-code/) `c`  `编码`  `组成原理`   
+- [ ] [通过Minio构建文件存储服务](articles/_discards/server/build-file-storage-by-minio/) `minio`   
 
