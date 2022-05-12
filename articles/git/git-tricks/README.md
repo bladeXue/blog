@@ -508,8 +508,9 @@ git fetch --all && git reset --hard origin/master
 推送是分支推送到分支，不是仓库对仓库。
 
 ```bash
-git push
-git push -u origin master               ;; 向远程推送本地所有提交
+git push                                ;; 默认仅推送当前分支
+git push --all                          ;; 推送所有分支
+git push -u origin master               ;; 向origin/master推送本地的所有提交，远程不存在的分支会主动创建
 git push -f <remote-name> <branch-name> ;; 强制推送
 ```
 
