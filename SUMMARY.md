@@ -48,16 +48,12 @@
 
 ## Git
 
-- [ ] [Angular提交信息规范](articles/git/angular-commit-message-format-translation/) `git`  `翻译`   
 - [x] [Visual Studio Code里有用的Git插件](articles/git/git-extensions-in-vsc/) `git`   
 - [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
 
-## 杂谈
+## Github
 
-- [ ] [如何在Github写博客](articles/github/how-to-blog-in-github/) `杂谈`  `博客`  `写作`   在Github更新博客的几种姿势以及优势
-- [ ] [测试用例](articles/test/) `test`   
-- [ ] [测试用例tex](articles/tex/test/) `test`   
-- [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
+- [ ] [如何在Github写博客](articles/github/how-to-blog-in-github/) `github`  `git`  `博客`   在Github更新博客的几种姿势以及优势
 
 ## Java
 
@@ -73,6 +69,15 @@
 - [x] [对速算的态度](articles/math/attitude-to-quick-calculation/) `数学`  `算术`   
 - [ ] [线性代数入门](articles/math/linear-algebra-guide/) `数学`  `线性代数`   
 - [ ] [三角学回顾](articles/math/review-of-trigonometry/) `三角函数`  `几何学`   
+
+## 测试
+
+- [ ] [测试用例](articles/test/) `test`   
+- [ ] [测试用例tex](articles/tex/test/) `test`   
+
+## 杂谈
+
+- [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
 ## Server
 
