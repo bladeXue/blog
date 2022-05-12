@@ -12,11 +12,13 @@
 
 ## 往期文章推荐
 
-> 作者很懒，什么都没有推荐
+> 作者很懒，只推荐了一篇。
+
+- [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
 
 ## 阅读插件
 
-> 为了增加阅读体验，建议安装[Octotree Code Tree](https://www.octotree.io/)这个Chrome插件，它会在浏览器左侧生成GitHub仓库的目录树
+> 为了增加阅读体验，建议安装[Octotree Code Tree](https://www.octotree.io/)这个Chrome插件，它会在浏览器左侧生成GitHub仓库的目录树。
 
 ![octotree](assets/images/octotree.png "octotree")
 
