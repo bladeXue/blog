@@ -587,7 +587,7 @@ git rebase --abort      ;; 放弃变基
 
 ## 提取其它分支的提交
 
-提取某一次提交（完整文件而不是单纯的新行）到当前分支
+使用`cherry-pick`可以将任一版本提取到当前分支。假设现在`develop`有1->2->3三个新提交，那么`master`提取2后，实际上加入的是1和2。`cherry-pick`不产生交汇，有时候会导致无法理解的版本树。
 
 ```bash
 git switch <branch-id> && git cherry-pick <commit-id>
