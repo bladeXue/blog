@@ -563,7 +563,7 @@ git checkout <commit-id>
 git switch -
 ```
 
-## 合并分支和变基
+## 分支合并和变基
 
 切换到主分支，就可以尝试合并副分支了，合并后，副分支会保留。合并会自己生成一个message，也可以开`-m`自己写。
 
@@ -582,6 +582,8 @@ git rebase --continue   ;; add后才能用这行命令，此时Git会让你填me
 git rebase --skip       ;; 无视冲突，直接提交
 git rebase --abort      ;; 放弃变基
 ```
+
+> 变基常用于分支间的同步，如PR后的上游仓库同步。
 
 ## 提取其它分支的提交
 
