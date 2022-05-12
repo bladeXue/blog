@@ -573,8 +573,8 @@ git switch -
 ```bash
 git merge <branch-id>           ;; 默认是--ff
 git merge --no-ff <branch-id>   ;; 拒绝快速合并
-git merge --squash <branch-id>  ;; 伪合并，将副分支上的所有版本直接
-                                ;; 做一个汇总版暂存到主分支，不产生交汇
+git merge --squash <branch-id>  ;; 伪合并，将副分支上版本累积的修改直接
+                                ;; 做一个汇总版**暂存**到主分支，不产生交汇
 ```
 
 采用**变基**，将副分支上的版本在主分支上重新提交（并处理相关冲突），副分支不会消失但是指针会贴主分支上。
