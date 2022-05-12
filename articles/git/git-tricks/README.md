@@ -511,7 +511,7 @@ git fetch --all && git reset --hard origin/master
 
 ```bash
 git push
-git push -u origin master               ;; 向远程推送本地的所有提交
+git push -u origin master               ;; 向远程推送本地的所有提交，远程没有的分支会主动创建
 git push -f <remote-name> <branch-name> ;; 强制推送
 ```
 
