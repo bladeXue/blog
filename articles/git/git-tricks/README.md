@@ -467,7 +467,9 @@ git branch -u origin/<branch-id>
 git branch -vv
 ```
 
-## 建立远程分支副本
+## 检出远程分支副本
+
+在远程开好分支后，检出到本地。
 
 ```bash
 git checkout -b <branch-id> origin/<branch-id>
