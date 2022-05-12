@@ -467,7 +467,9 @@ git branch -u origin/<branch-id>
 git branch -vv
 ```
 
-## 建立远程分支副本
+## 检出远程分支副本
+
+在远程开好分支后，检出到本地。
 
 ```bash
 git checkout -b <branch-id> origin/<branch-id>
@@ -509,7 +511,7 @@ git fetch --all && git reset --hard origin/master
 
 ```bash
 git push
-git push -u origin master               ;; 向远程推送本地所有提交
+git push -u origin master               ;; 向远程推送本地的所有提交
 git push -f <remote-name> <branch-name> ;; 强制推送
 ```
 
