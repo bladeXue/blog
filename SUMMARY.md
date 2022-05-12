@@ -79,7 +79,3 @@
 
 - [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
-## Server
-
-- [ ] [通过Minio构建文件存储服务](articles/_discards/server/build-file-storage-by-minio/) `minio`   
-
