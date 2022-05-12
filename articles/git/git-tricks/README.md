@@ -587,8 +587,19 @@ git rebase --abort      ;; 放弃变基
 
 ## 提取其它分支的提交
 
+提取某一次提交（完整文件而不是单纯的新行）到当前分支
+
 ```bash
 git switch <branch-id> && git cherry-pick <commit-id>
+```
+
+如果提取版本时出现冲突，需要采取和变基类似的步骤。
+
+```bash
+git add <filename>         ;; 1. 处理冲突后重新暂存目标文件
+git cherry-pick --continue ;; 2. 继续提取，这里会要求编写commit message后完成提取
+git cherry-pick --skip     ;; 3. 不想填message可以直接跳过
+git cherry-pick --abort    ;; 4. 放弃本次提取
 ```
 
 ## 变基前自动储藏
