@@ -53,7 +53,7 @@
 
 ## Github
 
-- [ ] [如何在Github写博客](articles/github/how-to-blog-in-github/) `github`  `git`  `博客`   在Github更新博客的几种姿势以及优势
+- [ ] [如何在Github写博客](articles/github/how-to-blog-in-github/) `github`  `git`  `博客`   在Github更新博客的几种姿势
 
 ## Java
 
@@ -72,7 +72,7 @@
 
 ## 测试
 
-- [ ] [测试用例](articles/test/) `test`   
+- [x] [测试用例](articles/test/) `test`   
 - [ ] [测试用例tex](articles/tex/test/) `test`   
 
 ## 杂谈
