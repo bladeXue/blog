@@ -94,6 +94,7 @@ Git原生的组织方式就是打补丁后抄送邮件列表，从而达到团�
 2. 处理PR时不要把对方过多的提交细节加进来，否则主仓库会出现很多不必要提交
 3. 可以建立一个develop分支来处理PR
 4. 尽量保证master分支的清晰
+5. 根据实际情况选择pr的合并策略
 
 > 滥用PR可能会导致你的版本树一团糟，关于Github的Merge机制，可以看看Linus的[“友善”评论](https://www.cnbeta.com/articles/tech/1175663.htm)。
 
@@ -499,6 +500,8 @@ git pull
 git fetch --all && git reset --hard origin/master
 ;; --all是获取所有remote
 ```
+
+> 随手fetch是一个好习惯，尤其是在发起pr前。
 
 ## 推送远程仓库
 
