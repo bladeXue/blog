@@ -331,6 +331,8 @@ git mv <old-name> <new-name>
 
 ## 删除文件
 
+使用`rm`指令从索引树中删除目标文件的索引（放弃索引），也可以在文件系统里把文件直接删了。
+
 ```bash
 git rm <filename>           ;; 连本地文件和索引一起删除
 git rm --cached <filename>  ;; 放弃索引，但会保留本地文件
