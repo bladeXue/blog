@@ -598,16 +598,22 @@ git merge --squash <branch-id>      ;; 伪合并，将副分支上版本累积�
 
 ## 分支变基
 
-采用`rebase`指令替代`merge`来合并分支，**变基**会将副分支上的版本在主分支上**重新提交**，完成后副分支指针会与主分支重合。变基过程中如果产生冲突，处理冲突文件后需要完成一次重新提交。
+采用`rebase`指令替代`merge`来合并分支，**变基**会将副分支上的版本在主分支上**重新提交**，完成后副分支指针会与主分支重合。
 
 ```bash
-git rebase <branch-id>  ;; 如果变基过程发生冲突，就要修改后再次add
-git rebase --continue   ;; add后才能用这行命令，此时Git会让你填message
-git rebase --skip       ;; 无视冲突，直接提交
-git rebase --abort      ;; 放弃变基
+git rebase <branch-id>
 ```
 
-> 变基常用于分支间的同步，如PR后的上游仓库同步。
+变基过程中如果产生冲突，处理冲突文件后需要完成一次重新提交。
+
+```bash
+git add <file-name>     ;; 1. 处理完冲突文件后重新暂存
+git rebase --continue   ;; 2. 继续变基流程，提交后结束变基
+git rebase --skip       ;; 3. 如果想无视冲突，可以直接提交
+git rebase --abort      ;; 4. 也可以放弃本次变基
+```
+
+> 变基常用于分支间的同步，如PR后，将主分支的最新记录同步到副分支。
 
 ## 变基前自动储藏
 
