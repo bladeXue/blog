@@ -433,6 +433,15 @@ git log --graph             ;; 输出树形图
 git log --decorate          ;; 输出注解
 ```
 
+## 查看指针变动历史
+
+查看分支指针的**变动历史**，可用于确认快速合并记录，查找流放版本等。
+
+```bash
+git reflog
+git reflog <branch-id>
+```
+
 ## 提取历史文件
 
 使用`show`指令查看目标版本的具体信息。
