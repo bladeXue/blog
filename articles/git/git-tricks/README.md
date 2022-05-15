@@ -607,6 +607,22 @@ git rebase --abort      ;; 放弃变基
 
 > 变基常用于分支间的同步，如PR后的上游仓库同步。
 
+## 变基前自动储藏
+
+```bash
+git rebase --autostash
+```
+
+## 变基的`-i`选项
+
+> 非常NB的选项，可以完成类似“将3次连续提交整合成1次后导入新分支”这样的神奇操作。
+
+使用交互式选项`-i`可以手动选择目标分支上的需要加入主分支的版本，允许改写，替换，删除和合并。
+
+```bash
+git rebase -i <branch-id> 
+```
+
 ## 提取其它分支的提交
 
 使用`cherry-pick`可以将任一版本提取到当前分支。假设现在`develop`有1->2->3三个新提交，那么`master`提取2后，实际上加入的是1和2。`cherry-pick`不产生交汇，有时候会导致无法理解的版本树。
@@ -622,22 +638,6 @@ git add <filename>         ;; 1. 处理冲突后重新暂存目标文件
 git cherry-pick --continue ;; 2. 继续提取，这里会要求编写commit message后完成提取
 git cherry-pick --skip     ;; 3. 不想填message可以直接跳过
 git cherry-pick --abort    ;; 4. 放弃本次提取
-```
-
-## 变基前自动储藏
-
-```bash
-git rebase --autostash
-```
-
-## 变基的`-i`选项
-
-> 非常NB的选项，可以完成类似“将3次连续提交整合成1次后导入新分支”这样的神奇操作。
-
-使用交互式选项`-i`可以手动选择目标分支上的需要加入主分支的版本，允许改写，替换，删除和合并。
-
-```bash
-git rebase -i <branch-id> 
 ```
 
 ## 重命名分支
