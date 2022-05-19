@@ -21,9 +21,14 @@
 - [x] [两数之和](articles/algorithm/question-sum-of-two-numbers/) `算法`   
 - [ ] [两个子串问题](articles/algorithm/question-two-substrings/) `算法`   
 
+## Angular
+
+- [ ] [在Angular中写CSS](articles/angular/css-in-angular/) `angular`  `javascript`  `css`   
+
 ## 书评
 
 - [x] [算法 第4版](articles/book/review-of-algorithm4th/) `书评`   
+- [ ] [素描的诀窍](articles/book/review-of-keys-to-drawing/) `书评`   
 
 ## C
 
@@ -77,5 +82,6 @@
 
 ## 杂谈
 
+- [x] [关于编程语言](articles/yet/about-languages/) `杂谈`   
 - [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
