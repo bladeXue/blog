@@ -1,0 +1,55 @@
+# !!! PLEASE USE ENGLISH IN COMMIT MESSAGE
+# !!! THIS TEMPLATE REFERENCES https://www.conventionalcommits.org/ AND
+#     https://github.com/angular/angular/blob/main/CONTRIBUTING.md
+
+# ! The commit message should be structured as follows:
+#   ```
+#   <type>[optional scope]: <description>
+# 
+#   [optional body]
+# 
+#   [optional footer(s)]
+#   ```
+# 
+# ? Select the type of change that you're committing:
+#   build:    Changes that affect the build system or external dependencies 
+#             (example scopes: gulp, broccoli, npm)
+#   chore:    Other changes that don't modify src or test files
+#   ci:       Changes to our CI configuration files and scripts 
+#             (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+#   docs:     Documentation only changes
+#   feat:     A new feature
+#   fix:      A bug fix
+#   perf:     A code change that improves performance
+#   refactor: A code change that neither fixes a bug nor adds a feature
+#   revert:   Reverts a previous commit
+#   style:    Changes that do not affect the meaning of the code 
+#             (white-space, formatting, missing semi-colons, etc)
+#   test:     Adding missing tests or correcting existing tests
+# 
+# ? Commit Scope can be: animations|bazel|benchpress|common|compiler|
+#                        compiler-cli|core|elements|forms|http|
+#                        language-service|localize|platform-browser|
+#                        platform-browser-dynamic|platform-server|router|
+#                        service-worker|upgrade|zone.js|packaging|changelog|
+#                        docs-infra|migrations|ngcc|ve|devtools
+#   Or any other names as you want (e.g. component or file name)                    
+# 
+# ? Write a short, imperative tense description of the change (max 87 chars)
+# 
+# ? Provide a longer description of the change (at least 20 chars). Explain 
+#   the motivation for the change in the commit message body. This commit 
+#   message should explain why you are making the change. You can include 
+#   a comparison of the previous behavior with the new behavior in order to 
+#   illustrate the impact of the change.
+# 
+# ? If there is any BREAKING CHANGES to be mentioned, it should be like:
+#   ```
+#   chore(source)!: drop support for Node 6
+# 
+#   BREAKING CHANGE: use JavaScript features not available in Node 6.
+#   ```
+# 
+# ? If this change affect any open issues, it should be in footer 
+#   (e.g. "fix #123", "re #123".)
+# 

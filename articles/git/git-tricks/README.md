@@ -39,7 +39,7 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 ## 关于提交规范
 
-目前最主流的参考还是[Angular提交规范](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format)和[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，可以有效：
+目前最主流的参考还是[Angular提交规范](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format)和[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，发布版本号可以参考[语义化版本](https://semver.org/lang/zh-CN/)。严格的提交规范有助于：
 
 1. 生成**CHANGELOG**
 2. 减少不必要提交
@@ -175,8 +175,13 @@ git config --global user.name ""
 git config --global user.email ""
 ```
 
-这里的个人信息不是指Github账户，而是会作为提交人信息记录在版本数据库里。
-关于设置代理可以参考[一文让你了解如何为 Git 设置代理](https://ericclose.github.io/git-proxy-config.html)。
+这里的个人信息不是指Github账户，而是会作为提交人信息记录在版本数据库里。关于设置代理可以参考[一文让你了解如何为 Git 设置代理](https://ericclose.github.io/git-proxy-config.html)。
+
+```bash
+git config --global commit.template /your/path/to/.gitmessage
+```
+
+这里有一份我自己维护的[提交模板](./.gitmessage)。
 
 ## 配置`.gitignore`
 
