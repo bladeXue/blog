@@ -54,6 +54,7 @@
 ## Git
 
 - [x] [Visual Studio Code里有用的Git插件](articles/git/git-extensions-in-vsc/) `git`   
+- [ ] [用Git管理HOME目录](articles/git/git-home/) `git`  `翻译`   
 - [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
 
 ## Github
