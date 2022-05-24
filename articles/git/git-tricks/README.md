@@ -45,6 +45,9 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 2. 减少不必要提交
 3. 提供更清晰的提交历史
 
+> 在实际开发中，尤其是在自由度比较高的个人分支上，不一定需要遵循过分严格的规范，但还是建议在公共仓库的主要分支（如`master`和`develop`）上采用规范化提交。
+> 如果担心个人分支上过于自由的提交信息会影响主要分支的整洁，那么可以在处理分支合并时多多尝试变基的`-i`选项。
+
 ## 关于分支规范
 
 采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
