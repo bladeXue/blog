@@ -91,7 +91,7 @@ Git在各个系统的命令行里表现一致，但是Windows和Unix下，命令
 
 ## 关于托管
 
-Git原生的组织方式就是打补丁后抄送邮件列表，从而达到团队协作的目的。现在流行的Github一类的托管平台不过是把这个步骤自动化了，包括Linux在内的一些老牌项目依旧在使用邮件列表。不管是选择自建，或者上平台，还是用邮件列表，都有各自的优势，但是Github作为第三方平台，是否值得信任要团队自己考虑。可以看看Nimble的Jesse Squires怎么[解释这个问题](https://www.jessesquires.com/blog/2022/04/19/github-suspending-russian-accounts/)。
+Git原生的组织方式就是打补丁后抄送邮件列表，从而达到团队协作的目的。现在流行的Github一类的托管平台不过是把这个步骤自动化了，包括Linux在内的一些老牌项目依旧在使用**邮件列表**。不管是选择自建，或者上平台，还是用邮件列表，都有各自的优势，但是Github作为第三方平台，是否值得信任要团队自己考虑。可以看看Nimble的Jesse Squires怎么[解释这个问题](https://www.jessesquires.com/blog/2022/04/19/github-suspending-russian-accounts/)。
 
 ## 关于PR
 
