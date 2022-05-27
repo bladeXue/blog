@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成`25`篇
-- [ ] 未完成`19`篇
+- [x] 完成25
+- [ ] 未完成20
 
 ## 算法
 
@@ -78,6 +78,7 @@
 
 ## 测试
 
+- [ ] [template](articles/template/) `test`   
 - [x] [测试用例](articles/test/) `test`   
 - [ ] [测试用例tex](articles/tex/test/) `test`   
 
