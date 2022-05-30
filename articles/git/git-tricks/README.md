@@ -51,7 +51,7 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 
 ## 关于分支规范
 
-采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+采用主从分支模型，具体参考Vincent Driessen的[A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)。类似的分支规范自动化后被称为[WorkFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)。
 
 ## 关于合并策略
 
