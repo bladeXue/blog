@@ -12,9 +12,10 @@
 
 ## 往期文章推荐
 
-> 作者很懒，只推荐了一篇。
+> 作者很懒，只推荐了2篇。
 
 - [x] [Git小魔术](articles/git/git-tricks/) `git`   收录一些常用的Git片段
+- [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `emacs`  `python`  `翻译`   
 
 ## 阅读插件
 
