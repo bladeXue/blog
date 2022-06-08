@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成
-- [ ] 未完成
+- [x] 完成26
+- [ ] 未完成20
 
 ## 算法
 
@@ -85,5 +85,6 @@
 ## 杂谈
 
 - [x] [关于编程语言](articles/yet/about-languages/) `杂谈`   
+- [x] [避免无效学习](articles/yet/avoid-ineffective-study/) `杂谈`   
 - [ ] [知识三等分](articles/yet/three-parts-of-knowledge/) `杂谈`   
 
