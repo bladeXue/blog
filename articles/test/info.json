@@ -1,8 +1,12 @@
 {
     "release": true,
     "title": "测试用例",
-    "description":"",
+    "description": "",
     "date": "2100-01-01 00:00:00",
-    "tags": ["test"],
-    "categories": ["测试"]
+    "tags": [
+        "test"
+    ],
+    "categories": [
+        "测试"
+    ]
 }
