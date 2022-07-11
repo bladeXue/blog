@@ -5,19 +5,26 @@
 谈谈我接触过的几门语言：
 
 - Pascal
-- C
-- Lisp
-- Lua
+- Delphi
 
+- C
 - C++
 - C#
+  
+- Rust  
+- Lua
+- Lisp
+- Haskell
 
 - Java
 - JavaScript
 - TypeScript
 
+- SQL
+
 - Python
 - Ruby
+- PowerShell
 
 
 
