@@ -38,6 +38,7 @@
 ## 友情链接
 
 - [Matrixzj](https://www.cnblogs.com/matrixzj/)
+- [Lebenito](https://blogs.lebenito.net/)
 - [WarrenRyan](https://www.cnblogs.com/warrenryan)
 - [无锡肖奈](https://segmentfault.com/u/wuxixiaonai)
 - [粟米](http://www.dreamingcat.me)
