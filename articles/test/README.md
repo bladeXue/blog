@@ -11,6 +11,8 @@
 
 <img src="/images/algorithm/kmp/next3.png" title="next3" alt="next3" style="max-width:50%;margin:auto;" />
 
+<img src="/images/algorithm/kmp/next3.png" title="next3" alt="next3" width="50%" />
+
 ## 测试链接
 
 [维基百科](https://zh.wikipedia.org/)
