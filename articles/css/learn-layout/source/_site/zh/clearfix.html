@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>学习CSS布局</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>学习CSS布局</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">主页</a>
+      <a href="toc.html">目录</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  清除浮动（clearfix hack）
+</h1>
+
+<p class="content">
+  在使用浮动的时候经常会遇到一个古怪的事情：
+</p>
+
+<style>
+  .content img {
+    float: right;
+  }
+  .clear {
+    clear: both;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">img</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="content">
+
+  <div class="elem">
+    <span class="label">&lt;div></span>
+    <img src="/images/ilta.png" alt="An Image">
+    <p>
+      不......这个图片比包含它的元素还高， 而且它是浮动的，于是它就溢出到了容器外面！
+    </p>
+  </div>
+
+</div>
+
+<p class="content clear">
+  见证奇迹的时刻到了！有一种比较丑陋的方法可以解决这个问题，它叫做<em>清除浮动（clearfix hack）</em>.
+</p>
+
+<p class="content">
+  让我们加入一些新的CSS样式：
+</p>
+
+<style>
+  .clearfix {
+    overflow: auto;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.clearfix</span> <span class="p">{</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p class="content">
+  现在再看看发生了什么：
+</p>
+
+<div class="content">
+
+  <div class="elem clearfix">
+    <span class="label">&lt;div class="clearfix"></span>
+    <img src="/images/ilta.png" alt="An Image">
+    <p>
+      好多了！
+    </p>
+  </div>
+
+</div>
+
+<p class="content">
+  这个可以在现代浏览器上工作。如果你想要支持IE6，你就需要再加入如下样式：
+</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.clearfix</span> <span class="p">{</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="py">zoom</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p class="content">
+  有些独特的浏览器需要“额外的关照”。<a href="http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best">清除浮动这潭 水很深很深</a>，但是这个简单的解决方案已经可以在今天所有的主要浏览器上工作。
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="clear.html">上一页</a>
+          
+
+          
+            <a class="nav next" href="float-layout.html">下一页</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          11 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
 # 目录
 
-- [x] 完成26
-- [ ] 未完成20
+- [x] 完成
+- [ ] 未完成
 
 ## 算法
 
@@ -34,6 +34,10 @@
 
 - [x] [理解补码](articles/c/understand-complement-code/) `c`  `编码`  `组成原理`   
 
+## C++
+
+- [x] [30分钟C++速学手册](articles/cpp/cpp-in-30-minutes/) `c`  `c++`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `css`   
@@ -46,6 +50,7 @@
 - [ ] [浮动布局](articles/css/layout/float-layout/) `css`  `布局`   
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `css`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `css`  `布局`   
+- [ ] [学习布局](articles/css/learn-layout/) `css`   
 
 ## Emacs
 
@@ -78,9 +83,9 @@
 
 ## 测试
 
-- [ ] [template](articles/template/) `test`   
+- [x] [template](articles/template/) `test`   
 - [x] [测试用例](articles/test/) `test`   
-- [ ] [测试用例tex](articles/tex/test/) `test`   
+- [x] [测试用例tex](articles/tex/test/) `test`   
 
 ## 杂谈
 

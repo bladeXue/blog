@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn CSS Layout</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>Learn CSS Layout</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">Home</a>
+      <a href="toc.html">Table of Contents</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  position
+</h1>
+
+<p class="content">
+  In order to make more complex layouts, we need to discuss the <code>position</code> property. It has a bunch of possible values, and their names make no sense and are impossible to remember. Let's go through them one by one, but maybe you should bookmark this page too.
+</p>
+
+<h2 class="content">
+  static
+</h2>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.static</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">static</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="elem">
+  <span class="label">&lt;div class="static"></span>
+  <p>
+    <code>static</code> is the default value. An element with <code>position: static;</code> is not positioned in any special way. A static element is said to be <em>not positioned</em> and an element with its position set to anything else is said to be <em>positioned</em>.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  relative
+</h2>
+
+<style>
+  .relative1 {
+    position: relative;
+  }
+  .relative2 {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.relative1</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.relative2</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">-20px</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">500px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="relative1 elem">
+  <span class="label">&lt;div class="relative1"></span>
+  <p>
+    <code>relative</code> behaves the same as <code>static</code> unless you add some extra properties.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<div class="relative2 elem elem-red">
+  <span class="label">&lt;div class="relative2"></span>
+  <p>
+    Setting the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<h2 class="content">
+  fixed
+</h2>
+
+<style>
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 9999;
+  }
+</style>
+
+<div class="fixed elem elem-green">
+  <span class="label">&lt;div class="fixed"></span>
+  <p>
+    Hello! Don't pay attention to me yet.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  A fixed element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. As with <code>relative</code>, the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties are used.
+</p>
+
+<p class="content">
+  I'm sure you've noticed that fixed element in the lower-right hand corner of the page. I'm giving you permission to pay attention to it now. Here is the CSS that puts it there:
+</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.fixed</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+  <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p class="content">
+  A fixed element does not leave a gap in the page where it would normally have been located.
+</p>
+
+<p class="content">
+  Mobile browsers have surprisingly shaky support for fixed. <a href="http://bradfrostweb.com/blog/mobile/fixed-position/">Learn more about the situation here</a>.
+</p>
+
+<h2 class="content">
+  absolute
+</h2>
+
+<style>
+  .relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+  }
+  .absolute {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 300px;
+    height: 200px;
+  }
+</style>
+
+<p class="content">
+  <code>absolute</code> is the trickiest position value. <code>absolute</code> behaves like <code>fixed</code> except relative to <em>the nearest positioned ancestor</em> instead of relative to the viewport. If an absolutely-positioned element has no positioned ancestors, it uses the document body, and still moves along with page scrolling. Remember, a "positioned" element is one whose position is anything except <code>static</code>.
+</p>
+
+<p class="content">
+  Here is a simple example:
+</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.relative</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.absolute</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">120px</span><span class="p">;</span>
+  <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="relative elem">
+  <span class="label">&lt;div class="relative"></span>
+  <p>
+    This element is relatively-positioned. If this element was <code>position: static;</code> its absolutely-positioned child would escape and would be positioned relative to the document body.
+  </p>
+  <div class="absolute elem elem-red">
+    <span class="label">&lt;div class="absolute"></span>
+    <p>
+      This element is absolutely-positioned. It's positioned relative to its parent.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<p class="content">
+  This stuff is tricky, but it's essential to creating great CSS layouts. On the next page we'll use <code>position</code> in a more practical example.
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="box-sizing.html">Previous</a>
+          
+
+          
+            <a class="nav next" href="position-example.html">Next</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          7 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>
