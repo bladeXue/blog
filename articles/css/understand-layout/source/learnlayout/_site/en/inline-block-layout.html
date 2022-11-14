@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn CSS Layout</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>Learn CSS Layout</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">Home</a>
+      <a href="toc.html">Table of Contents</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  inline-block layout
+</h1>
+
+<div class="content">
+
+  <p>
+    You can also use <code>inline-block</code> for layouts. There are a few things to keep in mind:
+  </p>
+
+  <ul>
+    <li><code>inline-block</code> elements are affected by the <code>vertical-align</code> property, which you probably want set to <code>top</code>.
+    <li>You need to set the width of each column
+    <li>There will be a gap between the columns if there is any whitespace between them in the HTML
+  </ul>
+</div>
+
+<style>
+  nav.elem {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+  }
+  .column {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">nav</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">25%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.column</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">75%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="inline-block-layout.html">Home</a>
+      </li>
+      <li>
+        <a href="inline-block-layout.html">Taco Menu</a>
+      </li>
+      <li>
+        <a href="inline-block-layout.html">Draft List</a>
+      </li>
+      <li>
+        <a href="inline-block-layout.html">Hours</a>
+      </li>
+      <li>
+        <a href="inline-block-layout.html">Directions</a>
+      </li>
+      <li>
+        <a href="inline-block-layout.html">Contact</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav><div class="elem elem-red column">
+    <span class="label">&lt;div class="column"></span>
+
+    <section class="elem elem-green">
+      <span class="label">&lt;section></span>
+      <p>
+        Tada!
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <section class="elem elem-green ipsum">
+      <span class="label">&lt;section></span>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="inline-block.html">Previous</a>
+          
+
+          
+            <a class="nav next" href="column.html">Next</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          16 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>

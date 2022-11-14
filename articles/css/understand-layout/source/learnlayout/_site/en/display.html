@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn CSS Layout</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>Learn CSS Layout</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">Home</a>
+      <a href="toc.html">Table of Contents</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  the "display" property
+</h1>
+
+<p class="content">
+  <code>display</code> is CSS's most important property for controlling layout. Every element has a default display value depending on what type of element it is. The default for most elements is usually <code>block</code> or <code>inline</code>. A block element is often called a block-level element. An inline element is always just called an inline element.
+</p>
+
+<h2 class="content">block</h2>
+
+<div class="elem">
+  <span class="label">&lt;div></span>
+  <p>
+    <code>div</code> is the standard block-level element. A block-level element starts on a new line and stretches out to the left and right as far as it can. Other common block-level elements are <code>p</code> and <code>form</code>, and new in HTML5 are <code>header</code>, <code>footer</code>, <code>section</code>, and more.
+  </p>
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+<div class="content">
+
+  <h2>inline</h2>
+
+  <p>
+    <code>span</code> is the standard inline element. An inline element can wrap some text inside a paragraph
+
+      <span class="elem elem-inline"><span class="label">&lt;span></span>
+        like this
+      <span class="endlabel">&lt;/span></span></span>
+
+    without disrupting the flow of that paragraph. The <code>a</code> element is the most common inline element, since you use them for links.
+  </p>
+
+  <h2>none</h2>
+
+  <p>
+    Another common display value is <code>none</code>. Some specialized elements such as <code>script</code> use this as their default. It is commonly used with JavaScript to hide and show elements without really deleting and recreating them.
+  </p>
+
+  <p>
+    This is different from <code>visibility</code>. Setting <code>display</code> to <code>none</code> will render the page as though the element does not exist. <code>visibility: hidden;</code> will hide the element, but the element will still take up the space it would if it was fully visible.
+  </p>
+
+  <div style="display:none;">You found me!</div>
+
+  <h2>other display values</h2>
+
+  <p>
+    There are plenty of more exotic display values, such as <code>list-item</code> and <code>table</code>. <a href="https://developer.mozilla.org/en-US/docs/CSS/display">Here is an exhaustive list</a>. We'll discuss <code>inline-block</code> and <code>flex</code> later on.
+  </p>
+
+  <h2>extra credit</h2>
+
+  <p>
+    As I mentioned, every element has a default display type. However, you can <em>always</em> override this! Though it wouldn't make sense to make an inline div, you can use this to customize the display of elements that have particular semantics. A common example is making inline <code>li</code> elements for horizontal menus.
+  </p>
+
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="no-layout.html">Previous</a>
+          
+
+          
+            <a class="nav next" href="margin-auto.html">Next</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          2 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>

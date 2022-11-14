@@ -1,14 +1,13 @@
 {
     "release": true,
-    "title": "理解补码",
+    "title": "30分钟C++速学手册",
     "description": "",
     "date": "2100-01-01 00:00:00",
     "tags": [
         "c",
-        "编码",
-        "组成原理"
+        "c++"
     ],
     "categories": [
-        "C"
+        "C++"
     ]
 }

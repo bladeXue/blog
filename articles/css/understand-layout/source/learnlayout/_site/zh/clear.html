@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>学习CSS布局</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>学习CSS布局</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">主页</a>
+      <a href="toc.html">目录</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  clear
+</h1>
+
+<p class="content">
+   <code>clear</code> 属性被用于控制浮动。比较下面两个例子：
+</p>
+
+<style>
+  .box {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;section&gt;</span>...<span class="nt">&lt;/section&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p class="content">
+  <div class="box elem">
+    <span class="label">&lt;div class="box"></span>
+    <p>
+      我感觉好像我在漂浮！
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+
+  <section class="elem elem-green">
+    <span class="label">&lt;section></span>
+    <p>
+      在这个例子中， <code>section</code> 元素实际上是在 <code>div</code> 之后的（译注：DOM结构上）。然而 <code>div</code> 元素是浮动到左边的，于是 <code>section</code> 中的文字就围绕了 <code>div</code> ，并且 <code>section</code> 元素包围了整个元素。如果我们想让 <code>section</code> 显示在浮动元素之后呢？
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+</p>
+
+<style>
+  .after-box {
+    clear: left;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.after-box</span> <span class="p">{</span>
+  <span class="nl">clear</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p class="content">
+  <div class="box elem">
+    <span class="label">&lt;div class="box"></span>
+    <p>
+      我感觉好像我在漂浮！
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+  <section class="elem elem-green after-box">
+    <span class="label">&lt;section class="after-box"></span>
+    <p>
+      使用 <code>clear</code> 我们就可以将这个段落移动到浮动元素 <code>div</code> 下面。你需要用 <code>left</code> 值才能清除元素的向左浮动。你还可以用 <code>right</code> 或 <code>both</code> 来清除向右浮动或同时清除向左向右浮动。
+    </p>
+    <span class="endlabel">&lt;/section></span>
+  </section>
+</p>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="float.html">上一页</a>
+          
+
+          
+            <a class="nav next" href="clearfix.html">下一页</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          10 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>

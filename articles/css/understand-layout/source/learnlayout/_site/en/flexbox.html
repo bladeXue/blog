@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn CSS Layout</title>
+    <meta name="viewport" content="width=600">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/code.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35945753-1']);
+  _gaq.push(['_setDomainName', 'learnlayout.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+  </head>
+  <body class="ltr">
+
+    <div id="logo">
+      <a href="/">
+        <img src="images/logo.png">
+        <span>Learn CSS Layout</span>
+      </a>
+    </div>
+
+    <div id="menu">
+      <a class="home-link" href="/">Home</a>
+      <a href="toc.html">Table of Contents</a>
+    </div>
+
+    <div id="container">
+
+      <h1>
+  flexbox
+</h1>
+
+<p class="content">
+  The new <code>flexbox</code> layout mode is poised to redefine how we do layouts in CSS. Unfortunately the specification has changed a lot recently, so it's implemented differently in different browsers. Still, I'd like to share a couple examples so you know what's coming up. These examples currently only work <a href="http://caniuse.com/flexbox">some browsers</a> that use the <a href="http://www.w3.org/TR/css3-flexbox/">latest version of the standard</a>.
+</p>
+
+<p class="content">
+  There are a lot of out-of-date flexbox resources around. If you want to learn more about flexbox, <a href="http://css-tricks.com/old-flexbox-and-new-flexbox/">start here</a> to learn how to identify if a resource is current or not. I have written a <a href="http://weblog.bocoup.com/dive-into-flexbox/">detailed article using the latest syntax</a>.
+</p>
+
+<p class="content">
+  There is a lot more you can do with flexbox; these are just a few examples to give you an idea:
+</p>
+
+<h2 class="content">Simple Layout using Flexbox</h2>
+
+<style>
+  .container {
+    display: -webkit-flex;
+    display: flex;
+  }
+  nav {
+    width: 200px;
+  }
+  .flex-column {
+    -webkit-flex: 1;
+            flex: 1;
+  }
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-flex</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">nav</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex-column</span> <span class="p">{</span>
+  <span class="nl">-webkit-flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+          <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="container elem">
+  <span class="label">&lt;div class="container"></span>
+
+  <nav class="elem elem-red">
+    <span class="label">&lt;nav></span>
+    <ul>
+      <li>
+        <a href="flexbox.html">Home</a>
+      </li>
+      <li>
+        <a href="flexbox.html">Taco Menu</a>
+      </li>
+      <li>
+        <a href="flexbox.html">Draft List</a>
+      </li>
+      <li>
+        <a href="flexbox.html">Hours</a>
+      </li>
+      <li>
+        <a href="flexbox.html">Directions</a>
+      </li>
+      <li>
+        <a href="flexbox.html">Contact</a>
+      </li>
+    </ul>
+    <span class="endlabel">&lt;/nav></span>
+  </nav>
+
+  <div class="elem elem-red flex-column">
+    <span class="label">&lt;div class="flex-column"></span>
+
+    <section class="elem elem-green">
+      <span class="label">&lt;section></span>
+      <p>
+        Flexbox is so easy!
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <section class="elem elem-green ipsum">
+      <span class="label">&lt;section></span>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+      </p>
+      <span class="endlabel">&lt;/section></span>
+    </section>
+
+    <span class="endlabel">&lt;/div></span>
+  </div>
+
+</div>
+
+<h2 class="content">Fancy Layout using Flexbox</h2>
+
+<style>
+.initial {
+  -webkit-flex: initial;
+          flex: initial;
+  width: 200px;
+  min-width: 100px;
+}
+.none {
+  -webkit-flex: none;
+          flex: none;
+  width: 200px;
+}
+.flex1 {
+  -webkit-flex: 1;
+          flex: 1;
+}
+.flex2 {
+  -webkit-flex: 2;
+          flex: 2;
+}
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-flex</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.initial</span> <span class="p">{</span>
+  <span class="nl">-webkit-flex</span><span class="p">:</span> <span class="n">initial</span><span class="p">;</span>
+          <span class="nl">flex</span><span class="p">:</span> <span class="n">initial</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">min-width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.none</span> <span class="p">{</span>
+  <span class="nl">-webkit-flex</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+          <span class="nl">flex</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex1</span> <span class="p">{</span>
+  <span class="nl">-webkit-flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+          <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.flex2</span> <span class="p">{</span>
+  <span class="nl">-webkit-flex</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+          <span class="nl">flex</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="container elem">
+
+  <section class="elem elem-green initial">
+    <span class="label">&lt;div class="initial"></span>
+    <p>
+      I will be 200px when there is room, and I will shrink down to 100px if there is not room, but no smaller.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green none">
+    <span class="label">&lt;div class="none"></span>
+    <p>
+      I will always be 200px, no matter what.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green flex1">
+    <span class="label">&lt;div class="flex1"></span>
+    <p>
+      I will fill up 1/3 of the remaining width.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <section class="elem elem-green flex2">
+    <span class="label">&lt;div class="flex2"></span>
+    <p>
+      I will fill up 2/3 of the remaining width.
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+</div>
+
+<h2 class="content">Centering using Flexbox</h2>
+
+<style>
+.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+</style>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.vertical-container</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-flex</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span>         <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">-webkit-align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+          <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">-webkit-justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+          <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="vertical-container elem">
+  <span class="label">&lt;div class="vertical-container"></span>
+
+  <section class="elem elem-green">
+    <span class="label">&lt;div></span>
+    <p>
+      Finally, it's easy to vertically center something in CSS!
+    </p>
+    <span class="endlabel">&lt;/div></span>
+  </section>
+
+  <span class="endlabel">&lt;/div></span>
+</div>
+
+      
+
+        <div class="nav-wrapper">
+
+          
+            <a class="nav prev" href="column.html">Previous</a>
+          
+
+          
+            <a class="nav next" href="frameworks.html">Next</a>
+          
+
+        </div>
+
+      
+
+      
+        <footer>
+          18 / 19
+        </footer>
+      
+
+    </div>
+
+    <div id="share">
+
+      <li>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://learnlayout.com/">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </li>
+
+      <li>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Flearnlayout.com%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+      </li>
+
+      <li>
+        <div class="g-plusone" data-size="medium"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+      </li>
+
+      <li id="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png"></a>
+      </li>
+
+    </div>
+
+  </body>
+</html>
