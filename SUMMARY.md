@@ -50,7 +50,7 @@
 - [ ] [浮动布局](articles/css/layout/float-layout/) `css`  `布局`   
 - [ ] [行内块布局](articles/css/layout/inline-layout/) `css`  `布局`   
 - [ ] [定位布局](articles/css/layout/position-layout/) `css`  `布局`   
-- [x] [学习布局](articles/css/learn-layout/) `css`  `布局`   
+- [x] [理解布局](articles/css/understand-layout/) `css`  `布局`   
 
 ## Emacs
 
