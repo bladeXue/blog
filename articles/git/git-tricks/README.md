@@ -69,11 +69,15 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 2. 将开发分支导入主分支，先由开发分支**rebase**更新，然后主分支再**merge**开发分支。
 
 ```
-A ---> B ---> C ---> D(master)                  ;; 分支产生
-       |
-       \ ---> X(develop)
-A ---> B ---> C ---> D(master) ---> X'(develop) ;; 将develop变基到master
-A ---> B ---> C ---> D ---> X'(master)(develop) ;; master进行一次快速合并，吸收develop的修改
+A --> B --> C --> D(master)                  ;; 分支产生
+      |
+      \ --> X(develop)
+A --> B --> C --> D(master)                  ;; develop变基到master节点（必要时要解决冲突）
+                  |
+                  \ --> X'(develop) 
+A --> B --> C --> D
+                  |
+                  \ --> X'(master)(develop)  ;; master进行一次快速合并，吸收develop的修改
 ```
 
 ## 关于标签
@@ -615,7 +619,7 @@ git merge --squash <branch-id>      ;; 伪合并，将副分支上版本累积�
 
 ## 分支变基
 
-采用`rebase`指令替代`merge`来合并分支，**变基**会将副分支上的版本在主分支上**重新提交**，完成后副分支指针会与主分支重合。
+采用`rebase`指令替代`merge`来合并分支，**变基**会将副分支上的版本在主分支上**重新提交**，视图记录中会呈现类似“剪枝嫁接”的效果。
 
 ```bash
 git rebase <branch-id>
