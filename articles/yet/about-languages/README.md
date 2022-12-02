@@ -19,6 +19,7 @@
 - Java
 - JavaScript
 - TypeScript
+- Dart
 
 - SQL
 
