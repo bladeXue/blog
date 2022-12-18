@@ -37,24 +37,24 @@
 ## C++
 
 - [x] [30分钟C++速学手册](articles/cpp/cpp-in-30-minutes/) `c`  `c++`   
+- [x] [最小化C++编程指南](articles/cpp/minimized-cpp-developer-guide/) `c++`   
 
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `css`   
 - [x] [使用表格构建日历表](articles/css/css-building-blocks/table-based-calendar/) `css`   
 - [x] [什么是CSS积木](articles/css/css-building-blocks/what-is-this/) `css`   
+- [ ] [CSS小魔术](articles/css/css-tricks/) `css`  `sass`   速查和片段
 - [ ] [设计一个栅格系统](articles/css/design-a-grid-system/) `css`   
-- [ ] [文档流模型](articles/css/layout/document-flow/) `css`  `布局`   
-- [ ] [元素尺度](articles/css/layout/element-scale/) `css`  `布局`   
-- [x] [弹性布局](articles/css/layout/flexible-layout/) `css`  `布局`   
-- [ ] [浮动布局](articles/css/layout/float-layout/) `css`  `布局`   
-- [ ] [行内块布局](articles/css/layout/inline-layout/) `css`  `布局`   
-- [ ] [定位布局](articles/css/layout/position-layout/) `css`  `布局`   
 - [x] [理解布局](articles/css/understand-layout/) `css`  `布局`   
 
 ## Emacs
 
 - [ ] [Emacs：最好的Python编辑器？](articles/emacs/emacs-the-best-python-editor/) `emacs`  `python`  `翻译`   
+
+## 英语
+
+- [x] [英语短文背诵30篇](articles/english/born-to-win/) `english`   
 
 ## Git
 
