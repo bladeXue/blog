@@ -39,6 +39,10 @@
 - [x] [30分钟C++速学手册](articles/cpp/cpp-in-30-minutes/) `c`  `c++`   
 - [x] [最小化C++编程指南](articles/cpp/minimized-cpp-developer-guide/) `c++`   
 
+## C#
+
+- [ ] [入门C#编程的19个问题](articles/csharp/19-questions-before-code-with-csharp/) `.net`  `c#`   
+
 ## CSS
 
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `css`   
