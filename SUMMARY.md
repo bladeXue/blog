@@ -5,6 +5,7 @@
 
 ## 算法
 
+- [x] [快速入门一门新语言的19个问题](articles/algorithm/19-questions-before-programing/) `编程`   
 - [x] [最大相同前缀后缀问题](articles/algorithm/classical-algorithm-maximum-same-prefix-suffix/) `算法`  `算法题解`   
 - [x] [八皇后问题](articles/algorithm/classical-algorithm-n-queens/) `算法`  `算法题解`   
 - [x] [缓存置换算法和LRU实现](articles/algorithm/classical-algotithm-for-cache-replacement/) `算法`  `算法题解`   
