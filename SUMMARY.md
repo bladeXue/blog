@@ -42,7 +42,15 @@
 
 ## C#
 
-- [ ] [入门C#编程的19个问题](articles/csharp/19-questions-before-code-with-csharp/) `.net`  `c#`   
+- [ ] [入门C#编程的19个问题](articles/csharp/19-questions-beginning-csharp/) `.net`  `c#`   
+- [ ] [为什么选择C#](articles/csharp/why-choose-csharp/) `.net`  `c#`   
+
+## 测试
+
+- [x] [template](articles/csharp/use-antlr-in-csharp/) `test`   
+- [x] [template](articles/template/) `test`   
+- [x] [测试用例](articles/test/) `test`   
+- [x] [测试用例tex](articles/tex/test/) `test`   
 
 ## CSS
 
@@ -85,12 +93,6 @@
 - [x] [对速算的态度](articles/math/attitude-to-quick-calculation/) `数学`  `算术`   
 - [ ] [线性代数入门](articles/math/linear-algebra-guide/) `数学`  `线性代数`   
 - [ ] [三角学回顾](articles/math/review-of-trigonometry/) `三角函数`  `几何学`   
-
-## 测试
-
-- [x] [template](articles/template/) `test`   
-- [x] [测试用例](articles/test/) `test`   
-- [x] [测试用例tex](articles/tex/test/) `test`   
 
 ## 杂谈
 

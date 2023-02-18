@@ -1,0 +1,33 @@
+# 19个问题入门C#
+
+## 概念
+
+本篇按照3段式的做法，更像是代码片段和知识点索引的整合。
+
+## 常识
+
+[C#](https://zh.wikipedia.org/zh/C%E2%99%AF)是微软推出的编程语言，最初被认作对抗Java的仿品，闭源且只运行在Windows生态下。C#从2000年始经历了11个版本，期间微软态度大改，重写C#编译器后将其开源，其开源版本称为[Mono Project](https://www.mono-project.com/)。
+
+C#拥有称为.NET的开发套件，负责C#编程的标准化、运行时、编译、打包和类库等。在开发者层面，.NET仅仅是一个平台标准，其拥有多个实现，其中耦合了微软Windows作业系统的称为.NET Framework，开源版本为.NET Core。C#在.NET环境下的编译产物被称为程序集（由[通用中间语言](https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E4%B8%AD%E9%97%B4%E8%AF%AD%E8%A8%80)描述），并在不同平台下被打包成具体格式。
+
+
+
+## 代码
+
+
+
+
+## 最佳实践
+
+
+
+## 结语
+
+
+## 参考
+
+1. [微软是怎么把C#玩砸的？](https://www.toutiao.com/article/6831723944962163212/)
+2. [微软是如何使用C#重写C#编译器并将其开源的](https://www.infoq.cn/article/o9gb9hgfpr2yex_t2zto)
+3. [通俗易懂，什么是.NET？什么是.NET Framework？什么是.NET Core？](https://www.cnblogs.com/1996V/p/9037603.html)
+
+
