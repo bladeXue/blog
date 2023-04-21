@@ -1,12 +1,13 @@
 {
-    "release": true,
-    "title": "template",
+    "release": false,
+    "title": "在C#中使用ANTLR",
     "description": "",
-    "date": "2000-00-00 00:00:00",
+    "date": "2023-02-25 12:00:00",
     "tags": [
-        "test"
+        ".net",
+        "c#"
     ],
     "categories": [
-        "测试"
+        "C#"
     ]
 }
