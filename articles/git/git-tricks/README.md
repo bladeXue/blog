@@ -68,7 +68,7 @@ Git仓库的每一个版本其实都是一个文本补丁的压缩包，称为Gi
 1. 开发分支通过**rebase**从主分支同步最新代码；
 2. 将开发分支导入主分支，先由开发分支**rebase**更新，然后主分支再**merge**开发分支。
 
-```
+```bash
 A --> B --> C --> D(master)                  ;; 分支产生
       |
       \ --> X(develop)
@@ -654,7 +654,7 @@ git rebase -i <branch-id>
 
 交互式变基会创建一个临时目录`.git/rebase-merge/`，其中最重要的`git-rebase-todo`文件是**变基待办列表**，git会弹出一个编辑器让你修改这个文件，其中的行代表了**待变基版本**需要进行的操作。这里拷贝了一份某次的[变基待办列表](./git-rebase-todo)，其应用的版本树为：
 
-```
+```bash
 A --> B(master)
 |
 \ --> C --> D --> E(develop)  ;; 将develop上的3个版本变基到maser上
@@ -667,7 +667,7 @@ A --> B(master)
 3. 遇到合并行项会要求重新写一次commit message。
 4. 行项全部完成后，`git-rebase-todo`文件会被回收，变基结束。
 
-```
+```bash
 A --> B(master) --> C' --> DE(develop) ;; 完成变基后的版本树（修改C合并DE）
 ```
 
