@@ -21,19 +21,22 @@ CSS有很多流行的开发框架，如`bootstrap`和`material`。虽然这些�
 
 > 布局是CSS最重要的部分，因为它会直接决定页面元素的整体排列。
 
-CSS中布局的概念很大程度上来自出版业（尤其是[报纸](https://en.wikipedia.org/wiki/Newspaper)）的[排版](https://en.wikipedia.org/wiki/Typesetting)技术
+推荐使用**弹性布局**，也就是`display: flex;`。[learnlayout.com](https://learnlayout.com/)（作者[Greg Smith](https://incompl.com/)是前端大神）上有一份很不错的布局样式入门指南。本篇的`source/learnlayout/`目录下备份了这个项目的[仓库](https://github.com/incompl/learnlayout)的快照和两份编译后的站点文件。
 
-如果是新手，建议先阅读来自[Greg Smith](https://incompl.com/)的学习布局教程[learnlayout](https://github.com/incompl/learnlayout)，这是一份很不错的布局样式入门指南。我在本篇的`source/learnlayout/`目录下备份了这个教程的原始仓库的快照和两份编译后的站点源码，也可以浏览项目站址[learnlayout.com](https://learnlayout.com/)。
+<img src="images/learnlayout.png" title="learnlayout" alt="learnlayout" width="50%" />
 
-<img src="images/learnlayout.png" title="learnlayout" alt="learnlayout" width="75%" />
-
-
+CSS中布局的概念很大程度上来自**报纸出版业**的排版技术（多栏样式就是一种典型的[排版](https://en.wikipedia.org/wiki/Typesetting)），推荐阅读[写给大家看的设计书](https://item.jd.com/13093890.html)。
 
 
 
 
 
 
+
+
+
+
+## 关于栅格
 
 
 ## 重制样式
@@ -59,7 +62,7 @@ CSS中布局的概念很大程度上来自出版业（尤其是[报纸](https://
 
 
 
-
+## 实用元素
 
 
 ## 关于格式
