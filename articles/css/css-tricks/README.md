@@ -6,7 +6,7 @@
 
 ## 关于CSS标准
 
-现行的标准为CSS3，于2011年正式发表，其实际在开发上的标准可以参考MDN的[CSS 参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)。不同浏览器的CSS在实现上五花八门，在日常开发中想写出兼容性代码可能是件很头疼的事情，可以通过[caniuse](https://caniuse.com/)查询浏览器支持细节。
+现行的标准为CSS3，于2011年正式发表，其实际在开发上的标准可以参考MDN的[CSS 参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)。不同浏览器的CSS在实现上五花八门，在日常开发中想写出兼容性代码可能是件很头疼的事情，可以通过[Can I use...](https://caniuse.com/)查询浏览器支持细节。
 
 <img src="./images/caniuse/caniuse.png" title="caniuse" alt="caniuse" width="50%">
 
