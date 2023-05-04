@@ -4,9 +4,22 @@
 
 > 本文更多地讨论现代CSS，对于CSS2时代的一些做法不予讨论。
 
+## 编写CSS的建议
+
+
+### 1. 维护自己的框架
+
+CSS有很多流行的开发框架，如`bootstrap`和`material`。虽然这些流行库很漂亮很稳定，但通常会耦合某一个JavaScript框架，且通常代码过于复杂，想针对自己的UI进行修改工作量较大，所以还是建议自己维护一套常用的CSS样式库。
+
+### 2. CSS标准
+
+
+
+
+
 ## 关于CSS标准
 
-现行的标准为2011发表的CSS3，其实际在开发上的标准可以参考MDN的[CSS 参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)。不同浏览器的CSS引擎在实现上五花八门，在日常开发中想写出兼容性代码可能是件很头疼的事情，可以多查询[Can I use...](https://caniuse.com/)。
+现行的标准为2011发表的CSS3，其实际在开发上的标准可以参考MDN的[CSS 参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)。不同浏览器的CSS引擎在实现上五花八门，兼容性问题可以查询[Can I use...](https://caniuse.com/)。
 
 <img src="./images/caniuse/caniuse.png" title="caniuse" alt="caniuse" width="65%">
 
@@ -14,7 +27,6 @@
 
 ## 关于CSS框架
 
-CSS有很多流行的开发框架，如`bootstrap`和`material`。虽然这些流行库很漂亮很稳定，但通常会耦合某一个JavaScript框架，且通常代码过于复杂，想针对自己的UI进行修改工作量较大，所以还是建议自己维护一套常用的CSS样式库。
 
 
 ## 关于布局
