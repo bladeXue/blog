@@ -25,6 +25,7 @@
 ## Angular
 
 - [ ] [在Angular中写CSS](articles/angular/css-in-angular/) `angular`  `javascript`  `css`   
+- [x] [组织一个Angular工程](articles/angular/organize-an-angular-project/) `angular`   
 
 ## 书评
 
@@ -48,12 +49,18 @@
 
 ## CSS
 
+- [x] [恼人的内联元素空格](articles/css/annoying-inline-element-whitespace/) `css`   
 - [x] [Font Awesome的正确使用方式](articles/css/css-building-blocks/correct-use-of-fa/) `css`   
 - [x] [使用表格构建日历表](articles/css/css-building-blocks/table-based-calendar/) `css`   
 - [x] [什么是CSS积木](articles/css/css-building-blocks/what-is-this/) `css`   
-- [ ] [CSS的技巧](articles/css/css-tricks/) `css`  `sass`   CSS的常识，技巧和常用片段
 - [ ] [设计一个栅格系统](articles/css/design-a-grid-system/) `css`   
-- [x] [理解布局](articles/css/understand-layout/) `css`  `布局`   
+
+## 测试
+
+- [x] [template](articles/css/minimal-css-development-guidelines/) `test`   
+- [x] [template](articles/template/) `test`   
+- [x] [测试用例](articles/test/) `test`   
+- [x] [测试用例tex](articles/tex/test/) `test`   
 
 ## Emacs
 
@@ -87,12 +94,6 @@
 - [x] [对速算的态度](articles/math/attitude-to-quick-calculation/) `数学`  `算术`   
 - [ ] [线性代数入门](articles/math/linear-algebra-guide/) `数学`  `线性代数`   
 - [ ] [三角学回顾](articles/math/review-of-trigonometry/) `三角函数`  `几何学`   
-
-## 测试
-
-- [x] [template](articles/template/) `test`   
-- [x] [测试用例](articles/test/) `test`   
-- [x] [测试用例tex](articles/tex/test/) `test`   
 
 ## 杂谈
 
