@@ -116,6 +116,8 @@ overflow-xy和overflow-scrolling
 
 ## article和markdown样式
 
+以GitHub的样式为主。
+
 ## 渐变效果和阴影
 
 ## 打包器和压缩
